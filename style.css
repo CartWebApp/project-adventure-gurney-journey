@@ -2,6 +2,7 @@
     --creepyfont: 'Creepster', cursive;
 }
 
+/* --HERE IS THE MAIN PAGE STYLING-- */
 * {
     padding: 0;
     margin: 0;
@@ -19,10 +20,209 @@
 
 
 .title {
-  font-family: 'Bahiana', sans-serif;
-  font-size: 128px;
+    font-family: 'Bahiana', sans-serif;
+    font-size: 128px;
+
+    &>p {
+        font-size: 200px;
+    }
 }
 
-.title p {
-    font-size: 200px;
+/* --HERE IS THE SECONDARY MAIN PAGE STYLING-- */
+
+.home2body {
+    background-image: url("/Images/Second-main-image.png");
+}
+
+/* Whole nav bar for secondary main page */
+.home2nav {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+
+    &>img {
+        animation: moveRight 0.5s ease-out forwards;
+    }
+
+    &>section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url("/images/Wood-button.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 400px;
+        height: 100px;
+
+        animation: moveLeft 0.5s ease-out forwards;
+
+        &>span {
+            font-size: 36px;
+        }
+
+        &>img {
+            width: 70px;
+            height: 70px;
+        }
+
+        &>select {
+            border-radius: 20px;
+            width: 70px;
+            height: 40px;
+            padding-left: 5px;
+        }
+    }
+
+}
+
+.home2main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 100px;
+
+    &>#play-button>h1 {
+        font-size: 96px;
+        margin-bottom: 50px;
+        background-image: url("/images/red-button.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 450px;
+        height: 144px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        animation: FadeUp 0.5s ease-out forwards;
+    }
+
+    &>#play-button:hover {
+        animation: scaleUp 0.3s ease-out forwards;
+    }
+
+
+    &>.threeText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        &> #go-back-button > #go-back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            background-image: url("/images/wood-button.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 250px;
+            height: 80px;
+            animation: moveup 0.5s ease-out forwards;
+        }
+
+        &>#go-back-button:hover {
+            animation: scaleUp 0.3s ease-out forwards;
+        }
+
+        &>section {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            &> #achievements-button > #achievements {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 32px;
+                background-image: url("/images/wood-button.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 300px;
+                height: 80px;
+                animation: moveRight 0.5s ease-out forwards;
+            }
+
+            &>#achievements-button:hover {
+                animation: scaleUp 0.3s ease-out forwards;
+            }
+
+            &> #credits-button > #credits {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 32px;
+                background-image: url("/images/wood-button.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 250px;
+                height: 60px;
+                animation: moveLeft 0.5s ease-out forwards;
+            }
+
+            &>#credits-button:hover {
+                animation: scaleUp 0.3s ease-out forwards;
+            }
+        }
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes FadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveup {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }

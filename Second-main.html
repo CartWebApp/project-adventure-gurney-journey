@@ -5,28 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home2body">
+    <!-- Nav Bar -->
     <nav class="home2nav">
         <section>
-            <img src="/images/Lang-icon.png">
+            <img src="/images/Lang-icon.png" alt="Language Icon">
             <span>Language</span>
             <select name="languages" id="languages">
-                <option value="" disabled selected hidden>Select your language</option>
+                <option value="" disabled selected hidden>Select</option>
                 <option value="en">English</option>
-                <option value="es">Spanish</option>
+                <option value="es">Español</option>
             </select>
         </section>
-        <img src="/images/Volume.png">
+        <img src="/images/Volume.png" alt="Volume Icon">
     </nav>
+    <!-- Main Content -->
     <main class="home2main">
-        <h1>Play</h1>
-        <section>
-            <h3>Achievements</h3>
-            <h3>Credits</h3>
+        <div id="play-button">
+            <h1>Play</h1>
+        </div>
+        <section class="threeText">
+            <section>
+                <div id="achievements-button">
+                    <h3 id="achievements">Achievements</h3>
+                </div>
+                <div id="credits-button">
+                    <h3 id="credits">Credits</h3>
+                </div>
+            </section>
+            <div id="go-back-button">
+                <h3 id="go-back">Go back</h3>
+            </div>
         </section>
-        <h3>Go back</h3>
     </main>
 </body>
 
