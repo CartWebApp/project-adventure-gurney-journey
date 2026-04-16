@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
 :root {
-    --creepyfont: 'Creepster', cursive;
+    --creepyfont: 'Creepster';
+    --normalfont: 'Caprasimo';
 }
 
 /* --HERE IS THE MAIN PAGE STYLING-- */
@@ -22,6 +26,7 @@
 .title {
     font-family: 'Bahiana', sans-serif;
     font-size: 128px;
+    color: #D9D9D9;
 
     &>p {
         font-size: 200px;
@@ -36,7 +41,7 @@
 
 /* Whole nav bar for secondary main page */
 .home2nav {
-    color: white;
+    color: #D9D9D9;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -84,7 +89,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #D9D9D9;
     margin-top: 100px;
 
     &>#play-button>h1 {
@@ -114,7 +119,7 @@
         align-items: center;
         gap: 30px;
 
-        &> #go-back-button > #go-back {
+        &>#go-back-button>#go-back {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -138,7 +143,7 @@
             align-items: center;
             flex-direction: column;
 
-            &> #achievements-button > #achievements {
+            &>#achievements-button>#achievements {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -155,7 +160,7 @@
                 animation: scaleUp 0.3s ease-out forwards;
             }
 
-            &> #credits-button > #credits {
+            &>#credits-button>#credits {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -226,3 +231,83 @@
         transform: translateY(0);
     }
 }
+
+/* All page nav bar */
+
+.All-pages-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Friend Yes or No page */
+
+.Friend-YN-body {
+    background-image: url("/images/Rocky-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Friend-YN-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+
+    &>h1 {
+        font-family: var(--creepyfont);
+        font-size: 96px;
+        color: #D9D9D9;
+        align-self: flex-end;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 9.6px;
+        width: 941px;
+        text-align: center;
+    }
+}
+
+.Friend-YN-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &>section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 100px;
+        margin-top: 16%;
+        color: #D9D9D9;
+        background-repeat: no-repeat;
+
+        &>img {
+            position: absolute;
+            left: center;
+            width: 38%;
+            height: 75%;
+            z-index: -2;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            background-image: url("/images/wood-button.png");
+            width: 125px;
+            height: 75px;
+            box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.75);
+        }
+    }
+}
+
