@@ -1,6 +1,10 @@
+
+
+//Game Over buttons
 const retryButton = document.getElementById("retry")
 const mainMenuButton = document.getElementById("mainmenu")
-
+const extraLifeYes = document.getElementById("extra-life-yes-button")
+const extraLifeNo = document.getElementById("extra-life-no-button")
 
 
 
