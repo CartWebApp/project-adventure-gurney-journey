@@ -1,3 +1,14 @@
+
+
+//Game Over buttons
+const retryButton = document.getElementById("retry")
+const mainMenuButton = document.getElementById("mainmenu")
+const extraLifeYes = document.getElementById("extra-life-yes-button")
+const extraLifeNo = document.getElementById("extra-life-no-button")
+
+
+
+
 let player = {
     health: 100,
     hasFriend: false
@@ -16,3 +27,9 @@ song.play();
 
 // To pause the music
 song.pause();
+
+// Here is where we are gonna connect pages
+mainMenuButton.addEventListener("click", function() {
+    window.location.href = "index.html";
+})
+
