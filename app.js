@@ -1,11 +1,14 @@
 
 
 //Game Over buttons
-const retryButton = document.getElementById("retry")
-const mainMenuButton = document.getElementById("mainmenu")
-const extraLifeYes = document.getElementById("extra-life-yes-button")
-const extraLifeNo = document.getElementById("extra-life-no-button")
-
+const retryButton = document.getElementById("retry");
+const mainMenuButton = document.getElementById("mainmenu");
+const extraLifeYes = document.getElementById("extra-life-yes-button");
+const extraLifeNo = document.getElementById("extra-life-no-button");
+const VolumeIcon = document.querySelector('.Volume');
+const SettingIcon = document.querySelector('.Settings');
+const friendYes = document.getElementById("Friend-Y-button");
+const friendNo = document.getElementById("Friend-N-button");
 
 
 
@@ -34,5 +37,16 @@ song.pause();
 // Here is where we are gonna connect pages
 mainMenuButton.addEventListener("click", function() {
     window.location.href = "index.html";
-})
+});
 
+retryButton.addEventListener("click", function() {
+    window.location.href = "Second-main.html";
+});
+
+extraLifeNo.addEventListener("click", function() {
+    window.location.href = "index.html";
+});
+
+extraLifeYes.addEventListener("click", function() {
+    window.location.href = "(--Here is the page that they are in--).html";
+});
