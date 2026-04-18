@@ -656,4 +656,93 @@
     border: solid 1px white;
     animation: scaleUp 0.3s ease-out forwards;
     background-color: rgb(73, 73, 73);
+    transition: 0.1s ease-in;
+}
+
+/* Select Friend Page */
+
+.selectfriendbody {
+    background-image: url(Images/selectfriendbackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.selectfriendmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &>h1 {
+        text-align: center;
+        font-family: var(--creepyfont);
+        font-size: 96px;
+    }
+}
+
+.friendsection {
+    display: flex;
+    width: 1000px;
+    height: 650px;
+    justify-content: space-between;
+}
+
+.anderdingus, .justin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &>img {
+        height: 340px;
+        width: 340px;
+    }
+
+    &>.name {
+        background-color: #342a22ba;
+        width: 340px;
+        height: 50px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        font-size: 24px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &>.description {
+        width: 340px;
+        height: 100px;
+        background-color: #342a22ba;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>p {
+            width: 321px;
+            height: 87px;
+        }
+    }
+
+    &>.pick {
+        align-self: center;
+
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        background-image: url(Images/Wood-button.png);
+        box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.pick:hover {
+    transition: 0.1s ease-in;
+    animation: scaleUp 0.3 ease-in forwards;
+    box-shadow: 0px 0px 12px 3px rgba(255, 255, 255, 0.8);
 }

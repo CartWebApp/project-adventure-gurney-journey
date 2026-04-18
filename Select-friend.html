@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="selectfriendbody">
     <nav class="All-pages-nav">
         <img src="/images/Settings-icon.png" alt="Settings Icon">
         <img src="/images/Volume.png" alt="Volume Icon">
@@ -14,24 +17,31 @@
     <main class="selectfriendmain">
         <h1>SELECT YOUR FRIEND</h1>
         <section class="friendsection">
-
             <section class="anderdingus">
-                <div>
+                <div class="name">
                     <p><strong>Name:</strong> Anderdingus</p>
                 </div>
-                <img src="Images/anderdingus.png">
-                <div>
+                <img id="anderdingus-image" src="Images/anderdingus.png">
+                <div class="description">
                     <p><strong>Description:</strong> Shy, scaredy cat, fun to hang around with</p>
+                </div>
+
+                <div class="pick" id="pick-anderdingus">
+                    <p>Pick</p>
                 </div>
             </section>
 
             <section class="justin">
-                <div>
+                <div class="name">
                     <p><strong>Name:</strong> Justin Buttlord</p>
                 </div>
-                <img src="Images/justinbuttlord.png">
-                <div>
+                <img id="justin-image" src="Images/justinbuttlord.png">
+                <div class="description">
                     <p><strong>Description:</strong> Brave ,courageous, strong, adventurous, positive</p>
+                </div>
+
+                <div class="pick" id="pick-justin">
+                    <p>Pick</p>
                 </div>
             </section>
 
@@ -39,4 +49,5 @@
     </main>
     <script src="app.js"></script>
 </body>
+
 </html>
