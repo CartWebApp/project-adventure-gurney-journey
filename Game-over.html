@@ -13,18 +13,27 @@
     <main class="game-over-main">
         <h1>Game Over</h1>
         <h2>(--Reason why--)</h2>
-        <h3>Do you want to use your extra life?</h3>
-        <section>
-            <section class="yes-no">
+
+        <section class="yes-no" id="yes-no-visiblity">
+            <h3>Do you want to use your extra life?</h3>
+            <section class="extra-life-buttons">
                 <div id="extra-life-yes-button">
                     <p>Yes</p>
                 </div>
+
                 <div id="extra-life-no-button">
                     <p>No</p>
                 </div>
             </section>
+
+            <section class="countdown-section">
+                <progress id="countdown-line" max="100" value="70"></progress>
+            </section>
         </section>
-        
+
+
+        </progress>
+
         <section class="retry-menu">
             <div id="retry">
                 <p>Retry</p>
