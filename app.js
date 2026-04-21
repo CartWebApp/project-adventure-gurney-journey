@@ -9,12 +9,15 @@ const SettingIcon = document.querySelector('.Settings');
 const friendYes = document.getElementById("Friend-Y-button");
 const friendNo = document.getElementById("Friend-N-button");
 
+const yesNo = document.getElementById("yesNo")
+
 let player = {
+    
     health: 100,
     hasFriend: false,
-    extraLife: false
+    hasExtraLife: false
+    
 };
-
 
 
 /*
@@ -33,7 +36,7 @@ song.pause();
 
 // Here is where we are gonna connect pages
 mainMenuButton.addEventListener("click", function() {
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
 });
 
 retryButton.addEventListener("click", function() {
@@ -41,19 +44,22 @@ retryButton.addEventListener("click", function() {
 });
 
 extraLifeNo.addEventListener("click", function() {
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
 });
 
 extraLifeYes.addEventListener("click", function() {
     window.location.href = "(--Here is the page that they are in--).html";
 });
 
-function gameRender() {
-    
-    if (extralife == true)
-
-
-    if (player[health] <= 0) {
-        window.location.href = "Game-over.html";
-    }
+if (player[hasExtraLife] = false) {
+    yesNo.style.display = "none";
+    console.log("no life")
 }
+
+
+function gameRender() {
+
+}
+
+gameRender()
+
