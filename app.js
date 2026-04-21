@@ -49,6 +49,7 @@ extraLifeYes.addEventListener("click", function() {
 });
 
 function gameRender() {
+    
     if (extralife == true)
 
 
