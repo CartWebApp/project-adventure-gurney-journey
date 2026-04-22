@@ -15,7 +15,7 @@ let player = {
     
     health: 100,
     hasFriend: false,
-    hasExtraLife: false
+    hasExtraLife: false,
     
 };
 
@@ -28,11 +28,12 @@ document.getElementById("Friend-Y-button").onclick = () => {
 
 
 // Just the base for the audio, I will add a sound later
-let song = new Audio("sounds/heresound");
+// let song = new Audio("sounds/heresound");
 
 // To play/pause the music
-song.play();
-song.pause();
+// song.play();
+// song.pause();
+
 
 // Here is where we are gonna connect pages
 mainMenuButton.addEventListener("click", function() {
@@ -51,14 +52,14 @@ extraLifeYes.addEventListener("click", function() {
     window.location.href = "(--Here is the page that they are in--).html";
 });
 
-if (player[hasExtraLife] = false) {
-    yesNo.style.display = "none";
-    console.log("no life")
-}
+
+
 
 
 function gameRender() {
 
+    console.log(player.health)
+    console.log(player.hasExtraLife)
 }
 
 gameRender()
