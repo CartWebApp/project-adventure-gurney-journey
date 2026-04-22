@@ -12,19 +12,15 @@ const friendNo = document.getElementById("Friend-N-button");
 const yesNo = document.getElementById("yesNo")
 
 let player = {
-    
+
     health: 100,
+    hunger: 100,
+    damage: 5,
     hasFriend: false,
     hasExtraLife: false,
-    
 };
 
-
-/*
-document.getElementById("Friend-Y-button").onclick = () => {
-    player.hasFriend = true;
-};
-*/
+let inventory = [];
 
 
 // Just the base for the audio, I will add a sound later
@@ -36,31 +32,48 @@ document.getElementById("Friend-Y-button").onclick = () => {
 
 
 // Here is where we are gonna connect pages
-mainMenuButton.addEventListener("click", function() {
-    window.location.href = "/index.html";
-});
-
-retryButton.addEventListener("click", function() {
-    window.location.href = "Second-main.html";
-});
-
-extraLifeNo.addEventListener("click", function() {
-    window.location.href = "/index.html";
-});
-
-extraLifeYes.addEventListener("click", function() {
-    window.location.href = "(--Here is the page that they are in--).html";
-});
 
 
 
 
 
-function gameRender() {
+function game() {
 
-    console.log(player.health)
-    console.log(player.hasExtraLife)
+    if (document.URL.includes("OtherPages/Second-main.html")) {
+        document.getElementById("play-button").onclick = () => {
+            window.location.href = "Introduction-page.html";
+        }
+        document.getElementById("go-back-button").onclick = () => {
+            window.location.href = "/index.html";
+        }
+
+    }
+
+    if (document.URL.includes("OtherPages/Friend-yes-no.html")) {
+
+        document.getElementById("Friend-Y-button").onclick = () => {
+            player.hasFriend = true;
+            window.location.href = "Select-friend.html";
+            console.log("Has Friend:", player.hasFriend)
+        };
+        document.getElementById("Friend-N-button").onclick = () => {
+            player.hasFriend = false
+            console.log("Has Friend:", player.hasFriend)
+        };
+
+    }
+
+    if (document.URL.includes("OtherPages/Game-over.html")) {
+
+        mainMenuButton.addEventListener("click", function () { window.location.href = "/index.html"; });
+        retryButton.addEventListener("click", function () { window.location.href = "Second-main.html"; });
+        extraLifeNo.addEventListener("click", function () { window.location.href = "/index.html"; });
+        extraLifeYes.addEventListener("click", function () { window.location.href = "(--Here is the page that they are in--).html"; });
+
+    }
 }
 
-gameRender()
+game()
 
+console.log(player.health)
+console.log(player.hasExtraLife)
