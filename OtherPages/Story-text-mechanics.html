@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
+
     <body class="Introduction-page-body">
-    <nav class="All-pages-nav">
-        <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
-        <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
-    </nav>
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
 
-    <main class="Introduction-page-main">
+        <main class="Introduction-page-main">
 
-        <!-- Copy this for other pages -->
-        <section class="Text-section">
-            <section class="title-image-text">
-                <h1 class="title-text">[The Narrator]:</h1>
-                <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image">
-            </section>
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image">
+                </section>
 
-            <section class="description-text-section">
-                <section>
-                    <p class="description-text">Not complete (type here, do not change position and font)</p>
+                <section class="description-text-section">
                     <section>
-                        <section class="Go-back-button">
-                            <h3 id="go-back">Go back <</h3>
-                        </section>
-                        <section class="Continue-button">
-                            <h3 id="continue">> Continue </h3>
+                        <p class="description-text">Not complete (type here, do not change position and font)</p>
+                        <section>
+                            <section class="Go-back-button">
+                                <h3 id="go-back">Go back <</h3>
+                            </section>
+                            <section class="Continue-button">
+                                <h3 id="continue">> Continue </h3>
+                            </section>
                         </section>
                     </section>
                 </section>
             </section>
+        </main>
+
+        <section class="bars">
+            <section class="health" id="healthbar">
+                <img src="/Images/heart.png">
+                <progress max="100" id="health-progress"></progress>
+            </section>
+
+            <section class="hunger" id="hungerbar">
+                <img src="/Images/burger.png">
+                <progress max="100" id="hunger-progress"></progress>
+            </section>
         </section>
-    </main>
-    <script src="/app.js"></script>
-</body>
+
+        <script src="/app.js"></script>
+    </body>
+
 </html>

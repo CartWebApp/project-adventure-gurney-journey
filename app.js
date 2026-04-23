@@ -20,6 +20,7 @@ let player = {
     hasExtraLife: false,
 };
 
+
 let inventory = [];
 
 
@@ -37,7 +38,9 @@ let inventory = [];
 
 
 
+
 function game() {
+
 
     if (document.URL.includes("OtherPages/Second-main.html")) {
         document.getElementById("play-button").onclick = () => {
@@ -72,8 +75,19 @@ function game() {
         extraLifeYes.addEventListener("click", function () { window.location.href = "(--Here is the page that they are in--).html"; });
 
     }
+
+    document.getElementById("health-progress").value = player.health;
+    document.getElementById("hunger-progress").value = player.hunger;
+
 }
 
+    function monsterAttack() {
+        const damage = 0;
+        player.health -= damage;
+    }
+
+
+monsterAttack()
 game()
 
 console.log(player.health)

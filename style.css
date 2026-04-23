@@ -184,9 +184,9 @@
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 50px 0 rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    
+
     animation: ScaleUpFull 4s ease-in forwards;
-    
+
 }
 
 #click-continue {
@@ -511,7 +511,7 @@
             border-top: 1px solid #D9D9D9;
             border-left: 1px solid #D9D9D9;
             border-right: 1px solid #D9D9D9;
-            box-shadow: inset 0 0 20 0 rgba(103 171 255, 0.5);
+            box-shadow: inset 0 0 20px 0 rgba(103, 171, 255, 0.5);
         }
 
     }
@@ -539,8 +539,6 @@
             border-top-right-radius: 20px;
             border: 1px solid #D9D9D9;
             box-shadow: inset 0px 0px 20px 0px rgba(103, 171, 255, 0.5);
-
-            box-shadow: inset 0 0 20 0 rgba(103 171 255, 0.5);
 
             &>section {
                 display: flex;
@@ -637,7 +635,8 @@
     }
 }
 
-#Friend-Y-button:hover, #Friend-N-button:hover {
+#Friend-Y-button:hover,
+#Friend-N-button:hover {
     animation: scaleUp 10ms ease-in forwards;
     box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.75);
 }
@@ -862,4 +861,63 @@
     transition: 0.1s ease-in;
     animation: scaleUp 0.3 ease-in forwards;
     box-shadow: 0px 0px 12px 3px rgba(255, 255, 255, 0.8);
+}
+
+.bars {
+    position: absolute;
+    right: 2vw;
+    top: 15vh;
+
+    &>section {
+
+        &>progress {
+            width: 225px;
+            height: 30px;
+            appearance: none;
+        }
+    }
+}
+
+.health {
+    display: flex;
+    align-items: center;
+
+    &>img {
+        margin-right: -20px;
+        z-index: 10;
+    }
+}
+
+.hunger {
+    display: flex;
+    align-items: center;
+
+    &>img {
+        margin-right: -20px;
+        z-index: 10;
+    }
+}
+
+.bars #health-progress::-webkit-progress-value {
+    background: #FF4B4B;
+    border-radius: 5px;
+
+}
+
+.bars #health-progress::-webkit-progress-bar {
+    background-color: #D9D9D9;
+    border-radius: 5px;
+
+}
+
+.bars #hunger-progress::-webkit-progress-value {
+    background: #FEB643;
+    border-radius: 5px;
+
+}
+
+.bars #hunger-progress::-webkit-progress-bar {
+    background-color: #D9D9D9;
+    border-radius: 5px;
+
 }
