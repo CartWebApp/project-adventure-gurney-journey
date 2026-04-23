@@ -57,7 +57,8 @@ function game() {
             console.log("Has Friend:", player.hasFriend)
         };
         document.getElementById("Friend-N-button").onclick = () => {
-            player.hasFriend = false
+            player.hasFriend = false;
+            window.location.href = "";
             console.log("Has Friend:", player.hasFriend)
         };
 

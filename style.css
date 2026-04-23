@@ -637,6 +637,11 @@
     }
 }
 
+#Friend-Y-button:hover, #Friend-N-button:hover {
+    animation: scaleUp 10ms ease-in forwards;
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.75);
+}
+
 
 /* Game Over Page*/
 .gameoverbody {
