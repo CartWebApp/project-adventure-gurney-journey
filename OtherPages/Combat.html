@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="body-page-combat">
     <nav class="All-pages-nav">
         <img draggable="false" src="/Images/Settings-icon.png" alt="Settings Icon">
         <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
@@ -17,13 +17,13 @@
     <main class="main-page-combat">
         <section class="rivals-people">
             <section class="ally-team">
-                <section class="bars-combat">
-                    <section class="health" class="healthbar">
+                <section class="bars-combat-ally">
+                    <section class="health">
                         <img src="/Images/heart.png">
                         <progress max="100" class="health-progress"></progress>
                     </section>
 
-                    <section class="hunger" class="hungerbar">
+                    <section class="hunger">
                         <img src="/Images/burger.png">
                         <progress max="100" class="hunger-progress"></progress>
                     </section>
@@ -32,10 +32,17 @@
             </section>
 
             <section class="enemy-team">
-                <section class="health" class="healthbar">
-                    <img src="/Images/heart.png">
-                    <progress max="100" class="health-progress"></progress>
+                <section class="bars-combat-enemy">
+                    <section class="health">
+                        <img src="/Images/heart.png">
+                        <progress max="100" class="health-progress"></progress>
+                    </section>
+                    <section class="health">
+                        <img src="/Images/heart.png">
+                        <progress max="100" class="health-progress"></progress>
+                    </section>
                 </section>
+
                 <img draggable="false" src="/Images/Creature-combat.png" alt="Creature Image">
             </section>
 

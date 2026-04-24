@@ -943,7 +943,53 @@
 
 /* -- COMBAT PAGE HERE -- */
 
-.bars-combat {
+.body-page-combat {
+    background-image: url(/Images/Combat.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rivals-people {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &>.ally-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        &>img {
+            width: 200px;
+        }
+    }
+
+    &>.enemy-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        &>img {
+            width: 250px;
+        }
+    }
+}
+
+.bars-combat-ally {
+
+    &>section {
+
+        &>progress {
+            width: 225px;
+            height: 30px;
+            appearance: none;
+        }
+    }
+}
+
+.bars-combat-enemy {
 
     &>section {
 
