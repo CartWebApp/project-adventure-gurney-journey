@@ -1062,35 +1062,31 @@
     visibility: hidden;
 }
 
-.bars-combat .health-progress::-webkit-progress-value {
+.bars-combat-ally #health-progress::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
 }
 
-.bars-combat .health-progress::-webkit-progress-bar {
+.bars-combat-ally #health-progress::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 
-.bars-combat .hunger-progress::-webkit-progress-value {
+.bars-combat-ally #hunger-progress::-webkit-progress-value {
     background: #FEB643;
     border-radius: 5px;
 
 }
 
-.bars-combat .hunger-progress::-webkit-progress-bar {
+
+.bars-combat-enemy #health-progress::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 
-.health-progress::-webkit-progress-value {
+.bars-combat-enemy #health-progress::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
-}
-
-.health-progress::-webkit-progress-bar {
-    background-color: #D9D9D9;
-    border-radius: 5px;
 }
