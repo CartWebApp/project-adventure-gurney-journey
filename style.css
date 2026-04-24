@@ -181,18 +181,11 @@
 
 #index-continue {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 1);
     box-shadow: 0 0 50px 0 rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-
-    animation: ScaleUpFull 4s ease-in forwards;
-
+    z-index: 11;
 }
-
-#click-continue {
-    animation: Spin 1s ease-in infinite;
-}
-
 
 
 @keyframes moveDown {
@@ -240,13 +233,30 @@
 }
 
 @keyframes ScaleUpFull {
-    from {
-        transform: scale(1);
+    0% {
+        transform: rotate(0deg) scale(1);
     }
 
-    to {
-        transform: scale(150);
+    25% {
+        transform: rotate(360deg) scale(5);
     }
+
+    50% {
+        transform: rotate(720deg) scale(10);
+    }
+
+    75% {
+        transform: rotate(960deg) scale(30);
+    }
+
+    90% {
+        transform: rotate(1320deg) scale(100);
+    }
+
+    100% {
+        transform: rotate(1320deg) scale(1000);
+    }
+
 }
 
 /* --HERE IS THE SECONDARY MAIN PAGE STYLING-- */

@@ -8,8 +8,16 @@ const VolumeIcon = document.querySelector('.Volume');
 const SettingIcon = document.querySelector('.Settings');
 const friendYes = document.getElementById("Friend-Y-button");
 const friendNo = document.getElementById("Friend-N-button");
+const indexContinue = document.getElementById("index-continue")
+const clickContinue = document.getElementById("click-continue");
 
 const yesNo = document.getElementById("yesNo")
+
+//progress bars
+const playerHealth = document.getElementById("health-progress");
+const playerHunger = document.getElementById("hunger-progress");
+
+const bigEyesHealth = document.getElementById("health-progress-bigEyes");
 
 const player = {
     health: 100,
@@ -41,6 +49,33 @@ let inventory = [];
 
 
 function game() {
+
+    if (document.URL.includes("/index.html")) {
+        indexContinue.onclick = () => {
+            indexContinue.style.animation = "ScaleUpFull 3s linear 0s infinite";
+            let count = 0;
+            const timer = setInterval(() => {
+                count++;
+
+                if (count >= 5) {
+                    clickContinue.style.color = "black";
+                }
+
+                if (count >= 6) {
+                    window.location.href = "/OtherPages/Second-main.html";
+                }
+            }, 500);
+
+            // for(let i = 0; i >= 3; i++) {
+
+            //     if (i == 3) {
+            //         indexContinue.remove
+            //         window.location.href = "/OtherPages/Second-main.html";
+            //     }
+
+            // }
+        }
+    }
 
 
     if (document.URL.includes("OtherPages/Second-main.html")) {
@@ -85,13 +120,12 @@ function game() {
 
     }
 
-
-    document.getElementById("health-progress").value = player.health;
-    document.getElementById("hunger-progress").value = player.hunger;
-    document.getElementById("health-progress-bigEyes").value = monsterBigEyes.health;
-
+    playerHealth.value = player.health;
+    playerHunger.value = player.hunger;
+    bigEyesHealth.value = monsterBigEyes.health;
 
 }
+
 
 function monsterAttack() {
     const damage = 0;
