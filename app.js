@@ -88,6 +88,7 @@ function game() {
 
     document.getElementById("health-progress").value = player.health;
     document.getElementById("hunger-progress").value = player.hunger;
+    document.getElementById("health-progress-bigEyes").value = monsterBigEyes.health;
 
 
 }
