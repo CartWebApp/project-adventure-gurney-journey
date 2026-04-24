@@ -11,13 +11,17 @@ const friendNo = document.getElementById("Friend-N-button");
 
 const yesNo = document.getElementById("yesNo")
 
-let player = {
-
+const player = {
     health: 100,
     hunger: 100,
     damage: 5,
     hasFriend: false,
     hasExtraLife: false,
+};
+
+const monsterBigEyes = {
+    health: 15,
+    damage: 2.5,
 };
 
 
@@ -33,9 +37,6 @@ let inventory = [];
 
 
 // Here is where we are gonna connect pages
-
-
-
 
 
 
@@ -69,22 +70,32 @@ function game() {
 
     if (document.URL.includes("OtherPages/Game-over.html")) {
 
-        mainMenuButton.addEventListener("click", function () { window.location.href = "/index.html"; });
-        retryButton.addEventListener("click", function () { window.location.href = "Second-main.html"; });
-        extraLifeNo.addEventListener("click", function () { window.location.href = "/index.html"; });
-        extraLifeYes.addEventListener("click", function () { window.location.href = "(--Here is the page that they are in--).html"; });
+        mainMenuButton.addEventListener("click", function () {
+            window.location.href = "/index.html";
+        });
+        retryButton.addEventListener("click", function () {
+            window.location.href = "Second-main.html";
+        });
+        extraLifeNo.addEventListener("click", function () {
+            window.location.href = "/index.html";
+        });
+        extraLifeYes.addEventListener("click", function () {
+            window.location.href = "(--Here is the page that they are in--).html";
+        });
 
     }
 
-    document.getElementById("health-progress").value = player.health;
-    document.getElementById("hunger-progress").value = player.hunger;
+
+    document.getElementById("health-progress") = player.health;
+    document.getElementById("hunger-progress") = player.hunger;
+
 
 }
 
-    function monsterAttack() {
-        const damage = 0;
-        player.health -= damage;
-    }
+function monsterAttack() {
+    const damage = 0;
+    player.health -= damage;
+}
 
 
 monsterAttack()
@@ -92,3 +103,4 @@ game()
 
 console.log(player.health)
 console.log(player.hasExtraLife)
+console.log(monsterBigEyes.health)
