@@ -86,8 +86,8 @@ function game() {
     }
 
 
-    document.getElementById("health-progress") = player.health;
-    document.getElementById("hunger-progress") = player.hunger;
+    document.getElementById("health-progress").value = player.health;
+    document.getElementById("hunger-progress").value = player.hunger;
 
 
 }
