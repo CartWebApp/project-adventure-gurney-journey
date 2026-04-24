@@ -897,7 +897,7 @@
     }
 }
 
-.health {
+.healthbar {
     display: flex;
     align-items: center;
 
@@ -907,7 +907,7 @@
     }
 }
 
-.hunger {
+.hungerbar {
     display: flex;
     align-items: center;
 
