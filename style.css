@@ -1069,12 +1069,12 @@
 }
 
 
-.bars-combat-enemy #health-progress::-webkit-progress-bar {
+.bars-combat-enemy #health-progress-bigEyes::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 
-.bars-combat-enemy #health-progress::-webkit-progress-value {
+.bars-combat-enemy #health-progress-bigEyes::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
