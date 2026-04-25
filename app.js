@@ -64,7 +64,7 @@ function game() {
                 if (count >= 6) {
                     window.location.href = "/OtherPages/Second-main.html";
                 }
-            }, 500);
+            }, 480);
 
             // for(let i = 0; i >= 3; i++) {
 
