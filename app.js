@@ -23,19 +23,16 @@ const playerHealth = document.getElementById("health-progress");
 const playerHunger = document.getElementById("hunger-progress");
 const bigEyesHealth = document.getElementById("health-progress-bigEyes");
 
-<<<<<<< HEAD
 // this saves the game process so there is no glitches
 function saveState() {
     localStorage.setItem("gameState", JSON.stringify(state));
 }
-=======
 const items = [
     { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
     { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
     { name: "Bandages", type: "heal", heal: 10, img: "/Images/knife.png" },
     { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" }
 ]
->>>>>>> bb9caef3890dc5ab66478b432592fddd71d7ce29
 
 const player = {
     health: 100,
@@ -310,7 +307,6 @@ function game() {
 
 updateInventory()
 game()
-<<<<<<< HEAD
 
 console.log(player.health)
 console.log(player.hasExtraLife)
@@ -388,5 +384,3 @@ const story = {
         next: "friend_choice"
     }
 };
-=======
->>>>>>> bb9caef3890dc5ab66478b432592fddd71d7ce29
