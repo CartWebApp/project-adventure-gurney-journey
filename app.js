@@ -18,26 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const playButton = document.getElementById("play-button");
     const goBackButton = document.getElementById("go-back-button");
 
-
-
-
     //progress bars
     const playerHealth = document.getElementById("health-progress");
     const playerHunger = document.getElementById("hunger-progress");
     const bigEyesHealth = document.getElementById("health-progress-bigEyes");
 
-
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
     }
+
     const items = [
         { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
         { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
         { name: "Bandages", type: "heal", heal: 10, img: "/Images/knife.png" },
         { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" }
     ]
-
 
     const player = {
         health: 100,
@@ -48,42 +44,26 @@ document.addEventListener("DOMContentLoaded", function () {
         weapon: null
     };
 
-
     const monsterBigEyes = {
         health: 15,
         damage: 2.5,
     };
 
-
     function progressBars() {
         if (playerHealth) {
             playerHealth.value = player.health;
         }
-
-
         if (playerHunger) {
             playerHunger.value = player.hunger;
         }
-
-
         if (bigEyesHealth) {
             bigEyesHealth.value = monsterBigEyes.health;
         }
     }
 
-
-
-
-
-
     let inventory = [];
 
-
-
-
     function updateInventory() {
-
-
         //weapons
         if (player.weapon == "Rusty Knife") {
             player.damage *= 1.5;
@@ -91,36 +71,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
-
-
     function randomItem() {
         const index = Math.floor(Math.random() * items.length);
         return items[index];
     }
 
-
     function searchRoom() {
         const found = Math.random() < 0.7;
-
 
         if (!found) {
             console.log("You found nothing...");
             return;
         }
 
-
         addRandomItem();
     }
-
 
     function addRandomItem() {
         const item = randomItem();
         inventory.push(item);
 
-
         console.log("Found:", item.name);
-
 
         if (item.type === "weapon") {
             player.weapon = item;
@@ -128,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateInventory();
         renderInventory();
     }
-
 
     function renderInventory() {
         const slots = [
@@ -138,20 +108,16 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("slot4"),
         ];
 
-
         slots.forEach(slot => slot.innerHTML = "");
-
 
         inventory.forEach((item, index) => {
             if (!slots[index]) return;
 
-
             slots[index].innerHTML = `
-           <img src="${item.img}" alt="${item.name}">
+           <img src="${item.img}" alt="${item.name}" id="${item.name}">
        `;
         });
     }
-
 
     //random item test
     if (document.getElementById("search")) {
@@ -160,40 +126,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
-
-
     //combat
     let playersTurn = true;
     let fighting = true;
     let playerDefending = false;
 
-
-    let monsterBigEyesTurn = false;
-
-
-
-
     if (attackButton) {
         attackButton.onclick = () => {
             console.log("Attack clicked");
-
 
             if (!playersTurn || !fighting) return;
             monsterBigEyes.health -= player.damage;
             player.hunger -= 2.5;
 
-
             bigEyesHealth.style.animation = "none";
             bigEyesHealth.offsetHeight;
             bigEyesHealth.style.animation = "shake 0.2s ease";
 
-
             console.log("monster health", monsterBigEyes.health);
 
-
             progressBars();
-
 
             if (monsterBigEyes.health <= 0) {
                 console.log("monster defeated");
@@ -204,11 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-
     if (defendButton) {
         defendButton.onclick = () => {
             if (!playersTurn || !fighting) return;
-
 
             playerDefending = true;
             console.log("player defending");
@@ -217,60 +167,49 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-
     if (runButton) {
         runButton.onclick = () => {
             if (!playersTurn || !fighting) return;
 
-
             const escape = Math.random() < 0.5;
-
 
             if (escape) {
                 fighting = false;
-            } else {
+            }
+
+            else {
                 endPlayerTurn();
             }
         };
     }
 
-
     function endPlayerTurn() {
         playersTurn = false;
-
 
         setTimeout(() => {
             monsterTurn();
         }, 600);
     }
 
-
     function monsterTurn() {
         if (!fighting) return;
 
-
         let damage = monsterBigEyes.damage;
-
 
         if (playerDefending) {
             damage *= 0.5;
             playerDefending = false;
         }
 
-
         player.health -= damage;
 
-
         progressBars()
-
 
         playerHealth.style.animation = "none";
         playerHealth.offsetHeight;
         playerHealth.style.animation = "shake 0.2s ease";
 
-
         console.log("Player HP:", player.health);
-
 
         if (player.health <= 0) {
             console.log("Game Over");
@@ -279,24 +218,14 @@ document.addEventListener("DOMContentLoaded", function () {
         playersTurn = true;
     }
 
-
     // Just the base for the audio, I will add a sound later
     // let song = new Audio("sounds/heresound");
-
 
     // To play/pause the music
     // song.play();
     // song.pause();
 
-
-
-
     // Here is where we are gonna connect pages
-
-
-
-
-
 
     function game() {
 
@@ -308,11 +237,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const timer = setInterval(() => {
                     count++;
 
-
                     if (count >= 5) {
                         clickContinue.style.color = "black";
                     }
-
 
                     if (count >= 6) {
                         window.location.href = "/OtherPages/Second-main.html";
@@ -320,9 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 480);
             }
         }
-
-
-
 
         if (document.URL.includes("OtherPages/Second-main.html")) {
             playButton.onclick = () => {
@@ -335,10 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         if (document.URL.includes("OtherPages/Friend-yes-no.html")) {
-
-
             friendYes.onclick = () => {
                 player.hasFriend = true;
                 window.location.href = "Select-friend.html";
@@ -351,10 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
         }
 
-
         if (document.URL.includes("OtherPages/Game-over.html")) {
-
-
             mainMenuButton.addEventListener("click", function () {
                 window.location.href = "/index.html";
             });
@@ -369,26 +287,15 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-
-
-
         progressBars()
     }
-
-
-
-
-
 
     updateInventory()
     game()
 
-
     console.log(player.health)
     console.log(player.hasExtraLife)
     console.log(monsterBigEyes.health)
-
-
 
     // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- //
     const friendYesBtn = document.getElementById("Friend-Y-button");
@@ -519,8 +426,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (step.next && step.next.includes(".html")) {
                 setTimeout(() => {
                     window.location.href = step.next;
+
                 }, 600);
                 return;
+
             }
 
             renderStep(step.next);
