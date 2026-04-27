@@ -487,6 +487,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!step) return;
 
+        if (!speakerText || !dialogueText || !characterImage) return;
+
         // here it saves the current step into a history stack by pushing it and making a list of steps
         if (currentStep) {
             historyStack.push(currentStep); // add current step to history stack
@@ -506,28 +508,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // continue button to finish the intro and goes to the friend yes no page when clicked
-    continueBtn.addEventListener("click", () => {
-        const step = story[currentStep];
 
-        if (!step) return;
+    if (continueBtn) {
+        continueBtn.addEventListener("click", () => {
+            const step = story[currentStep];
 
-        // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
-        if (step.next && step.next.includes(".html")) {
-            setTimeout(() => {
-                window.location.href = step.next;
-            }, 600);
-            return;
-        }
+            if (!step) return;
 
-        renderStep(step.next);
-    });
+            // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
+            if (step.next && step.next.includes(".html")) {
+                setTimeout(() => {
+                    window.location.href = step.next;
+                }, 600);
+                return;
+            }
 
-    goBackBtn.addEventListener("click", () => {
-        const previous = historyStack.pop(); // remove the last step from the history stack and returns it
-        if (!previous) return; // if there is nothing in history stack do nothing
+            renderStep(step.next);
+        });
+    }
 
-        renderStep(previous); // load the previous step
-    });
+    if (goBackBtn) {
+        goBackBtn.addEventListener("click", () => {
+            const previous = historyStack.pop(); // remove the last step from the history stack and returns it
+            if (!previous) return; // if there is nothing in history stack do nothing
 
-    renderStep(currentStep);
+            renderStep(previous); // load the previous step
+        });
+    }
+
+    if (speakerText && dialogueText && characterImage) {
+        renderStep(currentStep);
+    }
 });
