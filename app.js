@@ -19,6 +19,11 @@ const playerHunger = document.getElementById("hunger-progress");
 
 const bigEyesHealth = document.getElementById("health-progress-bigEyes");
 
+// this saves the game process so there is no glitches
+function saveState() {
+    localStorage.setItem("gameState", JSON.stringify(state));
+}
+
 const player = {
     health: 100,
     hunger: 100,
@@ -100,7 +105,6 @@ function game() {
             window.location.href = "";
             console.log("Has Friend:", player.hasFriend)
         };
-
     }
 
     if (document.URL.includes("OtherPages/Game-over.html")) {
@@ -139,3 +143,76 @@ game()
 console.log(player.health)
 console.log(player.hasExtraLife)
 console.log(monsterBigEyes.health)
+
+
+// -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- //
+
+const friend = localStorage.getItem("friend");
+
+if (friend === "anderdingus") {
+    // Anderdingus path
+    console.log("Anderdingus selected");
+}
+
+else if (friend === "justin") {
+    // Justin path
+    console.log("Justin selected");
+}
+
+else {
+    // NO FRIEND path
+    console.log("Solo path");
+}
+
+const story = {
+    intro1: {
+        type: "dialogue",
+        speaker: "Teddy",
+        image: "/Images/Teddy.png",
+        text: "I'm so hungry. Maybe I should get some McDonalds.",
+        next: "intro2"
+    },
+
+    intro2: {
+        type: "dialogue",
+        speaker: "Teddy",
+        image: "/Images/Teddy.png",
+        text: "Should I turn on the TV to check the news real quick?",
+        next: "tvChoice"
+    },
+
+    tvChoice: {
+        type: "choice",
+        speaker: "The Narrator",
+        image: null,
+        text: "What do you do?",
+        options: [
+            { text: "Turn on TV", next: "tvNews" },
+            { text: "Don't turn on TV", next: "no_tv" }
+        ]
+    },
+
+    tv_news: {
+        type: "dialogue",
+        speaker: "TV",
+        image: "/Images/tv.png",
+        text: "35-year-old Josh Ayala reported missing near Athens Lunatic Asylum.",
+        next: "tv_react"
+    },
+
+    tv_react: {
+        type: "dialogue",
+        speaker: "Teddy",
+        image: "/Images/teddy.png",
+        text: "Isn't that the abandoned insane asylum?",
+        next: "after_news"
+    },
+
+    after_news: {
+        type: "dialogue",
+        speaker: "Teddy",
+        image: "/Images/teddy.png",
+        text: "Eh whatever… I'm still hungry.",
+        next: "friend_choice"
+    }
+};
