@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
     }
+
     const items = [
         { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
         { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
@@ -398,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const pickJustinBtn = document.getElementById("pick-justin");
 
     const speakerText = document.getElementById("speaker-text");
-    const dialogueText = document.getElementById("story-text");
+    const dialogueText = document.querySelector(".description-text");
     const characterImage = document.getElementById("image-text");
 
     const continueBtn = document.getElementById("continue");
@@ -416,34 +417,45 @@ document.addEventListener("DOMContentLoaded", function () {
             type: "dialogue",
             speaker: "The Narrator",
             image: null,
+            bgImage: "/Image/Introduction-image.png",
             text: "On a seemingly normal night, a 17 year old Teddy Barragan wakes up after a long nap.",
-            next: "intro1"
+            next: "intro1",
+             options: [
+                { Decision1: "Next", next: "intro1" }
+            ]
         },
 
         intro1: {
             type: "dialogue",
             speaker: "Teddy",
             image: "/Images/Teddy.png",
+            bgImage: "/Image/Introduction-image.png",
             text: "I'm so hungry. Maybe I should get some McDonalds.",
-            next: "intro2"
+            next: "intro2",
+             options: [
+                { Decision1: "Back", next: "intro0" },
+                { Decision2: "Next", next: "intro2" }
+            ]
         },
 
         intro2: {
             type: "dialogue",
             speaker: "Teddy",
             image: "/Images/Teddy.png",
+            bgImage: "/Image/Introduction-image.png",
             text: "Should I turn on the TV to check the news real quick?",
-            next: "Decision-two-intro.html"
+            page: "Decision-two-intro.html",
+            next: "tvDecision"
         },
 
-        "Decision-two-intro.html": {
+        tvDecision: {
             type: "choice",
             speaker: "The Narrator",
             image: null,
             text: "What do you do?",
             options: [
-                { text: "Turn on TV", next: "tvNews" },
-                { text: "Don't turn on TV", next: "noTv" }
+                { Decision1: "Turn on TV", next: "tvNews" },
+                { Decision2: "Don't turn on TV", next: "noTv" }
             ]
         },
 
@@ -496,47 +508,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentStep = stepId;
 
-        speakerText.textContent = step.speaker + ":"; // changes text-story in box
-        dialogueText.textContent = step.text; // changes speaker in box
-        // changes image in box
-        if (step.image) {
-            characterImage.style.display = "block";
-            characterImage.src = step.image;
-        } else {
-            characterImage.style.display = "none";
+        if (document.URL.includes("Introduction-page.html")) {
+            speakerText.textContent = step.speaker + ":"; // changes text-story in box
+            dialogueText.textContent = step.text; // changes speaker in box
+            // changes image in box
+            if (step.image) {
+                characterImage.style.display = "block";
+                characterImage.src = step.image;
+            } else {
+                characterImage.style.display = "none";
+            }
         }
+
+        if (document.URL.includes("/OtherPages/Decision-two-intro.html")) {
+            speakerText.textContent = step.speaker + ":"; // changes text-story in box
+            dialogueText.textContent = step.text; // changes speaker in box
+            // changes image in box
+            if (step.image) {
+                characterImage.style.display = "block";
+                characterImage.src = step.image;
+            } else {
+                characterImage.style.display = "none";
+            }
+
+            decision1Btn.textContent = step.options.Decision1
+
+        }
+
     }
 
     // continue button to finish the intro and goes to the friend yes no page when clicked
+if (continueBtn) {
+    continueBtn.addEventListener("click", () => {
+        const step = story[currentStep];
 
-    if (continueBtn) {
-        continueBtn.addEventListener("click", () => {
-            const step = story[currentStep];
+        if (!step) return;
 
-            if (!step) return;
+        // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
+        if (step.page && step.page.includes(".html")) {
+            setTimeout(() => {
+                window.location.href = step.page;
+            }, 600);
+            return;
+        }
 
-            // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
-            if (step.next && step.next.includes(".html")) {
-                setTimeout(() => {
-                    window.location.href = step.next;
-                }, 600);
-                return;
-            }
+        renderStep(step.next);
+    });
+}
+if (goBackBtn){
 
-            renderStep(step.next);
-        });
-    }
-
-    if (goBackBtn) {
-        goBackBtn.addEventListener("click", () => {
-            const previous = historyStack.pop(); // remove the last step from the history stack and returns it
-            if (!previous) return; // if there is nothing in history stack do nothing
-
-            renderStep(previous); // load the previous step
-        });
-    }
-
+    goBackBtn.addEventListener("click", () => {
+        const previous = historyStack.pop(); // remove the last step from the history stack and returns it
+        if (!previous) return; // if there is nothing in history stack do nothing
+        
+        renderStep(previous); // load the previous step
+    });
+    
     if (speakerText && dialogueText && characterImage) {
         renderStep(currentStep);
+    }
     }
 });
