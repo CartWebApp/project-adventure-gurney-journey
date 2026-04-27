@@ -26,8 +26,8 @@ const bigEyesHealth = document.getElementById("health-progress-bigEyes");
 const items = [
     { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
     { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
-    { name: "Bandages", type: "heal", heal: 10 },
-    { name: "Medkit", type: "heal", heal: 50 }
+    { name: "Bandages", type: "heal", heal: 10, img: "/Images/knife.png" },
+    { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" }
 ]
 
 const player = {
@@ -43,12 +43,6 @@ const monsterBigEyes = {
     health: 15,
     damage: 2.5,
 };
-
-let playersTurn = false;
-let fighting = false;
-let playerDefending = false;
-
-let monsterBigEyesTurn = false;
 
 function progressBars() {
     if (playerHealth) {
@@ -128,49 +122,70 @@ function renderInventory() {
 }
 
 //random item test
-
-document.getElementById("search").onclick = () => {
-    searchRoom()
+if (document.getElementById("search")) {
+    document.getElementById("search").onclick = () => {
+        searchRoom()
+    }
 }
 
 
+//combat
+let playersTurn = true;
+let fighting = true;
+let playerDefending = false;
+
+let monsterBigEyesTurn = false;
 
 
-attackButton.onclick = () => {
-    console.log("Attack clicked");
+if (attackButton) {
+    attackButton.onclick = () => {
+        console.log("Attack clicked");
 
-    if (!playersTurn || !fighting) return;
-    monsterBigEyes.health -= player.damage;
-    console.log("Monster HP:", monsterBigEyes.health);
+        if (!playersTurn || !fighting) return;
+        monsterBigEyes.health -= player.damage;
+        player.hunger -= 2.5;
 
-    if (monsterBigEyes.health <= 0) {
-        console.log("Monster defeated!");
-        fighting = false;
-        return;
-    }
-    endPlayerTurn();
-};
+        bigEyesHealth.style.animation = "none";
+        bigEyesHealth.offsetHeight;
+        bigEyesHealth.style.animation = "shake 0.2s ease";
 
-defendButton.onclick = () => {
-    if (!playersTurn || !fighting) return;
+        console.log("monster health", monsterBigEyes.health);
 
-    playerDefending = true;
-    console.log("Player defending");
+        progressBars();
 
-    endPlayerTurn();
-};
-
-runButton.onclick = () => {
-    if (!playersTurn || !fighting) return;
-
-    const escape = Math.random() < 0.5;
-
-    if (escape) {
-        fighting = false;
-    } else {
+        if (monsterBigEyes.health <= 0) {
+            console.log("monster defeated");
+            fighting = false;
+            return;
+        }
         endPlayerTurn();
-    }
-};
+    };
+}
+
+if (defendButton) {
+    defendButton.onclick = () => {
+        if (!playersTurn || !fighting) return;
+
+        playerDefending = true;
+        console.log("player defending");
+        progressBars()
+        endPlayerTurn();
+    };
+}
+
+if (runButton) {
+    runButton.onclick = () => {
+        if (!playersTurn || !fighting) return;
+
+        const escape = Math.random() < 0.5;
+
+        if (escape) {
+            fighting = false;
+        } else {
+            endPlayerTurn();
+        }
+    };
+}
 
 function endPlayerTurn() {
     playersTurn = false;
@@ -191,6 +206,13 @@ function monsterTurn() {
     }
 
     player.health -= damage;
+
+    progressBars()
+
+    playerHealth.style.animation = "none";
+    playerHealth.offsetHeight;
+    playerHealth.style.animation = "shake 0.2s ease";
+
     console.log("Player HP:", player.health);
 
     if (player.health <= 0) {
