@@ -1018,6 +1018,8 @@
 
 .description-text-section-combat {
 
+    margin-top: -10vh;
+    margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1051,6 +1053,25 @@
             }
 
         }
+    }
+
+}
+
+.decisions-text {
+    display: flex;
+    width: 675px;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+
+    &>section {
+        width: 175px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0D1E3A;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 5px 3px rgba(103, 171, 255, 0.5);
     }
 }
 
@@ -1109,4 +1130,32 @@
     background: #FF4B4B;
     border-radius: 5px;
 
+}
+
+#inventory {
+    width: 460px;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+
+
+    &>.slot {
+        width: 85px;
+        height: 85px;
+        background-color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#search {
+    position: absolute;
+    background-color: rgb(86, 85, 85);
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 50px;
+    top: 0;
+    right: 50%;
 }
