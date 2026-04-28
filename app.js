@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    //Buttons
+    // -- BUTTONS -- //
     const retryButton = document.getElementById("retry");
     const mainMenuButton = document.getElementById("mainmenu");
     const extraLifeYes = document.getElementById("extra-life-yes-button");
     const extraLifeNo = document.getElementById("extra-life-no-button");
     const VolumeIcon = document.querySelector('.Volume');
-    const SettingIcon = document.querySelector('.Settings');
     const friendYes = document.getElementById("Friend-Y-button");
     const friendNo = document.getElementById("Friend-N-button");
     const indexContinue = document.getElementById("index-continue")
@@ -33,10 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const sceneDecisionThree = document.getElementById("scene-decision-three");
     const sceneCombat = document.getElementById("scene-combat");
 
-    //progress bars
+    // -- PROGRESS BAR -- //
     const playerHealth = document.querySelectorAll(".health-progress");
     const playerHunger = document.querySelectorAll(".hunger-progress");
     const bigEyesHealth = document.querySelectorAll(".health-progress-bigEyes");
+
+    // -- OVERLAYS -- //
+    const SettingIcon = document.querySelector('.Settings');
+    const achievmentsOverlay = document.getElementById("achievements-button");
+    const creditsOverlay = document.getElementById("credits-button");
 
 
     // This is the switcher for each page active and hidden
