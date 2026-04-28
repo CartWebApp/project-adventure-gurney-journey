@@ -73,6 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
         overlayToShow.classList.add("hidden");
     }
 
+    achievementsOverlayBackground.onclick = () => {
+        hideOverlay()
+    }
+    creditsOverlayBackground.onclick = () => {
+        hideOverlay()
+    }
+    settingsOverlayBackground.onclick = () => {
+        hideOverlay()
+    }
+
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
