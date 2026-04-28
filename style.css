@@ -272,7 +272,7 @@
 
 /* --HERE IS THE SECONDARY MAIN PAGE STYLING-- */
 
-.home2body {
+#scene-menu2 {
     background-image: url("/Images/Second-main-image.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -501,7 +501,7 @@
 
 /* Introduction page */
 
-.Introduction-page-body {
+#scene-intro {
     background-image: url("/Images/Introduction-image.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -633,7 +633,7 @@
 
 /* Friend Yes or No page */
 
-.Friend-YN-body {
+#scene-friend-yesno {
     background-image: url("/images/Rocky-background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -708,7 +708,7 @@
 
 
 /* Game Over Page*/
-.gameoverbody {
+#scene-gameover {
     background-image: url(/Images/gameoverbackground.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -840,7 +840,7 @@
 
 /* Select Friend Page */
 
-.selectfriendbody {
+#scene-friend {
     background-image: url(Images/selectfriendbackground.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -990,7 +990,7 @@
 
 /* -- COMBAT PAGE HERE -- */
 
-.body-page-combat {
+#scene-combat {
     background-image: url(/Images/Combat.png);
     background-repeat: no-repeat;
     background-size: cover;
