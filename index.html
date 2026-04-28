@@ -9,47 +9,490 @@
     <link href="https://fonts.googleapis.com/css2?family=Bahiana&display=swap" rel="stylesheet">
 </head>
 
-<body class="homebody">
-    
+<body>
+    <!-- SCENE 1: HOME -->
+    <section id="scene-home" class="scene hidden">
+        <nav class="homenav">
+            <img draggable="false" src="/Images/woodnav.png">
+        </nav>
 
-    <nav class="homenav">
-        <img draggable="false" src="/Images/woodnav.png">
-    </nav>
+        <main class="homemain">
 
-    <main class="homemain">
+            <section class="mainleft">
+                <div id="chains"></div>
+                <article id="leaderboard">
+                    <h4>Leaderboard</h4>
+                    <ol>
+                        <li>
+                            <p>Username</p> <span>Health</span>
+                        </li>
+                        <li>
+                            <p>Username</p> <span>Health</span>
+                        </li>
+                        <li>
+                            <p>Username</p> <span>Health</span>
+                        </li>
+                        <li>
+                            <p>Username</p> <span>Health</span>
+                        </li>
+                        <li>
+                            <p>Username</p> <span>Health</span>
+                        </li>
+                    </ol>
+                </article>
+            </section>
 
-        <section class="mainleft">
-            <div id="chains"></div>
-            <article id="leaderboard">
-                <h4>Leaderboard</h4>
-                <ol>
-                    <li> <p>Username</p> <span>Health</span> </li>
-                    <li> <p>Username</p> <span>Health</span> </li>
-                    <li> <p>Username</p> <span>Health</span> </li>
-                    <li> <p>Username</p> <span>Health</span> </li>
-                    <li> <p>Username</p> <span>Health</span> </li>
-                </ol>
-            </article>
+            <section id="mainmiddle">
+                <h1 class="title">The <p>Gurney</p> Journey</h1>
+                <h2>Ready for a new adventure?</h2>
+                <div id="index-continue">
+                    <p id="click-continue"> Click to continue...</p>
+                </div>
+            </section>
+
+            <section class="mainright">
+                <div id="chains"></div>
+                <article id="instructions">
+                    <h4>How to play?</h4>
+                    <p>Write here (do not change nothing just type)</p>
+                </article>
+            </section>
+
+
+        </main>
+    </section>
+
+    <!-- SCENE 2: STORY -->
+    <section id="scene-story-mechanics" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="Introduction-page-main" id="introduction">
+
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image" class="image-text">
+                </section>
+
+                <section class="description-text-section">
+                    <section>
+                        <p class="description-text" id="story-text">Not complete (type here, do not change position and
+                            font)</p>
+                        <section class="link-text">
+                            <section class="go-back-button-text">
+                                <h3 class="go-back-text">Go back &lt;</h3>
+                            </section>
+                            <section class="continue-button-text">
+                                <h3 class="continue-text">&gt; Continue </h3>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <section class="bars">
+
+            <section class="healthbar">
+                <img src="/Images/heart.png">
+                <progress max="100" class="health-progress"></progress>
+            </section>
+
+            <section class="hungerbar">
+                <img src="/Images/burger.png">
+                <progress max="100" class="hunger-progress"></progress>
+            </section>
+
         </section>
+    </section>
 
-        <section id="mainmiddle">
-            <h1 class="title">The <p>Gurney</p> Journey</h1>
-            <h2>Ready for a new adventure?</h2>
-            <div id="index-continue">
-                <p id="click-continue"> Click to continue...</p>
+    <!-- SCENE 3: SELECT FRIEND -->
+    <section id="scene-friend" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="selectfriendmain">
+            <h1>SELECT YOUR FRIEND</h1>
+            <section class="friendsection">
+                <section class="anderdingus">
+                    <div class="name">
+                        <p><strong>Name:</strong> Anderdingus</p>
+                    </div>
+                    <img draggable="false" draggable="false" draggable="false" draggable="false" draggable="false"
+                        draggable="false" draggable="false" draggable="false" id="anderdingus-image"
+                        src="/Images/anderdingus.png">
+                    <div class="description">
+                        <p><strong>Description:</strong> Shy, scaredy cat, fun to hang around with</p>
+                    </div>
+
+                    <div class="pick" id="pick-anderdingus">
+                        <p>Pick</p>
+                    </div>
+                </section>
+
+                <section class="justin">
+                    <div class="name">
+                        <p><strong>Name:</strong> Justin Buttlord</p>
+                    </div>
+                    <img draggable="false" draggable="false" draggable="false" draggable="false" draggable="false"
+                        draggable="false" draggable="false" draggable="false" id="justin-image"
+                        src="/Images/justinbuttlord.png">
+                    <div class="description">
+                        <p><strong>Description:</strong> Brave ,courageous, strong, adventurous, positive</p>
+                    </div>
+
+                    <div class="pick" id="pick-justin">
+                        <p>Pick</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </section>
+
+    <!-- SCENE 4: SECOND MENU -->
+    <section id="scene-menu2" class="scene active">
+        <div id="black-screen"></div>
+
+        <!-- Nav Bar -->
+        <nav class="home2nav">
+            <section>
+                <img draggable="false" src="/Images/Lang-icon.png" alt="Language Icon">
+                <span>Language</span>
+                <select name="languages" id="languages">
+                    <option value="" disabled selected hidden>Select</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </section>
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+        <!-- Main Content -->
+        <main class="home2main">
+            <div id="play-button">
+                <h1>Play</h1>
             </div>
-        </section>
+            <section class="threeText">
+                <section>
+                    <div id="achievements-button">
+                        <h3 id="achievements">Achievements</h3>
+                    </div>
+                    <div id="credits-button">
+                        <h3 id="credits">Credits</h3>
+                    </div>
+                </section>
+                <div class="go-back-button">
+                    <h3 class="go-back">Go back</h3>
+                </div>
+            </section>
+        </main>
+    </section>
 
-        <section class="mainright">
-            <div id="chains"></div>
-            <article id="instructions">
-                <h4>How to play?</h4>
-                <p>Write here (do not change nothing just type)</p>
-            </article>
-        </section>
+    <!-- SCENE 5: GAME OVER -->
+    <section id="scene-gameover" class="scene hidden">
+        <main class="game-over-main" id="game-over">
+            <h1>Game Over</h1>
+            <h2>(--Reason why--)</h2>
 
-        
-    </main>
+            <section class="yes-no" id="yesNo">
+                <h3>Do you want to use your extra life?</h3>
+                <section class="extra-life-buttons">
+                    <div id="extra-life-yes-button">
+                        <p>Yes</p>
+                    </div>
+
+                    <div id="extra-life-no-button">
+                        <p>No</p>
+                    </div>
+                </section>
+
+                <section class="countdown-section">
+                    <progress id="countdown-line" max="100" value="70"></progress>
+                </section>
+            </section>
+
+            <section class="retry-menu">
+                <div id="retry">
+                    <p>Retry</p>
+                </div>
+                <div id="mainmenu">
+                    <p>Main Menu</p>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <!-- SCENE 6: INTRODUCTION -->
+    <section id="scene-intro" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="Introduction-page-main">
+
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image" class="image-text">
+                </section>
+
+                <section class="description-text-section">
+                    <section>
+                        <p class="description-text" id="story-text">Not complete (type here, do not change position and
+                            font)</p>
+                        <section class="link-text">
+                            <section class="go-back-button-text">
+                                <h3 class="go-back-text">Go back &lt;</h3>
+                            </section>
+                            <section class="continue-button-text">
+                                <h3 class="continue-text">&gt; Continue </h3>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section>
+
+    <!-- SCENE 7: FRIEND YES NO -->
+    <section id="scene-friend-yesno" class="scene hidden">
+        <nav class="Friend-YN-nav">
+            <img draggable="false" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <h1>Do you want to call a friend?</h1>
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+        <main class="Friend-YN-main">
+            <section>
+                <img draggable="false" src="/Images/Yes-no-image.png" alt="Yes or No Image">
+                <div id="Friend-Y-button">
+                    <p>Yes</p>
+                </div>
+                <div id="Friend-N-button">
+                    <p>No</p>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <!-- SCENE 8: DECISION TWO -->
+    <section id="scene-decision-two" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="Introduction-page-main">
+
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image" class="image-text">
+                </section>
+
+                <section class="description-text-section">
+                    <section>
+                        <p class="description-text" id="story-text">Not complete (type here, do not change position and
+                            font)</p>
+                        <section class="decisions-text">
+                            <section class="decision1-button">
+                                <h3 class="decision1">Decision</h3>
+                            </section>
+                            <section class="decision2-button">
+                                <h3 class="decision2">Decision</h3>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <section class="bars">
+
+            <section class="healthbar">
+                <img src="/Images/heart.png">
+                <progress max="100" class="health-progress"></progress>
+            </section>
+
+            <section class="hungerbar">
+                <img src="/Images/burger.png">
+                <progress max="100" class="hunger-progress"></progress>
+            </section>
+
+        </section>
+    </section>
+
+    <!-- SCENE 9: DECISION TWO INTRO -->
+    <section id="scene-decision-two-intro" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="Introduction-page-main">
+
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image" class="image-text">
+                </section>
+
+                <section class="description-text-section">
+                    <section>
+                        <p class="description-text">Not complete (type here, do not change position and
+                            font)</p>
+                        <section class="decisions-text">
+                            <section class="decision1-button">
+                                <h3 class="decision1">Decision</h3>
+                            </section>
+                            <section class="decision2-button">
+                                <h3 class="decision2">Decision</h3>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section>
+
+    <!-- SCENE 10: DECISION THREE -->
+    <section id="scene-decision-three" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="Introduction-page-main">
+
+            <!-- Copy this for other pages -->
+            <section class="Text-section">
+                <section class="title-image-text">
+                    <h1 class="title-text">[The Narrator]:</h1>
+                    <img draggable="false" src="/Images/Teddy.png" alt="Teddy Image" class="image-text">
+                </section>
+
+                <section class="description-text-section">
+                    <section>
+                        <p class="description-text">Not complete (type here, do not change position and
+                            font)</p>
+                        <section class="decisions-text">
+                            <section class="decision1-button">
+                                <h3 class="decision1">Decision</h3>
+                            </section>
+                            <section class="decision2-button">
+                                <h3 class="decision2">Decision</h3>
+                            </section>
+                            <section class="decision3-button">
+                                <h3 class="decision3">Decision</h3>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <section class="bars">
+
+            <section class="healthbar">
+                <img src="/Images/heart.png">
+                <progress max="100" class="health-progress"></progress>
+            </section>
+
+            <section class="hungerbar">
+                <img src="/Images/burger.png">
+                <progress max="100" class="hunger-progress"></progress>
+            </section>
+
+        </section>
+    </section>
+
+    <!-- SCENE 11: COMBAT -->
+    <section id="scene-combat" class="scene hidden">
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
+        </nav>
+
+        <main class="main-page-combat">
+            <section class="rivals-people">
+                <section class="ally-team">
+                    <section class="bars-combat-ally">
+                        <section class="healthbar">
+                            <img src="/Images/heart.png">
+                            <progress max="100" class="health-progress"></progress>
+                        </section>
+
+                        <section class="hungerbar">
+                            <img src="/Images/burger.png">
+                            <progress max="100" class="hunger-progress"></progress>
+                        </section>
+                    </section>
+                    <img draggable="false" src="/Images/Teddy-fighting.png" alt="Teddy Fighting Image">
+                </section>
+
+                <section class="enemy-team">
+                    <section class="bars-combat-enemy">
+                        <section class="health-none">
+                            <img src="/Images/heart.png">
+                            <progress max="100" class="health-progress"></progress>
+                        </section>
+                        <section class="healthbar-bigEyes">
+                            <img src="/Images/heart.png">
+                            <progress max="15" class="health-progress-bigEyes"></progress>
+                        </section>
+                    </section>
+                    <img draggable="false" src="/Images/Creature-combat.png" alt="Creature Image">
+                </section>
+            </section>
+
+            <section class="description-text-section-combat">
+                <section>
+                    <p class="description-text">Not complete (type here, do not change position and
+                        font)
+                    </p>
+                    <section class="link-text">
+                        <section class="go-back-button-text">
+                            <h3 class="go-back-text">Go back &lt;</h3>
+                        </section>
+                        <section class="continue-button-text">
+                            <h3 class="continue-text">&gt; Continue </h3>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <section class="decisions-text">
+
+                <section class="decision1-button" id="attack-button">
+                    <h3 id="Attack-combat">Attack</h3>
+                </section>
+                <section class="decision2-button" id="defend-button">
+                    <h3 id="Defend-combat">Defend</h3>
+                </section>
+                <section class="decision3-button" id="run-button">
+                    <h3 id="Run-combat">Run</h3>
+                </section>
+            </section>
+
+            <section id="inventory">
+                <div class="slot" id="slot1"></div>
+                <div class="slot" id="slot2"></div>
+                <div class="slot" id="slot3"></div>
+                <div class="slot" id="slot4"></div>
+            </section>
+        </main>
+
+        <button id="search">search (console test)</button>
+    </section>
+
     <script src="app.js"></script>
 </body>
 

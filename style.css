@@ -15,6 +15,16 @@
     user-select: none;
 }
 
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
 .homebody {
     background-image: url(/Images/mainbackground.png);
     background-repeat: no-repeat;
@@ -356,7 +366,7 @@
         align-items: center;
         gap: 30px;
 
-        &>#go-back-button>#go-back {
+        &>.go-back-button>.go-back {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -369,7 +379,7 @@
             animation: moveup 0.5s ease-out forwards;
         }
 
-        &>#go-back-button:hover {
+        &>.go-back-button:hover {
             animation: scaleUp 0.3s ease-out forwards;
         }
 
@@ -1104,8 +1114,15 @@
     }
 }
 
-#health-none {
+.health-none {
     visibility: hidden;
+    display: flex;
+    align-items: center;
+
+    &>img {
+        margin-right: -20px;
+        z-index: 10;
+    }
 }
 
 .bars-combat-ally #health-progress::-webkit-progress-value {

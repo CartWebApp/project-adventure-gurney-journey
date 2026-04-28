@@ -16,7 +16,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const defendButton = document.getElementById("defend-button");
     const runButton = document.getElementById("run-button");
     const playButton = document.getElementById("play-button");
-    const goBackButton = document.getElementById("go-back-button");
+    const goBackButtonSecondPage = document.getElementById("go-back-button");
+    const goBackBtn = document.querySelector(".go-back-button-text");
+    const continueBtn = document.querySelector(".continue-button-text");
+
+    // -- PAGES SCENES -- //
+    const sceneHome = document.getElementById("scene-home");
+    const sceneStory = document.getElementById("scene-story-mechanics");
+    const sceneFriend = document.getElementById("scene-friend");
+    const sceneMenu2 = document.getElementById("scene-menu2");
+    const sceneGameOver = document.getElementById("scene-gameover");
+    const sceneIntro = document.getElementById("scene-intro");
+    const sceneFriendYN = document.getElementById("scene-friend-yesno");
+    const sceneDecisionTwo = document.getElementById("scene-decision-two");
+    const sceneDecisionTwoIntro = document.getElementById("scene-decision-two-intro");
+    const sceneDecisionThree = document.getElementById("scene-decision-three");
+    const sceneCombat = document.getElementById("scene-combat");
 
     //progress bars
     const playerHealth = document.getElementById("health-progress");
@@ -298,22 +313,17 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(monsterBigEyes.health)
 
     // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- //
-    const friendYesBtn = document.getElementById("Friend-Y-button");
-    const friendNoBtn = document.getElementById("Friend-N-button");
 
     const pickAnderdingusBtn = document.getElementById("pick-anderdingus");
     const pickJustinBtn = document.getElementById("pick-justin");
 
-    const speakerText = document.getElementById("speaker-text");
+    const speakerText = document.querySelector(".title-text");
     const dialogueText = document.querySelector(".description-text");
-    const characterImage = document.getElementById("image-text");
+    const characterImage = document.querySelector(".image-text");
 
-    const continueBtn = document.getElementById("continue");
-    const goBackBtn = document.getElementById("go-back");
-
-    const decision1Btn = document.getElementById("decision1");
-    const decision2Btn = document.getElementById("decision2");
-    const decision3Btn = document.getElementById("decision3");
+    const decision1Btn = document.querySelector(".decision1");
+    const decision2Btn = document.querySelector(".decision2");
+    const decision3Btn = document.querySelector(".decision3");
 
     let currentStep = "intro0";
     let historyStack = [];
