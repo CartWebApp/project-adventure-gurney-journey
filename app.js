@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const sceneCombat = document.getElementById("scene-combat");
 
     //progress bars
-    const playerHealth = document.getElementById("health-progress");
-    const playerHunger = document.getElementById("hunger-progress");
-    const bigEyesHealth = document.getElementById("health-progress-bigEyes");
+    const playerHealth = document.querySelectorAll(".health-progress");
+    const playerHunger = document.querySelectorAll(".hunger-progress");
+    const bigEyesHealth = document.querySelectorAll(".health-progress-bigEyes");
 
     // this saves the game process so there is no glitches
     function saveState() {
@@ -65,15 +65,17 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function progressBars() {
-        if (playerHealth) {
-            playerHealth.value = player.health;
-        }
-        if (playerHunger) {
-            playerHunger.value = player.hunger;
-        }
-        if (bigEyesHealth) {
-            bigEyesHealth.value = monsterBigEyes.health;
-        }
+        playerHealth.forEach(bar => {
+            bar.value = player.health;
+        });
+
+        playerHunger.forEach(bar => {
+            bar.value = player.hunger;
+        });
+
+        bigEyesHealth.forEach(bar => {
+            bar.value = monsterBigEyes.health;
+        });
     }
 
     let inventory = [];
@@ -154,9 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
             monsterBigEyes.health -= player.damage;
             player.hunger -= 2.5;
 
-            bigEyesHealth.style.animation = "none";
-            bigEyesHealth.offsetHeight;
-            bigEyesHealth.style.animation = "shake 0.2s ease";
+            bigEyesHealth.forEach(bar => {
+                bar.style.animation = "none";
+                bar.offsetHeight;
+                bar.style.animation = "shake 0.2s ease";
+            });
 
             console.log("monster health", monsterBigEyes.health);
 
@@ -220,9 +224,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         progressBars()
 
-        playerHealth.style.animation = "none";
-        playerHealth.offsetHeight;
-        playerHealth.style.animation = "shake 0.2s ease";
+        playerHealth.forEach(bar => {
+            bar.style.animation = "none";
+            bar.offsetHeight;
+            bar.style.animation = "shake 0.2s ease";
+        });
 
         console.log("Player HP:", player.health);
 

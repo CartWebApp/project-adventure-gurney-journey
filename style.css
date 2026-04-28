@@ -16,13 +16,13 @@
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .active {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 .homebody {
@@ -964,25 +964,25 @@
     }
 }
 
-#health-progress::-webkit-progress-value {
+.health-progress::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
 }
 
-#health-progress::-webkit-progress-bar {
+.health-progress::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 
 }
 
-#hunger-progress::-webkit-progress-value {
+.hunger-progress::-webkit-progress-value {
     background: #FEB643;
     border-radius: 5px;
 
 }
 
-#hunger-progress::-webkit-progress-bar {
+.hunger-progress::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 
@@ -1125,30 +1125,30 @@
     }
 }
 
-.bars-combat-ally #health-progress::-webkit-progress-value {
+.bars-combat-ally .health-progress::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
 }
 
-.bars-combat-ally #health-progress::-webkit-progress-bar {
+.bars-combat-ally .health-progress::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 
-.bars-combat-ally #hunger-progress::-webkit-progress-value {
+.bars-combat-ally .hunger-progress::-webkit-progress-value {
     background: #FEB643;
     border-radius: 5px;
 
 }
 
 
-.bars-combat-enemy #health-progress-bigEyes::-webkit-progress-bar {
+.bars-combat-enemy .health-progress-bigEyes::-webkit-progress-bar {
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 
-.bars-combat-enemy #health-progress-bigEyes::-webkit-progress-value {
+.bars-combat-enemy .health-progress-bigEyes::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
 
@@ -1204,4 +1204,145 @@
     height: 50px;
     top: 0;
     right: 50%;
+}
+
+/* achievement overlay */
+
+.achievements-overlay-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.328);
+    z-index: 10;
+}
+
+.achievements-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    background-image: url(Images/overlay-woodplank.png);
+    z-index: 12;
+
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    &>section {
+        height: 67px;
+        width: 265px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid 1px white;
+
+        &>h1 {
+            font-size: 40px;
+        }
+
+        &>p {
+            width: 265px;
+            font-size: 20px;
+            margin: 0;
+
+            &>span {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border: solid 1px black;
+                vertical-align: middle;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+/* credits overlay */
+
+.credits-overlay-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.328);
+    z-index: 10;
+}
+
+.credits-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    flex-direction: column;
+    background-image: url(Images/overlay-woodplank.png);
+
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    &>section {
+        &>h1 {
+            border-bottom: solid 1px white;
+            width: 250px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &>P {
+            font-size: 24px;
+            width: 250px;
+            height: 39px;
+            text-align: center;
+        }
+    }
+}
+
+/* Settings Overlay */
+
+.settings-overlay-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.328);
+    z-index: 10;
+}
+
+.settings-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Images/overlay-woodplank.png);
+    width: 300px;
+    height: 250px;
+
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    &>h1 {
+        font-size: 40px;
+    }
+
+    &>p {
+        border-top: solid 1px white;
+        width: 250px;
+        text-align: center;
+        height: 52px;
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    &>#exit-program {
+        color: #EC5050;
+    }
 }
