@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const defendButton = document.getElementById("defend-button");
     const runButton = document.getElementById("run-button");
     const playButton = document.getElementById("play-button");
-    const goBackButtonSecondPage = document.querySelector("go-back-button");
+    const goBackButtonSecondPage = document.querySelector(".go-back-button");
     const goBackBtn = document.querySelector(".go-back-button-text");
     const continueBtn = document.querySelector(".continue-button-text");
 
@@ -341,15 +341,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Overlay opening
 
-            achievmentsButton.onclick = () => {
-                console.log("achivements")
-                showOverlay(achievmentsOverlay)
-            }
-        
+        achievmentsButton.onclick = () => {
+            showOverlay(achievmentsOverlay)
+        }
+
 
         if (creditsButton) {
             creditsButton.onclick = () => {
-                showOverlay(creditsOverlay) 
+                showOverlay(creditsOverlay)
             }
         }
 
@@ -427,7 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
             image: null,
             bgImage: "/Image/Introduction-image.png",
             text: "On a seemingly normal night, a 17 year old Teddy Barragan wakes up after a long nap.",
-            next: "intro1",
             options: [
                 { Decision1: "Next", next: "intro1" }
             ]
@@ -439,10 +437,9 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "/Images/Teddy.png",
             bgImage: "/Image/Introduction-image.png",
             text: "I'm so hungry. Maybe I should get some McDonalds.",
-            next: "intro2",
             options: [
-                { Decision1: "Back", next: "intro0" },
-                { Decision2: "Next", next: "intro2" }
+                { Decision1: "Go Back >", next: "intro0" },
+                { Decision2: "> Continue", next: "intro2" }
             ]
         },
 
@@ -452,52 +449,58 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "/Images/Teddy.png",
             bgImage: "/Image/Introduction-image.png",
             text: "Should I turn on the TV to check the news real quick?",
-            page: "Decision-two-intro.html",
-            next: "tvDecision"
+            options: [
+                { Decision1: "Go Back >", next: "intro1" },
+                { Decision2: "> Continue", next: "tvDecision" }
+            ]
         },
 
         tvDecision: {
             type: "choice",
             speaker: "The Narrator",
             image: null,
+            bgImage: "/Image/Introduction-image.png",
             text: "What do you do?",
             options: [
                 { Decision1: "Turn on TV", next: "tvNews" },
-                { Decision2: "Don't turn on TV", next: "noTv" }
+                { Decision2: "Don't turn on TV", next: "afterNews" }
             ]
         },
 
         tvNews: {
             type: "dialogue",
-            speaker: "TV",
-            image: "/Images/tv.png",
-            text: "35-year-old Josh Ayala reported missing near Athens Lunatic Asylum.",
-            next: "tvReact"
+            speaker: "The Narrator",
+            image: null,
+            bgImage: "/Image/Introduction-image.png",
+            text: "Tv opened in the background, “35 year old Josh Ayala reported missing after taking a casual walk near Athens Lunatic Asylum at night.”",
+            options: [
+                { Decision1: "Go Back >", next: null }, // after decision you cant go back
+                { Decision2: "> Continue", next: "tvReact" }
+            ]
         },
 
         tvReact: {
             type: "dialogue",
             speaker: "Teddy",
             image: "/Images/Teddy.png",
-            text: "Isn't that the abandoned insane asylum?",
-            next: "afterNews"
-        },
-
-        noTv: {
-            type: "dialogue",
-            speaker: "Teddy",
-            image: "/Images/Teddy.png",
-            text: "Nah... I'm just gonna go get food.",
-            next: "afterNews"
+            bgImage: "/Image/Introduction-image.png",
+            text: "Isn't that the abandoned insane asylum? But brushes it off.",
+            options: [
+                { Decision1: "Go Back >", next: "tvNews" },
+                { Decision2: "> Continue", next: "afterNews" }
+            ]
         },
 
         afterNews: {
             type: "dialogue",
-            speaker: "The Narrator",
-            image: null,
-            text: "Click next to decide if Teddy should call a friend...",
-            next: "friendChoice"
-        }
+            speaker: "Teddy",
+            image: "/Images/Teddy.png",
+            text: "Eh whatever, I am pretty hungry I wonder if I should call my friend to get some food",
+            options: [
+                { Decision1: "Go Back >", next: "tvReact" },
+                { Decision2: "> Continue", next: "decisionFriend" } // HERE IT HIDES INTRODUCTION AND OPENS IF HE WANTS TO CALL A FRIEND HTML
+            ]
+        },
     };
 
     // here is the brain of the whole dialog system
