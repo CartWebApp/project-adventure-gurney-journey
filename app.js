@@ -44,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // -- OVERLAYS BUTTONS -- //
     const settingsButton = document.querySelector('.Settings');
-    const achievmentsButton = document.getElementById("achievements-button");
+    const achievementsButton = document.getElementById("achievements-button");
     const creditsButton = document.getElementById("credits-button");
 
     // -- OVERLAY -- //
     const creditsOverlay = document.getElementById("credits-overlay-container");
     const settingsOverlay = document.getElementById("settings-overlay-container");
-    const achievmentsOverlay = document.getElementById("achievements-overlay-container");
+    const achievementsOverlay = document.getElementById("achievements-overlay-container");
 
 
     // This is the switcher for each page active and hidden
@@ -340,11 +340,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Overlay opening
-
-        achievmentsButton.onclick = () => {
-            showOverlay(achievmentsOverlay)
+        if (achievementsOverlay) {
+            achievementsButton.onclick = () => {
+                console.log("achivements")
+                showOverlay(achievementsOverlay)
+            }
         }
-
 
         if (creditsButton) {
             creditsButton.onclick = () => {
@@ -353,9 +354,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Overlay closing
-        if (achievmentsOverlay) {
+        if (achievementsOverlay) {
             achievementsOverlayBackground.onclick = () => {
-                hideOverlay(achievmentsOverlay)
+                hideOverlay(achievementsOverlay)
             }
         }
         if (creditsOverlay) {
