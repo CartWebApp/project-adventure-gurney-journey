@@ -194,7 +194,7 @@
     background-color: rgba(0, 0, 0, 1);
     box-shadow: 0 0 50px 0 rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    z-index: 11;
+    z-index: 5;
     margin-bottom: 20px;
 }
 
@@ -1208,7 +1208,7 @@
 
 /* achievement overlay */
 
-.achievements-overlay-container {
+#achievements-overlay-container {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1263,7 +1263,7 @@
 
 /* credits overlay */
 
-.credits-overlay-container {
+#credits-overlay-container {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1302,9 +1302,11 @@
     }
 }
 
+
+
 /* Settings Overlay */
 
-.settings-overlay-container {
+#settings-overlay-container {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1330,19 +1332,26 @@
         font-size: 40px;
     }
 
-    &>p {
+    &>div {
         border-top: solid 1px white;
-        width: 250px;
-        text-align: center;
-        height: 52px;
-        font-size: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-    }
 
-    &>#exit-program {
-        color: #EC5050;
+        &>p {
+            width: 250px;
+            text-align: center;
+            height: 52px;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        &>p:hover {
+            animation: scaleUp 0.2s ease forwards;
+        }
+
+        &>#exit-program {
+            color: #EC5050;
+        }
     }
 }

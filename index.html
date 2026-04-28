@@ -495,7 +495,7 @@
 
     <!--Overlay-->
 
-    <dialog class="achievements-overlay-container hidden">
+    <dialog id="achievements-overlay-container" class="overlay hidden">
         <section class="achievements-overlay">
             <section>
                 <h1>Achievements</h1>
@@ -517,7 +517,7 @@
         </section>
     </dialog>
 
-    <dialog class="credits-overlay-container hidden">
+    <dialog id="credits-overlay-container" class="overlay active">
         <section class="credits-overlay">
             <section>
                 <h1>Credits</h1>
@@ -531,12 +531,12 @@
         </section>
     </dialog>
 
-    <dialog class="settings-overlay-container hidden">
+    <dialog id="settings-overlay-container" class="overlay hidden">
         <section class="settings-overlay">
             <h1>Settings</h1>
-            <p id="continue">Continue</p>
-            <p id="restart-program">Restart program</p>
-            <p id="exit-program">Exit program</p>
+            <div><p id="continue">Continue</p></div>
+            <div><p id="restart-program">Restart program</p></div>
+            <div><p id="exit-program">Exit program</p></div>
         </section>
     </dialog>
 
