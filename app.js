@@ -327,11 +327,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        if (sceneMenu2) {
+        if (playButton) {
             playButton.onclick = () => {
                 showScene(sceneIntro);
             }
+        }
 
+        if (goBackButtonSecondPage) {
             goBackButtonSecondPage.onclick = () => {
                 showScene(sceneHome);
             }
@@ -390,11 +392,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 showScene("--Here is the page that they are in here");
             });
         }
-
-
-
         progressBars()
-    }
+    };
+
 
     updateInventory()
     game()
