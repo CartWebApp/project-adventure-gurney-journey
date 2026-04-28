@@ -38,6 +38,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const playerHunger = document.querySelectorAll(".hunger-progress");
     const bigEyesHealth = document.querySelectorAll(".health-progress-bigEyes");
 
+
+    // This is the switcher for each page active and hidden
+    function showScene(sceneToShow) {
+        const allScenes = document.querySelectorAll(".scene");
+
+        allScenes.forEach(scene => {
+            scene.classList.remove("active");
+            scene.classList.add("hidden");
+        });
+
+        sceneToShow.classList.remove("hidden");
+        sceneToShow.classList.add("active");
+    }
+
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
@@ -251,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function game() {
 
 
-        if (document.URL.includes("/index.html")) {
+        if (indexContinue) {
             indexContinue.onclick = () => {
                 indexContinue.style.animation = "ScaleUpFull 3s linear 0s infinite";
                 let count = 0;
@@ -263,48 +277,48 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
                     if (count >= 6) {
-                        window.location.href = "/OtherPages/Second-main.html";
+                        showScene(sceneMenu2);
                     }
                 }, 480);
             }
         }
 
-        if (document.URL.includes("OtherPages/Second-main.html")) {
+        if (sceneMenu2) {
             playButton.onclick = () => {
-                window.location.href = "Introduction-page.html";
+                showScene(sceneIntro);
             }
             goBackButton.onclick = () => {
-                window.location.href = "/index.html";
+                showScene(sceneHome);
             }
 
 
         }
 
-        if (document.URL.includes("OtherPages/Friend-yes-no.html")) {
+        if (sceneFriend) {
             friendYes.onclick = () => {
                 player.hasFriend = true;
-                window.location.href = "Select-friend.html";
+                showScene(sceneFriendYN);
                 console.log("Has Friend:", player.hasFriend)
             };
             friendNo.onclick = () => {
                 player.hasFriend = false;
-                window.location.href = "";
+                showScene(sceneStory);
                 console.log("Has Friend:", player.hasFriend)
             };
         }
 
-        if (document.URL.includes("OtherPages/Game-over.html")) {
+        if (sceneGameOver) {
             mainMenuButton.addEventListener("click", function () {
-                window.location.href = "/index.html";
+                showScene(sceneHome);
             });
             retryButton.addEventListener("click", function () {
-                window.location.href = "Second-main.html";
+                showScene(sceneMenu2);
             });
             extraLifeNo.addEventListener("click", function () {
-                window.location.href = "/index.html";
+                showScene(sceneHome);
             });
             extraLifeYes.addEventListener("click", function () {
-                window.location.href = "(--Here is the page that they are in--).html";
+                showScene("--Here is the page that they are in here");
             });
         }
 
@@ -430,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentStep = stepId;
 
-        if (document.URL.includes("Introduction-page.html")) {
+        if (sceneIntro) {
             speakerText.textContent = step.speaker + ":"; // changes text-story in box
             dialogueText.textContent = step.text; // changes speaker in box
             // changes image in box
@@ -442,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        if (document.URL.includes("/OtherPages/Decision-two-intro.html")) {
+        if (sceneDecisionTwoIntro) {
             speakerText.textContent = step.speaker + ":"; // changes text-story in box
             dialogueText.textContent = step.text; // changes speaker in box
             // changes image in box
@@ -467,9 +481,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!step) return;
 
             // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
-            if (step.page && step.page.includes(".html")) {
+            if (step.next === "friendChoice") {
                 setTimeout(() => {
-                    window.location.href = step.page;
+                    showScene(sceneFriendYN);
                 }, 600);
                 return;
             }
@@ -477,19 +491,6 @@ document.addEventListener("DOMContentLoaded", function () {
             renderStep(step.next);
         });
     }
-    if (goBackBtn) {
-        // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
-        if (step.next && step.next.includes(".html")) {
-            setTimeout(() => {
-                window.location.href = step.next;
-
-            }, 600);
-            return;
-
-        }
-
-        renderStep(step.next);
-    };
 
     if (goBackBtn) {
         goBackBtn.addEventListener("click", () => {
@@ -499,13 +500,6 @@ document.addEventListener("DOMContentLoaded", function () {
             renderStep(previous); // load the previous step
         });
     }
-
-    goBackBtn.addEventListener("click", () => {
-        const previous = historyStack.pop(); // remove the last step from the history stack and returns it
-        if (!previous) return; // if there is nothing in history stack do nothing
-
-        renderStep(previous); // load the previous step
-    });
 
     if (speakerText && dialogueText && characterImage) {
         renderStep(currentStep);
