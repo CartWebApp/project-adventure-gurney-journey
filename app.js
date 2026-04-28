@@ -42,10 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const creditsOverlayBackground = document.getElementById("credits-overlay-background");
     const settingsOverlayBackground = document.getElementById("settings-overlay-background");
 
-    // -- OVERLAYS -- //
-    const SettingIcon = document.querySelector('.Settings');
-    const achievmentsOverlay = document.getElementById("achievements-button");
-    const creditsOverlay = document.getElementById("credits-button");
+    // -- OVERLAYS BUTTONS -- //
+    const settingButton = document.querySelector('.Settings');
+    const achievmentsButton = document.getElementById("achievements-button");
+    const creditsButton = document.getElementById("credits-button");
+
+    // -- OVERLAY -- //
+    const creditsOverlay = document.getElementById("credits-overlay-container");
+    const settingsOverlay = document.getElementById("settings-overlay-container");
+    const achievmentsOverlay = document.getElementById("achievements-overlay-container");
 
 
     // This is the switcher for each page active and hidden
@@ -74,20 +79,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function hideOverlay(overlayToHide) {
-        overlayToShow.classList.remove("active");
-        overlayToShow.classList.add("hidden");
+        overlayToHide.classList.remove("active");
+        overlayToHide.classList.add("hidden");
     }
 
-    achievementsOverlayBackground.onclick = () => {
-        hideOverlay()
-    }
-    creditsOverlayBackground.onclick = () => {
-        hideOverlay()
-    }
-    settingsOverlayBackground.onclick = () => {
-        hideOverlay()
+    if (achievmentsOverlay) {
+        achievementsOverlayBackground.onclick = () => {
+            hideOverlay(achievmentsOverlay)
+        }
     }
 
+    if (creditsOverlay) {
+        creditsOverlayBackground.onclick = () => {
+            console.log("Hello world!")
+            hideOverlay(creditsOverlay)
+        }
+    }
+
+    if (settingsOverlay) {
+        settingsOverlayBackground.onclick = () => {
+            hideOverlay(settingsOverlay)
+        }
+    }
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
@@ -323,11 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
             playButton.onclick = () => {
                 showScene(sceneIntro);
             }
-            goBackButton.onclick = () => {
+
+            goBackButtonSecondPage.onclick = () => {
                 showScene(sceneHome);
             }
-
-
         }
 
         if (sceneFriend) {
@@ -358,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        
+
 
         progressBars()
     }
