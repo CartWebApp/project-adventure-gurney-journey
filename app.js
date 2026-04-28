@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const sceneDecisionThree = document.getElementById("scene-decision-three");
     const sceneCombat = document.getElementById("scene-combat");
 
+    const achievementsOverlayBackground = document.getElementById("achievements-overlay-background");
+    const creditsOverlayBackground = document.getElementById("credits-overlay-background");
+    const settingsOverlayBackground = document.getElementById("settings-overlay-background");
+
     //progress bars
     const playerHealth = document.querySelectorAll(".health-progress");
     const playerHunger = document.querySelectorAll(".hunger-progress");
@@ -333,6 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 showScene("--Here is the page that they are in here");
             });
         }
+
+        
 
         progressBars()
     }

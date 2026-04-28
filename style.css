@@ -1222,7 +1222,7 @@
 
 /* achievement overlay */
 
-.overlay-background {
+.achievements-overlay-background, .credits-overlay-background, .settings-overlay-background {
     background-color: rgba(0, 0, 0, 0.328);
     width: 100%;
     height: 100vh;
