@@ -189,7 +189,7 @@
             font-size: 18px;
             font-weight: bold;
             background-color: rgba(0, 0, 0, 0.305);
-            list-style-type: inside;
+            list-style-position: inside;
         }
 
     }
