@@ -52,6 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
         sceneToShow.classList.add("active");
     }
 
+    function showOverlay(overlayToShow) {
+        const allOverlays = document.querySelectorAll(".overlay");
+
+        allOverlays.forEach(overlay => {
+            overlay.classList.remove("active");
+            overlay.classList.add("hidden");
+        });
+
+        overlayToShow.classList.remove("hidden");
+        overlayToShow.classList.add("active");
+    }
+
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
