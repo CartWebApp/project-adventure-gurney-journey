@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const playerHunger = document.querySelectorAll(".hunger-progress");
     const bigEyesHealth = document.querySelectorAll(".health-progress-bigEyes");
 
+    // -- BACKGROUND OVERLAYS -- //
+    const achievementsOverlayBackground = document.getElementById("achievements-overlay-background");
+    const creditsOverlayBackground = document.getElementById("credits-overlay-background");
+    const settingsOverlayBackground = document.getElementById("settings-overlay-background");
+
     // -- OVERLAYS -- //
     const SettingIcon = document.querySelector('.Settings');
     const achievmentsOverlay = document.getElementById("achievements-button");
@@ -71,6 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideOverlay(overlayToHide) {
         overlayToShow.classList.remove("active");
         overlayToShow.classList.add("hidden");
+    }
+
+    achievementsOverlayBackground.onclick = () => {
+        hideOverlay()
+    }
+    creditsOverlayBackground.onclick = () => {
+        hideOverlay()
+    }
+    settingsOverlayBackground.onclick = () => {
+        hideOverlay()
     }
 
     // this saves the game process so there is no glitches
@@ -342,6 +357,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 showScene("--Here is the page that they are in here");
             });
         }
+
+        
 
         progressBars()
     }
