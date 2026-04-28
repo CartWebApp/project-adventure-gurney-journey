@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const defendButton = document.getElementById("defend-button");
     const runButton = document.getElementById("run-button");
     const playButton = document.getElementById("play-button");
-    const goBackButtonSecondPage = document.getElementById("go-back-button");
+    const goBackButtonSecondPage = document.querySelector("go-back-button");
     const goBackBtn = document.querySelector(".go-back-button-text");
     const continueBtn = document.querySelector(".continue-button-text");
 
@@ -338,15 +338,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Overlay opening
-        if (achievmentsButton) {
+
             achievmentsButton.onclick = () => {
+                console.log("achivements")
                 showOverlay(achievmentsOverlay)
             }
-        }
+        
 
         if (creditsButton) {
             creditsButton.onclick = () => {
-                showOverlay(creditsOverlay)
+                showOverlay(creditsOverlay) 
             }
         }
 
