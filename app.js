@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const settingsOverlayBackground = document.getElementById("settings-overlay-background");
 
     // -- OVERLAYS BUTTONS -- //
-    const settingButton = document.querySelector('.Settings');
+    const settingsButton = document.querySelector('.Settings');
     const achievmentsButton = document.getElementById("achievements-button");
     const creditsButton = document.getElementById("credits-button");
 
@@ -83,24 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlayToHide.classList.add("hidden");
     }
 
-    if (achievmentsOverlay) {
-        achievementsOverlayBackground.onclick = () => {
-            hideOverlay(achievmentsOverlay)
-        }
-    }
 
-    if (creditsOverlay) {
-        creditsOverlayBackground.onclick = () => {
-            console.log("Hello world!")
-            hideOverlay(creditsOverlay)
-        }
-    }
-
-    if (settingsOverlay) {
-        settingsOverlayBackground.onclick = () => {
-            hideOverlay(settingsOverlay)
-        }
-    }
     // this saves the game process so there is no glitches
     function saveState() {
         localStorage.setItem("gameState", JSON.stringify(state));
@@ -313,6 +296,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function game() {
 
+        // Settings Overlay
+        if (settingsButton) {
+            settingsButton.onclick = () => {
+                showOverlay(settingsOverlay)
+            }
+        }
+
+        if (settingsOverlay) {
+            settingsOverlayBackground.onclick = () => {
+                hideOverlay(settingsOverlay)
+            }
+        }
 
         if (indexContinue) {
             indexContinue.onclick = () => {
@@ -339,6 +334,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
             goBackButtonSecondPage.onclick = () => {
                 showScene(sceneHome);
+            }
+        }
+
+        // Overlay opening
+        if (achievmentsButton) {
+            achievmentsButton.onclick = () => {
+                showOverlay(achievmentsOverlay)
+            }
+        }
+
+        if (creditsButton) {
+            creditsButton.onclick = () => {
+                showOverlay(creditsOverlay)
+            }
+        }
+
+        // Overlay closing
+        if (achievmentsOverlay) {
+            achievementsOverlayBackground.onclick = () => {
+                hideOverlay(achievmentsOverlay)
+            }
+        }
+        if (creditsOverlay) {
+            creditsOverlayBackground.onclick = () => {
+                console.log("Hello world!")
+                hideOverlay(creditsOverlay)
             }
         }
 
