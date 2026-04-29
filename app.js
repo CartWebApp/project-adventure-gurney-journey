@@ -54,6 +54,11 @@ const creditsOverlay = document.getElementById("credits-overlay-container");
 const settingsOverlay = document.getElementById("settings-overlay-container");
 const achievementsOverlay = document.getElementById("achievements-overlay-container");
 
+// -- OVERLAY INSIDE BUTTONS -- //
+const settingsContinue = document.getElementById("continue-settings");
+const settingsRestart = document.getElementById("restart-program-settings");
+const settingsExit = document.getElementById("exit-program-settings");
+
 
 // This is the switcher for each page active and hidden
 function showScene(sceneToShow) {
@@ -83,6 +88,17 @@ function showOverlay(overlayToShow) {
 function hideOverlay(overlayToHide) {
     overlayToHide.classList.remove("active");
     overlayToHide.classList.add("hidden");
+}
+
+function hideOverlayShowScene(sceneToShow) {
+    const allOverlays = document.querySelectorAll(".overlay");
+
+    allOverlays.forEach(overlay => {
+        overlay.classList.remove("active");
+        overlay.classList.add("hidden");
+    });
+
+    showScene(sceneToShow);
 }
 
 
@@ -399,6 +415,24 @@ function game() {
         };
     }
 
+    if (settingsContinue) {
+        settingsContinue.onclick = () => {
+            hideOverlayShowScene(currentStep);
+        }
+    }
+
+    if (settingsExit) {
+        settingsExit.onclick = () => {
+            hideOverlayShowScene(sceneHome);
+        }
+    }
+
+    if (settingsRestart) {
+        settingsRestart.onclick = () => {
+            hideOverlayShowScene(sceneMenu2);
+        }
+    }
+
 
     if (sceneGameOver.classList.contains("active")) {
         mainMenuButton.addEventListener("click", function () {
@@ -454,7 +488,7 @@ const story = {
     intro0: {
         type: "dialogueIntro",
         speaker: "The Narrator",
-        image: null,
+        image: "",
         bgImage: "/Images/Introduction-image.png",
         text: "On a seemingly normal night, a 17 year old Teddy Barragan wakes up after a long nap.",
         options: [
@@ -2045,17 +2079,20 @@ function renderStep(stepId) {
     activeSpeaker.textContent = step.speaker + ":"; // changes text-story in box
     activeDialogue.textContent = step.text; // changes speaker in box
     // changes image in box
-    if (step.image) {
-        activeImage.style.display = "block";
-        activeImage.src = step.image;
-    } else {
-        activeImage.style.display = "none";
+    if (activeImage) {
+        if (step.image) {
+            activeImage.style.display = "block";
+            activeImage.src = step.image;
+        } else {
+            activeImage.style.display = "none";
+        }
     }
 
     if (step.bgImage) {
         activeScene.style.backgroundImage = `url('${step.bgImage}')`;
         activeScene.style.backgroundSize = "cover";
         activeScene.style.backgroundPosition = "center";
+        activeScene.style.zIndex = "-2";
     } else {
         activeScene.style.backgroundImage = "none";
     }

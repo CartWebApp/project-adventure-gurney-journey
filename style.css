@@ -30,7 +30,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
 }
 
 .homenav {
@@ -284,7 +283,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 /* Whole nav bar for secondary main page */
@@ -514,10 +512,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -2;
 }
 
 
 .Text-section {
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -643,7 +643,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 .Friend-YN-nav {
@@ -721,7 +720,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    height: 100vh;
 }
 
 .game-over-main {
@@ -854,7 +852,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 .selectfriendmain {
@@ -1006,7 +1003,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 .main-page-combat {
