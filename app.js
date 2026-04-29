@@ -583,7 +583,7 @@ const story = {
     withAnderdingus1: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Yo whats up?",
         options: [
@@ -607,7 +607,7 @@ const story = {
     withAnderdingus3: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Depends man, what food are you getting?",
         options: [
@@ -631,7 +631,7 @@ const story = {
     withAnderdingus5: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "McDonalds? The one near the insane asylum? No way man did you see the news?",
         options: [
@@ -655,7 +655,7 @@ const story = {
     withAnderdingus7: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I am not going there bro.",
         options: [
@@ -679,7 +679,7 @@ const story = {
     withAnderdingus9: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I mean I guess...",
         options: [
@@ -704,7 +704,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "Can I get a large big mac meal with a coke, oreo mcflurry, 3 McChickens and a large fanta, and large fries.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD0" },
@@ -715,8 +715,8 @@ const story = {
     withAnderdingusMcD2: {
         type: "dialogueStory",
         speaker: "Cashier",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
+        image: "Images/CashierDonalds.png",
+        bgImage: "Images/McDonalds.png",
         text: "Will that be all?",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD1" },
@@ -728,7 +728,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "Yeah.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD2" },
@@ -739,8 +739,8 @@ const story = {
     withAnderdingusMcD4: {
         type: "dialogueStory",
         speaker: "Cashier",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
+        image: "Images/CashierDonalds.png",
+        bgImage: "Images/McDonalds.png",
         text: "That will be $32.58, would you like to round up for charity?",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD3" },
@@ -752,7 +752,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "Sure.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD4" },
@@ -763,8 +763,8 @@ const story = {
     withAnderdingusMcD6: {
         type: "dialogueStory",
         speaker: "Cashier",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
+        image: "Images/CashierDonalds.png",
+        bgImage: "Images/McDonalds.png",
         text: "Okay that will be $33 flat.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD5" },
@@ -776,7 +776,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "Teddy pays for the food and they wait for their food... They get their food.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMcD6" },
@@ -788,7 +788,7 @@ const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "What do you do with the food?",
         options: [
             { text: "Finish all the food", next: "withAnderdingusFinishFood" },
@@ -800,7 +800,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         text: "Teddy and Anderdingus finish all the McDonalds.",
         options: [
             { text: "> Continue", next: "withAnderdingusAsylum0" }
@@ -811,7 +811,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/McDonalds.png",
         hungerChange: 15,
         text: "Anderdingus saves some McChickens for later...",
         options: [
@@ -833,7 +833,7 @@ const story = {
     withAnderdingusAsylum1: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Bro why.",
         options: [
@@ -857,7 +857,7 @@ const story = {
     withAnderdingusAsylum3: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I guess bro.",
         options: [
@@ -869,7 +869,7 @@ const story = {
     withAnderdingusAsylum4: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "You think the missing guy was walking down here as well?",
         options: [
@@ -893,7 +893,7 @@ const story = {
     withAnderdingusAsylum6: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Yo there is light coming from the door.",
         options: [
@@ -917,7 +917,7 @@ const story = {
     withAnderdingusAsylum8: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "You said we wouldn't.",
         options: [
@@ -941,7 +941,7 @@ const story = {
     withAnderdingusAsylum10: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I guess bro.",
         options: [
@@ -965,7 +965,7 @@ const story = {
     withAnderdingusEnter1: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Yo...",
         options: [
@@ -1046,7 +1046,7 @@ const story = {
     withAnderdingusJosh1: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Bro you see that?",
         options: [
@@ -1070,7 +1070,7 @@ const story = {
     withAnderdingusJosh3: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Dude, that's the guy from the news!",
         options: [
@@ -1118,7 +1118,7 @@ const story = {
     withAnderdingusJosh7: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Are you okay?",
         options: [
@@ -1190,7 +1190,7 @@ const story = {
     withAnderdingusJosh13: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "You're telling us there's a monster here that will kill us?",
         options: [
@@ -1298,7 +1298,7 @@ const story = {
     withAnderdingusJosh21: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Okay so to leave we have to get the key from these monsters.",
         options: [
@@ -1382,7 +1382,7 @@ const story = {
     withAnderdingusJosh28: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "No way dude, do you not see what they did to this guy.",
         options: [
@@ -1649,7 +1649,7 @@ const story = {
     withAnderdingusTotem0: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I think we should keep going, these rooms probably don't have anything we need.",
         options: [
@@ -1683,7 +1683,7 @@ const story = {
     withAnderdingusTotemFind2: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "What is that?",
         options: [
@@ -1730,7 +1730,7 @@ const story = {
     withAnderdingusMachete2: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "You think it leaves the key in his nest or something?",
         options: [
@@ -1754,7 +1754,7 @@ const story = {
     withAnderdingusMachete4: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "There's some more rooms here they seem kinda empty though.",
         options: [
@@ -1789,7 +1789,7 @@ const story = {
     withAnderdingusMacheteFind2: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Look what I found!",
         options: [
@@ -1813,7 +1813,7 @@ const story = {
     withAnderdingusMacheteFind4: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Yeah, it looks almost brand new too. It feels very sharp.",
         options: [
@@ -1904,7 +1904,7 @@ const story = {
     withAnderdingusHallwayGood3: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "You think he is gonna sleep or something?",
         options: [
@@ -1962,7 +1962,7 @@ const story = {
     withAnderdingusHallwayGood8: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "I see the key.",
         options: [
@@ -1997,7 +1997,7 @@ const story = {
     withAnderdingusHallwayGood11: {
         type: "dialogueStory",
         speaker: "Anderdingus",
-        image: "Images/anderdingus.png",
+        image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Yeah.",
         options: [
@@ -2105,17 +2105,6 @@ function renderStep(stepId) {
         }
     }
 
-    if (step.type === "combat") {
-        showScene(sceneCombat);
-        combatWinNext = step.winNext;
-        combatLoseNext = step.loseNext;
-        monsterBigEyes.health = step.monsterHealth || 15; // reset monster health
-        fighting = true;
-        playersTurn = true;
-        progressBars();
-        return;
-    }
-
     // chnages value throughout the decisions of the user
     if (step.healthChange) {
         player.health += step.healthChange;
@@ -2160,6 +2149,17 @@ function renderStep(stepId) {
 
                 if (next === "decisionFriend") {
                     showScene(sceneFriendYN);
+                    return;
+                }
+
+                if (next === "withAnderdingusCombat") {
+                    showScene(sceneCombat);
+                    combatWinNext = step.winNext;
+                    combatLoseNext = step.loseNext;
+                    monsterBigEyes.health = step.monsterHealth || 15; // reset monster health
+                    fighting = true;
+                    playersTurn = true;
+                    progressBars();
                     return;
                 }
 
