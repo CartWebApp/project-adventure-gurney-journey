@@ -510,14 +510,6 @@
 
 /* Introduction page */
 
-#scene-intro {
-    background-image: url("/Images/Introduction-image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}
-
 .Introduction-page-main {
     display: flex;
     align-items: center;
@@ -601,7 +593,9 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 600px
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 50px;
             }
 
             &>.decisions-text {
@@ -694,13 +688,14 @@
             left: center;
             width: 38%;
             height: 75%;
-            z-index: -2;
+            z-index: 0;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
         }
 
         &>div {
+            z-index: 1;
             display: flex;
             justify-content: center;
             align-items: center;

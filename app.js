@@ -319,7 +319,9 @@ function game() {
                 }
 
                 if (count >= 6) {
-                    clearInterval(timer);
+                    clearInterval(timer); // this fixed the loop between pages (stops timer)
+                    indexContinue.style.animation = "none";
+                    clickContinue.style.color = "#D9D9D9";
                     showScene(sceneMenu2);
                 }
             }, 480);
@@ -329,6 +331,7 @@ function game() {
 
     playButton.onclick = () => {
         showScene(sceneIntro);
+        renderStep(currentStep);
     }
 
     if (goBackButtonSecondPage) {
@@ -364,18 +367,20 @@ function game() {
         }
     }
 
-    if (sceneFriend.classList.contains("active")) {
+    if (friendYes) {
         friendYes.onclick = () => {
             player.hasFriend = true;
             showScene(sceneFriendYN);
-            console.log("Has Friend:", player.hasFriend)
         };
+    }
+
+    if (friendNo) {
         friendNo.onclick = () => {
             player.hasFriend = false;
             showScene(sceneStory);
-            console.log("Has Friend:", player.hasFriend)
         };
     }
+
 
     if (sceneGameOver.classList.contains("active")) {
         mainMenuButton.addEventListener("click", function () {
@@ -407,26 +412,17 @@ console.log(monsterBigEyes.health)
 const pickAnderdingusBtn = document.getElementById("pick-anderdingus");
 const pickJustinBtn = document.getElementById("pick-justin");
 
-const speakerText = document.querySelector(".title-text");
-const dialogueText = document.querySelector(".description-text");
-const characterImage = document.querySelector(".image-text");
-
-const decision1Btn = document.querySelector(".decision1");
-const decision2Btn = document.querySelector(".decision2");
-const decision3Btn = document.querySelector(".decision3");
-
 let currentStep = "intro0";
-let historyStack = [];
 
 const story = {
     intro0: {
         type: "dialogue",
         speaker: "The Narrator",
         image: null,
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "On a seemingly normal night, a 17 year old Teddy Barragan wakes up after a long nap.",
         options: [
-            { Decision1: "Next", next: "intro1" }
+            { text: "> Continue", next: "intro1" }
         ]
     },
 
@@ -434,11 +430,11 @@ const story = {
         type: "dialogue",
         speaker: "Teddy",
         image: "/Images/Teddy.png",
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "I'm so hungry. Maybe I should get some McDonalds.",
         options: [
-            { Decision1: "Go Back >", next: "intro0" },
-            { Decision2: "> Continue", next: "intro2" }
+            { text: "Go Back >", next: "intro0" },
+            { text: "> Continue", next: "intro2" }
         ]
     },
 
@@ -446,23 +442,23 @@ const story = {
         type: "dialogue",
         speaker: "Teddy",
         image: "/Images/Teddy.png",
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "Should I turn on the TV to check the news real quick?",
         options: [
-            { Decision1: "Go Back >", next: "intro1" },
-            { Decision2: "> Continue", next: "tvDecision" }
+            { text: "Go Back >", next: "intro1" },
+            { text: "> Continue", next: "tvDecision" }
         ]
     },
 
     tvDecision: {
-        type: "choice",
+        type: "choiceIntro",
         speaker: "The Narrator",
         image: null,
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "What do you do?",
         options: [
-            { Decision1: "Turn on TV", next: "tvNews" },
-            { Decision2: "Don't turn on TV", next: "afterNews" }
+            { text: "Turn on TV", next: "tvNews" },
+            { text: "Don't turn on TV", next: "afterNews" }
         ]
     },
 
@@ -470,11 +466,10 @@ const story = {
         type: "dialogue",
         speaker: "The Narrator",
         image: null,
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "Tv opened in the background, “35 year old Josh Ayala reported missing after taking a casual walk near Athens Lunatic Asylum at night.”",
         options: [
-            { Decision1: "Go Back >", next: null }, // after decision you cant go back
-            { Decision2: "> Continue", next: "tvReact" }
+            { text: "> Continue", next: "tvReact" }
         ]
     },
 
@@ -482,11 +477,11 @@ const story = {
         type: "dialogue",
         speaker: "Teddy",
         image: "/Images/Teddy.png",
-        bgImage: "/Image/Introduction-image.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "Isn't that the abandoned insane asylum? But brushes it off.",
         options: [
-            { Decision1: "Go Back >", next: "tvNews" },
-            { Decision2: "> Continue", next: "afterNews" }
+            { text: "Go Back >", next: "tvNews" },
+            { text: "> Continue", next: "afterNews" }
         ]
     },
 
@@ -494,12 +489,15 @@ const story = {
         type: "dialogue",
         speaker: "Teddy",
         image: "/Images/Teddy.png",
+        bgImage: "/Images/Introduction-image.png",
         text: "Eh whatever, I am pretty hungry I wonder if I should call my friend to get some food",
         options: [
-            { Decision1: "Go Back >", next: "tvReact" },
-            { Decision2: "> Continue", next: "decisionFriend" } // HERE IT HIDES INTRODUCTION AND OPENS IF HE WANTS TO CALL A FRIEND HTML
+            // THERE IS NO GO BACK OPTION HERE BECAUSE IT WOULD CAUSE A GLITCH BETWEEN THE INTRODUCTION AND THE TV DECISION
+            { text: "> Continue", next: "decisionFriend" } // HERE IT HIDES INTRODUCTION AND OPENS IF HE WANTS TO CALL A FRIEND HTML
         ]
     },
+
+
 };
 
 // here is the brain of the whole dialog system
@@ -507,74 +505,77 @@ function renderStep(stepId) {
     //see the current step in the story
     const step = story[stepId];
 
-    if (!step) return;
-
-    if (!speakerText || !dialogueText || !characterImage) return;
-
-    // here it saves the current step into a history stack by pushing it and making a list of steps
-    if (currentStep) {
-        historyStack.push(currentStep); // add current step to history stack
-    }
+    if (!step || !step.options) return;
 
     currentStep = stepId;
 
-    if (sceneIntro) {
-        speakerText.textContent = step.speaker + ":"; // changes text-story in box
-        dialogueText.textContent = step.text; // changes speaker in box
-        // changes image in box
-        if (step.image) {
-            characterImage.style.display = "block";
-            characterImage.src = step.image;
+    if (step.type === "choiceIntro") {
+        showScene(sceneDecisionTwoIntro);
+    } else {
+        showScene(sceneIntro);
+    }
+
+    const activeScene = document.querySelector(".scene.active");
+    const activeSpeaker = activeScene.querySelector(".title-text");
+    const activeDialogue = activeScene.querySelector(".description-text");
+    const activeImage = activeScene.querySelector(".image-text");
+    const activeDecision1 = activeScene.querySelector(".decision1");
+    const activeDecision2 = activeScene.querySelector(".decision2");
+    const activeDecision3 = activeScene.querySelector(".decision3");
+    const linkText = activeScene.querySelector(".link-text");
+
+    activeSpeaker.textContent = step.speaker + ":"; // changes text-story in box
+    activeDialogue.textContent = step.text; // changes speaker in box
+    // changes image in box
+    if (step.image) {
+        activeImage.style.display = "block";
+        activeImage.src = step.image;
+    } else {
+        activeImage.style.display = "none";
+    }
+
+    if (step.bgImage) {
+        activeScene.style.backgroundImage = `url('${step.bgImage}')`;
+        activeScene.style.backgroundSize = "cover";
+        activeScene.style.backgroundPosition = "center";
+    } else {
+        activeScene.style.backgroundImage = "none";
+    }
+
+    if (linkText) {
+        if (step.options.length === 1) {
+            linkText.style.justifyContent = "flex-end";
         } else {
-            characterImage.style.display = "none";
+            linkText.style.justifyContent = "";
         }
     }
 
-    if (sceneDecisionTwoIntro) {
-        speakerText.textContent = step.speaker + ":"; // changes text-story in box
-        dialogueText.textContent = step.text; // changes speaker in box
-        // changes image in box
-        if (step.image) {
-            characterImage.style.display = "block";
-            characterImage.src = step.image;
+    const buttons = [activeDecision1, activeDecision2, activeDecision3];
+
+    // this is where the options for each step are created and if there is no option for that button it hides it
+    buttons.forEach((btn, i) => {
+        if (!btn) return;
+
+        if (step.options[i]) {
+            btn.style.display = "block";
+            btn.textContent = step.options[i].text;
+
+            btn.onclick = () => {
+                const next = step.options[i].next;
+
+                if (next === "decisionFriend") {
+                    showScene(sceneFriendYN);
+                    return;
+                }
+
+                if (!next) return;
+
+                renderStep(next);
+            };
+
         } else {
-            characterImage.style.display = "none";
+            btn.style.display = "none";
         }
-
-        decision1Btn.textContent = step.options.Decision1
-
-    }
-
-}
-
-// continue button to finish the intro and goes to the friend yes no page when clicked
-if (continueBtn) {
-    continueBtn.addEventListener("click", () => {
-        const step = story[currentStep];
-
-        if (!step) return;
-
-        // goes to the html page is selected for the decision pages with a delay of 600ms for the cool animation 
-        if (step.next === "friendChoice") {
-            setTimeout(() => {
-                showScene(sceneFriendYN);
-            }, 600);
-            return;
-        }
-
-        renderStep(step.next);
     });
-}
 
-if (goBackBtn) {
-    goBackBtn.addEventListener("click", () => {
-        const previous = historyStack.pop(); // remove the last step from the history stack and returns it
-        if (!previous) return; // if there is nothing in history stack do nothing
-
-        renderStep(previous); // load the previous step
-    });
-}
-
-if (speakerText && dialogueText && characterImage) {
-    renderStep(currentStep);
 }
