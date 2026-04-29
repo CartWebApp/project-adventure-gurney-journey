@@ -488,8 +488,8 @@ const story = {
     intro0: {
         type: "dialogueIntro",
         speaker: "The Narrator",
-        image: "",
-        bgImage: "/Images/Introduction-image.png",
+        image: null,
+        bgImage: "Images/Introduction-image.png",
         text: "On a seemingly normal night, a 17 year old Teddy Barragan wakes up after a long nap.",
         options: [
             { text: "> Continue", next: "intro1" }
@@ -499,8 +499,8 @@ const story = {
     intro1: {
         type: "dialogueIntro",
         speaker: "Teddy",
-        image: "/Images/Teddy.png",
-        bgImage: "/Images/Introduction-image.png",
+        image: "Images/Teddy.png",
+        bgImage: "Images/Introduction-image.png",
         text: "I'm so hungry. Maybe I should get some McDonalds.",
         options: [
             { text: "Go Back >", next: "intro0" },
@@ -511,8 +511,8 @@ const story = {
     intro2: {
         type: "dialogueIntro",
         speaker: "Teddy",
-        image: "/Images/Teddy.png",
-        bgImage: "/Images/Introduction-image.png",
+        image: "Images/Teddy.png",
+        bgImage: "Images/Introduction-image.png",
         text: "Should I turn on the TV to check the news real quick?",
         options: [
             { text: "Go Back >", next: "intro1" },
@@ -524,7 +524,7 @@ const story = {
         type: "choiceIntro",
         speaker: "The Narrator",
         image: null,
-        bgImage: "/Images/Introduction-image.png",
+        bgImage: "Images/Introduction-image.png",
         text: "What do you do?",
         options: [
             { text: "Turn on TV", next: "tvNews" },
@@ -536,7 +536,7 @@ const story = {
         type: "dialogueIntro",
         speaker: "The Narrator",
         image: null,
-        bgImage: "/Images/Introduction-image.png",
+        bgImage: "Images/Introduction-image.png",
         text: "Tv opened in the background, “35 year old Josh Ayala reported missing after taking a casual walk near Athens Lunatic Asylum at night.”",
         options: [
             { text: "> Continue", next: "tvReact" }
@@ -546,8 +546,8 @@ const story = {
     tvReact: {
         type: "dialogueIntro",
         speaker: "Teddy",
-        image: "/Images/Teddy.png",
-        bgImage: "/Images/Introduction-image.png",
+        image: "Images/Teddy.png",
+        bgImage: "Images/Introduction-image.png",
         text: "Isn't that the abandoned insane asylum? But brushes it off.",
         options: [
             { text: "Go Back >", next: "tvNews" },
@@ -558,8 +558,8 @@ const story = {
     afterNews: {
         type: "dialogueIntro",
         speaker: "Teddy",
-        image: "/Images/Teddy.png",
-        bgImage: "/Images/Introduction-image.png",
+        image: "Images/Teddy.png",
+        bgImage: "Images/Introduction-image.png",
         text: "Eh whatever, I am pretty hungry I wonder if I should call my friend to get some food",
         options: [
             // THERE IS NO GO BACK OPTION HERE BECAUSE IT WOULD CAUSE A GLITCH BETWEEN THE INTRODUCTION AND THE TV DECISION
@@ -823,7 +823,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Yo we should check out the insane asylum.",
         options: [
             { text: "> Continue", next: "withAnderdingusAsylum1" }
@@ -834,7 +834,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Bro why.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum0" },
@@ -846,7 +846,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Just to check it out dude we aren't gonna go inside just walk around.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum1" },
@@ -858,7 +858,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "I guess bro.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum2" },
@@ -870,7 +870,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "You think the missing guy was walking down here as well?",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum3" },
@@ -882,7 +882,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Probably, we are almost at the insane asylum.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum4" },
@@ -894,7 +894,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "Yo there is light coming from the door.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum5" },
@@ -906,7 +906,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "I see it, dude we should go inside.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum6" },
@@ -918,7 +918,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "You said we wouldn't.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum7" },
@@ -930,7 +930,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "We will leave right away if there's something bad dude, I paid for the McDonalds.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum8" },
@@ -942,7 +942,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "I guess bro.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum9" },
@@ -954,7 +954,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/GlowyDoor.png",
         text: "They enter the insane asylum and as soon as they enter, the door shuts instantly.",
         options: [
             { text: "< Go Back", next: "withAnderdingusAsylum10" },
@@ -966,7 +966,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "Yo...",
         options: [
             { text: "< Go Back", next: "withAnderdingusEnter0" },
@@ -978,7 +978,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "Its not opening dude.",
         options: [
             { text: "< Go Back", next: "withAnderdingusEnter1" },
@@ -990,7 +990,7 @@ const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "What do you do?",
         options: [
             { text: "Ram the door yourself", next: "withAnderdingusRamSelf" },
@@ -1002,7 +1002,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         healthChange: -10,
         text: "Teddy attempts to ram the door, but the door does not budge. During the process, Teddy injures himself by ramming the door too hard.",
         options: [
@@ -1014,7 +1014,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "Try ramming it open.",
         options: [
             { text: "> Continue", next: "withAnderdingusRamFriend2" }
@@ -1025,7 +1025,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "Anderdingus listens and attempts to ram the door. The door does not budge and both of you realize the door is not opening no matter how hard they try.",
         options: [
             { text: "> Continue", next: "withAnderdingusJosh0" }
@@ -1036,7 +1036,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/DoorShut.png",
         text: "After attempting to open the door, they turn around and realize they are trapped and how dark and eerie this place is, but they also notice someone sitting down against the wall.",
         options: [
             { text: "> Continue", next: "withAnderdingusJosh1" }
@@ -2126,7 +2126,7 @@ function renderStep(stepId) {
 
     // here it drop hunger on every step the user does
     if (step.type === "dialogueStory" || step.type === "choiceTwo" || step.type === "choiceThree") {
-        player.hunger -= 0.5; // drops hunger every step
+        player.hunger -= 1; // drops hunger every step
         if (player.hunger <= 0) {
             player.hunger = 0;
             player.health -= 2;  // drops health faster when hunger is 0
