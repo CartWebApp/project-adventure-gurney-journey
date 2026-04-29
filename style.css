@@ -30,6 +30,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 100svh;
+
 }
 
 .homenav {
@@ -283,6 +285,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100svh;
 }
 
 /* Whole nav bar for secondary main page */
@@ -596,6 +599,12 @@
                 width: 100%;
                 padding-left: 50px;
                 padding-right: 50px;
+
+                &>section {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
 
             &>.decisions-text {
@@ -609,7 +618,7 @@
 
                 &>section {
                     display: flex;
-                    justify-content: center;
+                    justify-items: center;
                     align-items: center;
                     font-weight: lighter;
                     width: 175px;
@@ -618,6 +627,8 @@
                     border-radius: 10px;
                     background-color: #001938c5;
                     box-shadow: inset 0 0 10px 0 #67abffc5;
+
+                    
                 }
             }
         }
@@ -643,6 +654,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100svh;
 }
 
 .Friend-YN-nav {
@@ -719,7 +731,8 @@
     background-image: url(/Images/gameoverbackground.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
+    height: 100svh;
 }
 
 .game-over-main {
@@ -851,7 +864,7 @@
     background-image: url(Images/selectfriendbackground.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    height: 100svh;
 }
 
 .selectfriendmain {
@@ -1003,6 +1016,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100svh;
 }
 
 .main-page-combat {
@@ -1378,4 +1392,9 @@
             color: #EC5050;
         }
     }
+}
+
+#scene-intro, #scene-decision-two-intro, #scene-friend-yesno, #scene-friend, #scene-story-mechanics, #scene-decision-two, #scene-decision-three, #scene-combat, #scene-gameover {
+    background-size: cover;
+    height: 100vh;
 }
