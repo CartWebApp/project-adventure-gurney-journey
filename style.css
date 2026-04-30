@@ -628,7 +628,7 @@
                     background-color: #001938c5;
                     box-shadow: inset 0 0 10px 0 #67abffc5;
 
-                    
+
                 }
             }
         }
@@ -1404,7 +1404,51 @@
     }
 }
 
-#scene-intro, #scene-decision-two-intro, #scene-friend-yesno, #scene-friend, #scene-story-mechanics, #scene-decision-two, #scene-decision-three, #scene-combat, #scene-gameover {
+#scene-intro,
+#scene-decision-two-intro,
+#scene-friend-yesno,
+#scene-friend,
+#scene-story-mechanics,
+#scene-decision-two,
+#scene-decision-three,
+#scene-combat,
+#scene-gameover {
     background-size: cover;
     height: 100vh;
 }
+
+/* ESCAPED SCENE */
+
+.escaped-main {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(/Images/CashierDonalds.png);
+
+    &>section {
+        align-self: center;
+
+        display: flex;
+        justify-content: space-between;
+        width: 1000px;
+        height: 110px;
+
+        &>div {
+            width: 380px;
+            height: 110px;
+            background-color: #3A3A3A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 7px rgba(255, 255, 255, 0.8);
+
+            &>p {
+                font-family: var(--normalfont);
+            }
+        }
+    }
+}
+
+< !-- Escaped scene --><section class="scene-escape active"><main id="escaped-main"><h1>You escaped !</h1><section class="retry-menu"><div id="retry"><p>Retry</p></div><div id="mainmenu"><p>Main Menu</p></div></section></main></section>

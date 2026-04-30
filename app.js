@@ -109,14 +109,14 @@ function saveState() {
 
 const items = [
     { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
-    { name: "Protein Bars", type: "food", hunger: 20, img: "/Images/bread.png" },
-    { name: "McChicken", type: "food", hunger: 30, img: "/Images/bread.png" },
-    { name: "Fries", type: "food", hunger: 15, img: "/Images/bread.png" },
+    { name: "Protein Bars", type: "food", hunger: 20, img: "/Images/protein-bars.png" },
+    { name: "McChicken", type: "food", hunger: 30, img: "/Images/mc-chicken.png" },
+    { name: "Fries", type: "food", hunger: 15, img: "/Images/fries.png" },
     { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
-    { name: "Machete", type: "weapon", multi: 2, img: "/Images/knife.png" },
-    { name: "Bandages", type: "heal", heal: 10, img: "/Images/knife.png" },
-    { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" },
-    { name: "Totem", type: "extraLife", img: "/Images/bread.png" }
+    { name: "Machete", type: "weapon", multi: 2, img: "/Images/machete.png" },
+    { name: "Bandages", type: "heal", heal: 10, img: "/Images/bandages.png" },
+    { name: "Medkit", type: "heal", heal: 50, img: "/Images/medkit.png" },
+    { name: "Totem", type: "extraLife", img: "/Images/Totem.png" }
 ]
 
 let combatWinNext = null;
