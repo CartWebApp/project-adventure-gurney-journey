@@ -628,7 +628,16 @@
                     background-color: #001938c5;
                     box-shadow: inset 0 0 10px 0 #67abffc5;
 
-
+                    &>h3 {
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 100;
+                        font-size: 16px;
+                        width: 175px;
+                        height: 60px;
+                    }
                 }
             }
         }
@@ -1450,5 +1459,3 @@
         }
     }
 }
-
-< !-- Escaped scene --><section class="scene-escape active"><main id="escaped-main"><h1>You escaped !</h1><section class="retry-menu"><div id="retry"><p>Retry</p></div><div id="mainmenu"><p>Main Menu</p></div></section></main></section>

@@ -182,7 +182,7 @@ function addRandomItem() {
 }
 
 function equipWeapon(item) {
-    
+
     player.weapon = item;
     player.damage *= item.multi;
 }
@@ -444,7 +444,6 @@ function game() {
     // Overlay opening
     if (achievementsOverlay) {
         achievementsButton.onclick = () => {
-            console.log("achivements")
             showOverlay(achievementsOverlay)
         }
     }
@@ -463,7 +462,6 @@ function game() {
     }
     if (creditsOverlay) {
         creditsOverlayBackground.onclick = () => {
-            console.log("Hello world!")
             hideOverlay(creditsOverlay)
         }
     }
@@ -483,7 +481,7 @@ function game() {
             renderStep(currentStep);
         };
     }
-    
+
     if (settingsExit) {
         settingsExit.onclick = () => {
             hideOverlayShowScene(sceneHome);
@@ -1595,7 +1593,7 @@ const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        hungerChange: 20,
+        hungerChange: 10,
         healthChange: 15,
         text: "They take a moment to rest and recover before heading deeper into the asylum.",
         options: [
@@ -3005,7 +3003,7 @@ const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        hungerChange: 20,
+        hungerChange: 10,
         healthChange: 15,
         text: "Teddy and Justin eat the protein bars to recover their hunger and heal a little from their fight with the monster. They then continue exploring.",
         options: [
@@ -4201,7 +4199,7 @@ const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        hungerChange: 20,
+        hungerChange: 10,
         healthChange: 15,
         text: "Teddy eats his pieces of bread to fill his hunger and uses the bandages to heal himself. After resting Teddy continues exploring.",
         options: [
@@ -4233,15 +4231,9 @@ const story = {
     },
 
     noFriendFightMonster: {
-        type: "dialogueStory",
-        speaker: "The Narrator",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
-        healthChange: -10,
-        text: "Teddy fights the monster, he gets cut in multiple places, but he won the fight and the monster dropped its weapon. Teddy has gained a new weapon.",
-        options: [
-            { text: "> Continue", next: "noFriendFollowMonster0" }
-        ]
+        type: "combat",
+        winNext: "noFriendWin",
+        loseNext: "noFriendLose"
     },
 
     noFriendRunMonster: {
@@ -4483,7 +4475,7 @@ function renderStep(stepId) {
                     showScene(sceneCombat);
                     combatWinNext = nextStep.winNext;
                     combatLoseNext = nextStep.loseNext;
-                    monsterBigEyes.health = nextStep.monsterHealth || 15;
+                    monsterBigEyes.health = nextStep.monsterHealth;
                     fighting = true;
                     playersTurn = true;
                     progressBars();
