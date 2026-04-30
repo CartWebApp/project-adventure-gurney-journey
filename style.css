@@ -527,7 +527,7 @@
     flex-direction: column;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 20%;
+    margin-top: 19%;
 
     &>.title-image-text {
         display: flex;
@@ -1126,15 +1126,24 @@
 }
 
 .bars-combat-enemy {
-
     &>section {
-
         &>progress {
             width: 225px;
             height: 30px;
             appearance: none;
         }
     }
+}
+
+.healthbar-bigEyes {
+    display: flex;
+    align-items: center;
+
+    &>img {
+        margin-right: -20px;
+        z-index: 10;
+    }
+
 }
 
 .health-none {
@@ -1200,7 +1209,6 @@
 }
 
 .inventory {
-    bottom: 5%;
     width: 460px;
     height: 85px;
     display: flex;
