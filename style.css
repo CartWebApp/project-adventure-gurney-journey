@@ -1206,7 +1206,8 @@
     height: 85px;
     display: flex;
     justify-content: space-between;
-
+    align-self: center;
+    margin-top: 1%;
 
     &>.slot {
         width: 85px;
