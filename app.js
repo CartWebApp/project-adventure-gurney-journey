@@ -134,8 +134,8 @@ const player = {
 };
 
 const monsterBigEyes = {
-    health: 15,
-    damage: 2.5,
+    health: 150,
+    damage: 10,
 };
 
 function progressBars() {
@@ -182,6 +182,7 @@ function addRandomItem() {
 }
 
 function equipWeapon(item) {
+    
     player.weapon = item;
     player.damage *= item.multi;
 }
@@ -2080,7 +2081,6 @@ const story = {
 
     withAnderdingusCombat: {
         type: "combat",
-        monsterHealth: 150,
         winNext: "withAnderdingusWin",
         loseNext: "withAnderdingusLose",
     },
@@ -2878,7 +2878,6 @@ const story = {
 
     withJustinFight1: {
         type: "combat",
-        monsterHealth: 40,
         winNext: "withJustinAfterMonster0",
         loseNext: "withJustinLose",
     },
@@ -3404,7 +3403,6 @@ const story = {
 
     withJustinFinalCombat: {
         type: "combat",
-        monsterHealth: 50,
         winNext: "withJustinWin",
         loseNext: "withJustinLose",
     },
@@ -4339,7 +4337,6 @@ const story = {
 
     noFriendFinalCombat: {
         type: "combat",
-        monsterHealth: 60,
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
     },
