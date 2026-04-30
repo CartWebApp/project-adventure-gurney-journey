@@ -200,15 +200,15 @@ function giveItem(itemName) {
 
 function useItem(item) {
 
-if (item.type === "food") {
-    player.hunger = Math.min(100, player.hunger + item.hunger);
-    inventory.splice(inventory.indexOf(item), 1);
-}
+    if (item.type === "food") {
+        player.hunger = Math.min(100, player.hunger + item.hunger);
+        inventory.splice(inventory.indexOf(item), 1);
+    }
 
-else if (item.type === "heal") {
-    player.health = Math.min(100, player.health + item.heal);
-    inventory.splice(inventory.indexOf(item), 1);
-}
+    else if (item.type === "heal") {
+        player.health = Math.min(100, player.health + item.heal);
+        inventory.splice(inventory.indexOf(item), 1);
+    }
     else if (item.type === "extraLife") {
         player.hasExtraLife = true;
     }
@@ -482,34 +482,7 @@ function game() {
             renderStep(currentStep);
         };
     }
-
-    // if (settingsContinue) {
-    //     settingsContinue.onclick = () => {
-    //         const step = story[currentStep];
-    //         let sceneToReturn;
-
-    //         if (!step) {
-    //             sceneToReturn = sceneMenu2;
-    //         } else if (step.type === "dialogueIntro") {
-    //             sceneToReturn = sceneIntro;
-    //         } else if (step.type === "choiceIntro") {
-    //             sceneToReturn = sceneDecisionTwoIntro;
-    //         } else if (step.type === "choiceTwo") {
-    //             sceneToReturn = sceneDecisionTwo;
-    //         } else if (step.type === "choiceThree") {
-    //             sceneToReturn = sceneDecisionThree;
-    //         } else if (step.type === "dialogueStory") {
-    //             sceneToReturn = sceneStory;
-    //         } else if (step.type === "combat") {
-    //             sceneToReturn = sceneCombat;
-    //         } else {
-    //             sceneToReturn = sceneMenu2;
-    //         }
-
-    //         hideOverlayShowScene(sceneToReturn);
-    //     }
-    // }
-
+    
     if (settingsExit) {
         settingsExit.onclick = () => {
             hideOverlayShowScene(sceneHome);
@@ -2904,14 +2877,10 @@ const story = {
     },
 
     withJustinFight1: {
-        type: "dialogueStory",
-        speaker: "The Narrator",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "Teddy and Justin fight the monster, they severely wound it, but they failed to retrieve the key... The monster escapes and runs back to its nest.",
-        options: [
-            { text: "> Continue", next: "withJustinAfterMonster0" }
-        ]
+        type: "combat",
+        monsterHealth: 40,
+        winNext: "withJustinAfterMonster0",
+        loseNext: "withJustinLose",
     },
 
     withJustinRun1: {
