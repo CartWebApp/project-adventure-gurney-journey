@@ -109,9 +109,14 @@ function saveState() {
 
 const items = [
     { name: "Bread", type: "food", hunger: 10, img: "/Images/bread.png" },
+    { name: "Protein Bars", type: "food", hunger: 20, img: "/Images/bread.png" },
+    { name: "McChicken", type: "food", hunger: 30, img: "/Images/bread.png" },
+    { name: "Fries", type: "food", hunger: 15, img: "/Images/bread.png" },
     { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
+    { name: "Machete", type: "weapon", multi: 2, img: "/Images/knife.png" },
     { name: "Bandages", type: "heal", heal: 10, img: "/Images/knife.png" },
-    { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" }
+    { name: "Medkit", type: "heal", heal: 50, img: "/Images/knife.png" },
+    { name: "Totem", type: "extraLife", img: "/Images/bread.png" }
 ]
 
 let combatWinNext = null;
@@ -124,6 +129,7 @@ const player = {
     hasFriend: false,
     hasExtraLife: false,
     weapon: null,
+    weaponActive: false,
     friend: null
 };
 
@@ -148,27 +154,18 @@ function progressBars() {
 
 let inventory = [];
 
-function updateInventory() {
-    //weapons
-    if (player.weapon == "Rusty Knife") {
-        player.damage *= 1.5;
-        console.log(player.damage)
-    }
-}
-
 function randomItem() {
     const index = Math.floor(Math.random() * items.length);
     return items[index];
 }
 
 function searchRoom() {
-    const found = Math.random() < 0.7;
+    const found = Math.random() < 0.30;
 
     if (!found) {
         console.log("You found nothing...");
         return;
     }
-
     addRandomItem();
 }
 
@@ -181,26 +178,67 @@ function addRandomItem() {
     if (item.type === "weapon") {
         player.weapon = item;
     }
-    updateInventory();
+    renderInventory();
+}
+
+function equipWeapon(item) {
+    player.weapon = item;
+    player.damage *= item.multi;
+}
+
+function giveItem(itemName) {
+    const item = items.find(i => i.name === itemName);
+    if (!item) return;
+
+    inventory.push(item);
+
+    if (item.type === "weapon") {
+        equipWeapon(item);
+    }
+    renderInventory();
+}
+
+function useItem(item) {
+
+if (item.type === "food") {
+    player.hunger = Math.min(100, player.hunger + item.hunger);
+    inventory.splice(inventory.indexOf(item), 1);
+}
+
+else if (item.type === "heal") {
+    player.health = Math.min(100, player.health + item.heal);
+    inventory.splice(inventory.indexOf(item), 1);
+}
+    else if (item.type === "extraLife") {
+        player.hasExtraLife = true;
+    }
+
+    else if (item.type === "weapon") {
+        equipWeapon(item);
+    }
+
+    progressBars();
     renderInventory();
 }
 
 function renderInventory() {
-    const slots = [
-        document.getElementById("slot1"),
-        document.getElementById("slot2"),
-        document.getElementById("slot3"),
-        document.getElementById("slot4"),
-    ];
+    const allSlot1 = document.querySelectorAll(".slot1");
+    const allSlot2 = document.querySelectorAll(".slot2");
+    const allSlot3 = document.querySelectorAll(".slot3");
+    const allSlot4 = document.querySelectorAll(".slot4");
 
-    slots.forEach(slot => slot.innerHTML = "");
+    [...allSlot1, ...allSlot2, ...allSlot3, ...allSlot4].forEach(slot => slot.innerHTML = "");
 
     inventory.forEach((item, index) => {
-        if (!slots[index]) return;
+        const allMatchingSlots = [allSlot1, allSlot2, allSlot3, allSlot4][index];
+        if (!allMatchingSlots) return;
 
-        slots[index].innerHTML = `
-           <img src="${item.img}" alt="${item.name}" id="${item.name}">
-       `;
+        allMatchingSlots.forEach(slot => {
+            slot.innerHTML = `<img src="${item.img}" alt="${item.name}" style="cursor:pointer;">`;
+            slot.querySelector("img").onclick = () => {
+                useItem(item);
+            };
+        });
     });
 }
 
@@ -315,6 +353,36 @@ function monsterTurn() {
     playersTurn = true;
 }
 
+let currentTimer = null;
+
+function typeWriter(element, text, speed = 30) { // type writer animation for dialogue
+    element.textContent = "";
+    let i = 0;
+    let done = false;
+
+    if (currentTimer) {
+        clearInterval(currentTimer);
+    }
+
+    currentTimer = setInterval(() => {
+        element.textContent += text[i];
+        i++;
+
+        if (i >= text.length) {
+            clearInterval(currentTimer);
+            done = true;
+        }
+    }, speed);
+
+    element.onclick = () => {
+        if (!done) {
+            clearInterval(currentTimer);
+            element.textContent = text;
+            done = true;
+        }
+    };
+}
+
 // Just the base for the audio, I will add a sound later
 // let song = new Audio("sounds/heresound");
 
@@ -413,7 +481,7 @@ function game() {
             showScene(sceneStory);
             renderStep(currentStep);
         };
-    
+    }
 
     // if (settingsContinue) {
     //     settingsContinue.onclick = () => {
@@ -470,7 +538,6 @@ function game() {
 }
 
 progressBars()
-updateInventory()
 game()
 
 console.log(player.health)
@@ -831,6 +898,7 @@ const story = {
         image: null,
         bgImage: "Images/McDonalds.png",
         hungerChange: 15,
+        item: "McChicken",
         text: "Anderdingus saves some McChickens for later...",
         options: [
             { text: "> Continue", next: "withAnderdingusAsylum0" }
@@ -1693,6 +1761,7 @@ const story = {
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "At first there is nothing useful, but as they search more and more, they find a weird looking totem.",
+        item: "Totem",
         options: [
             { text: "> Continue", next: "withAnderdingusTotemFind2" }
         ]
@@ -1810,6 +1879,7 @@ const story = {
         image: "Images/anderdingus-full.png",
         bgImage: "Images/story-mechanics.png",
         text: "Look what I found!",
+        item: "Machete",
         options: [
             { text: "< Go Back", next: "withAnderdingusMacheteFind" },
             { text: "> Continue", next: "withAnderdingusMacheteFind3" }
@@ -2037,7 +2107,7 @@ const story = {
 
     withAnderdingusCombat: {
         type: "combat",
-        monsterHealth: 50,
+        monsterHealth: 150,
         winNext: "withAnderdingusWin",
         loseNext: "withAnderdingusLose",
     },
@@ -2268,6 +2338,7 @@ const story = {
         image: null,
         bgImage: "Images/McDonalds.png",
         hungerChange: 15,
+        item: "Fries",
         text: "Teddy saves some fries for later...",
         options: [
             { text: "> Continue", next: "withJustinAsylum0" }
@@ -2920,6 +2991,7 @@ const story = {
         bgImage: "Images/story-mechanics.png",
         hungerChange: 10,
         text: "Teddy searches the room while Justin is on lookout. After a minute of searching Teddy finds 5 old protein bars. They then continue exploring.",
+        item: "Protein Bars",
         options: [
             { text: "> Continue", next: "withJustinBreak0" }
         ]
@@ -3014,6 +3086,7 @@ const story = {
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "They search the rooms and they find a mysterious totem...",
+        item: "Totem",
         options: [
             { text: "> Continue", next: "withJustinTotemFind2" }
         ]
@@ -3539,7 +3612,7 @@ const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        hungerChange: 15,
+        hungerChange: 1,
         text: "Teddy saves some fries for later...",
         options: [
             { text: "> Continue", next: "noFriendAsylum0" }
@@ -4090,6 +4163,7 @@ const story = {
         bgImage: "Images/story-mechanics.png",
         healthChange: 10,
         text: "Teddy searches the rooms and luckily he finds some bandages. Teddy stores the bandages and continues exploring after.",
+        item: "Bandages",
         options: [
             { text: "> Continue", next: "noFriendIntersection" }
         ]
@@ -4136,7 +4210,8 @@ const story = {
         image: null,
         bgImage: "Images/story-mechanics.png",
         hungerChange: 15,
-        text: "Teddy goes left, as Teddy continues forward and he finds the asylum's cafeteria. Teddy searches the cafeteria for food and he finds 2 pieces of old bread.",
+        text: "Teddy goes left, as Teddy continues forward and he finds the asylum's cafeteria. Teddy searches the cafeteria for food and he finds a pieces of old bread.",
+        item: "Bread",
         options: [
             { text: "> Continue", next: "noFriendBreakChoice2" }
         ]
@@ -4321,6 +4396,10 @@ function renderStep(stepId) {
     //see the current step in the story
     const step = story[stepId];
 
+    if (step.item) { //gives player items in specific scenes
+        giveItem(step.item);
+    }
+
     if (!step || step.type === "gameOver") {
         showScene(sceneGameOver);
         return;
@@ -4454,5 +4533,5 @@ function renderStep(stepId) {
             btn.style.display = "none";
         }
     });
-
+    typeWriter(activeDialogue, step.text);
 }
