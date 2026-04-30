@@ -628,6 +628,16 @@
                     background-color: #001938c5;
                     box-shadow: inset 0 0 10px 0 #67abffc5;
 
+                    &>h3 {
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 100;
+                        font-size: 16px;
+                        width: 175px;
+                        height: 60px;
+                    }
                     
                 }
             }
