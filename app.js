@@ -132,7 +132,7 @@ const player = {
 };
 
 const monsterBigEyes = {
-    health: 150,
+    health: 75,
     damage: 10,
 };
 
@@ -616,9 +616,6 @@ function game() {
 progressBars()
 game()
 
-console.log(player.health)
-console.log(player.hasExtraLife)
-console.log(monsterBigEyes.health)
 
 // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- // -- DIALOG HERE -- //
 
@@ -2982,7 +2979,7 @@ const story = {
         type: "combat",
         winNext: "withJustinAfterMonster0",
         loseNext: "withJustinLose",
-        monsterHealth: 150,
+        monsterHealth: 75,
     },
 
     withJustinRun1: {
@@ -3508,7 +3505,7 @@ const story = {
         type: "combat",
         winNext: "withJustinWin",
         loseNext: "withJustinLose",
-        monsterHealth: 150,
+        monsterHealth: 75,
     },
 
     withJustinLose: {
@@ -4340,7 +4337,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
-        monsterHealth: 150,
+        monsterHealth: 75,
     },
 
     noFriendRunMonster: {
@@ -4438,7 +4435,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
-        monsterHealth: 150,
+        monsterHealth: 75,
     },
 
     noFriendLose: {
