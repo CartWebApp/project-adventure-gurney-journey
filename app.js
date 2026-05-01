@@ -370,7 +370,7 @@ function combatRender() {
 
         if (escape) {
             fighting = false;
-            updateCombatLog("You retreat from the monster, luckily the monster didn't chase you. You escaped successfully!");
+            updateCombatLog("You retreat from the monster, luckly the monster didn't chase you. You escaped successfully!");
             setTimeout(() => {
                 if (combatWinNext) {
                     renderStep(combatWinNext);
@@ -2424,7 +2424,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/DonaldsSideWalk.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Yo we should check out that insane asylum.",
         options: [
             { text: "> Continue", next: "withJustinAsylum1" }
@@ -2435,7 +2435,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/DonaldsSideWalk.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Hell yeah man lets go, lets run there.",
         options: [
             { text: "< Go Back", next: "withJustinAsylum0" },
@@ -2447,7 +2447,7 @@ const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/DonaldsSideWalk.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "Lets race there.",
         options: [
             { text: "< Go Back", next: "withJustinAsylum1" },
@@ -2459,7 +2459,7 @@ const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/DonaldsSideWalk.png",
+        bgImage: "Images/DonaldSideWalk.png",
         text: "They race towards the insane asylum...",
         options: [
             { text: "> Continue", next: "withJustinAsylum4" }
@@ -4567,7 +4567,7 @@ function renderStep(stepId) {
         if (!btn) return;
 
         if (step.options[i]) {
-            btn.style.display = "block";
+            btn.style.display = "flex";
             btn.textContent = step.options[i].text;
 
             btn.onclick = () => {
