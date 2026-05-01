@@ -132,7 +132,7 @@ const player = {
 };
 
 const monsterBigEyes = {
-    health: 75,
+    health: 45,
     damage: 3,
 };
 
@@ -2973,7 +2973,7 @@ const story = {
         type: "combat",
         winNext: "withJustinAfterMonster0",
         loseNext: "withJustinLose",
-        monsterHealth: 75,
+        monsterHealth: 45,
     },
 
     withJustinRun1: {
@@ -3499,7 +3499,7 @@ const story = {
         type: "combat",
         winNext: "withJustinWin",
         loseNext: "withJustinLose",
-        monsterHealth: 75,
+        monsterHealth: 45,
     },
 
     withJustinLose: {
@@ -4331,7 +4331,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
-        monsterHealth: 75,
+        monsterHealth: 450,
     },
 
     noFriendRunMonster: {
@@ -4429,7 +4429,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
-        monsterHealth: 75,
+        monsterHealth: 45,
     },
 
     noFriendLose: {
@@ -4575,7 +4575,7 @@ function renderStep(stepId) {
                     showScene(sceneCombat);
                     combatWinNext = nextStep.winNext;
                     combatLoseNext = nextStep.loseNext;
-                    monsterBigEyes.health = nextStep.monsterHealth || 75;
+                    monsterBigEyes.health = nextStep.monsterHealth || 45;
                     fighting = true;
                     playersTurn = true;
                     playerDefending = false;
