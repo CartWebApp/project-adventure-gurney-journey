@@ -1,10 +1,6 @@
-// NEXT THING TO DO IS TO CONNECT THE GAME OVER PAGE WHEN THERE IS A GAME OVER TYPE STEP
-// CONNECT OVERLAYS BUTTONS WITH PAGES
-
-
 // -- BUTTONS -- //
-const retryButton = document.getElementById("retry");
-const mainMenuButton = document.getElementById("mainmenu");
+const retryButton = document.querySelector(".retry");
+const mainMenuButton = document.querySelector(".mainmenu");
 const extraLifeYes = document.getElementById("extra-life-yes-button");
 const extraLifeNo = document.getElementById("extra-life-no-button");
 const VolumeIcon = document.querySelector('.Volume');
@@ -20,6 +16,7 @@ const playButton = document.getElementById("play-button");
 const goBackButtonSecondPage = document.querySelector(".go-back-button");
 const goBackBtn = document.querySelector(".go-back-button-text");
 const continueBtn = document.querySelector(".continue-button-text");
+const combatContinueBtn = document.querySelector("#scene-combat .decision2");
 
 // -- PAGES SCENES -- //
 const sceneHome = document.getElementById("scene-home");
@@ -33,7 +30,7 @@ const sceneDecisionTwo = document.getElementById("scene-decision-two");
 const sceneDecisionTwoIntro = document.getElementById("scene-decision-two-intro");
 const sceneDecisionThree = document.getElementById("scene-decision-three");
 const sceneCombat = document.getElementById("scene-combat");
-const combatContinueBtn = document.querySelector("#scene-combat .decision2");
+const sceneEscape = document.getElementById("scene-escape");
 
 // -- PROGRESS BAR -- //
 const playerHealth = document.querySelectorAll(".health-progress");
@@ -511,7 +508,7 @@ function game() {
 
     if (settingsContinue) {
         settingsContinue.onclick = () => {
-            hideOverlay(settingsOverlay); 
+            hideOverlay(settingsOverlay);
         }
     }
 
@@ -4599,7 +4596,10 @@ function renderStep(stepId) {
                     return;
                 }
 
-                if (!next) return;
+                if (!next) {
+                    showScene(sceneEscape);
+                    return;
+                }
 
                 renderStep(next);
             };

@@ -22,7 +22,7 @@
                 <div id="chains"></div>
                 <article id="leaderboard">
                     <h4>Leaderboard</h4>
-                    <ol>
+                    <ol id="leaderboard-list">
                         <li>
                             <p>Username</p> <span>Health</span>
                         </li>
@@ -411,7 +411,7 @@
     </section>
 
     <!-- SCENE 10: COMBAT -->
-    <section id="scene-combat" class="scene active">
+    <section id="scene-combat" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
@@ -513,10 +513,10 @@
             </section>
 
             <section class="retry-menu">
-                <div id="retry">
+                <div class="retry">
                     <p>Retry</p>
                 </div>
-                <div id="mainmenu">
+                <div class="mainmenu">
                     <p>Main Menu</p>
                 </div>
             </section>
@@ -524,16 +524,16 @@
     </section>
 
     <!-- Escaped scene -->
-    <section class="scene-escape hidden">
+    <section id="scene-escape" class="scene hidden">
         <main id="escaped-main">
 
             <h1>You escaped!</h1>
 
             <section class="retry-menu">
-                <div id="retry">
+                <div class="retry">
                     <p>Retry</p>
                 </div>
-                <div id="mainmenu">
+                <div class="mainmenu">
                     <p>Main Menu</p>
                 </div>
             </section>
