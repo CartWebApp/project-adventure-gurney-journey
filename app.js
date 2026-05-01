@@ -123,7 +123,7 @@ let combatLoseNext = null;
 const player = {
     health: 100,
     hunger: 100,
-    damage: 5,
+    damage: 7.5,
     hasFriend: false,
     hasExtraLife: false,
     weapon: null,
@@ -133,7 +133,7 @@ const player = {
 
 const monsterBigEyes = {
     health: 75,
-    damage: 10,
+    damage: 3,
 };
 
 function progressBars() {
