@@ -1,6 +1,8 @@
 // -- BUTTONS -- //
 const retryButton = document.querySelector(".retry");
 const mainMenuButton = document.querySelector(".mainmenu");
+const mainMenuButtonEscaped = document.querySelector(".mainmenu-escaped");
+const retryButtonEscaped = document.querySelector(".retry-escaped");
 const extraLifeYes = document.getElementById("extra-life-yes-button");
 const extraLifeNo = document.getElementById("extra-life-no-button");
 const VolumeIcon = document.querySelector('.Volume');
@@ -99,6 +101,9 @@ function hideOverlayShowScene(sceneToShow) {
     showScene(sceneToShow);
 }
 
+mainMenuButton.onclick = () => {
+    console.log("main menyu")
+}
 
 // this saves the game process so there is no glitches
 function saveState() {
@@ -599,6 +604,14 @@ function game() {
     retryButton.onclick = () => {
         showScene(sceneMenu2);
     };
+
+    mainMenuButtonEscaped.onclick = () => {
+        showScene(sceneHome);
+    };
+    retryButtonEscaped.onclick = () => {
+        showScene(sceneMenu2);
+    };
+
     extraLifeNo.onclick = () => {
         showScene(sceneHome);
     };
