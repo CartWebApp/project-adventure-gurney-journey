@@ -604,6 +604,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    animation: scaleUp 0.3s ease-out forwards;
                 }
             }
 
@@ -1407,7 +1408,7 @@
             animation: scaleUp 0.2s ease forwards;
         }
 
-        &>#exit-program {
+        &>#exit-program-settings {
             color: #EC5050;
         }
     }
