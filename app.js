@@ -161,7 +161,6 @@ function searchRoom() {
     const found = Math.random() < 0.30;
 
     if (!found) {
-        console.log("You found nothing...");
         return;
     }
     addRandomItem();
@@ -170,8 +169,6 @@ function searchRoom() {
 function addRandomItem() {
     const item = randomItem();
     inventory.push(item);
-
-    console.log("Found:", item.name);
 
     if (item.type === "weapon") {
         player.weapon = item;
@@ -297,7 +294,6 @@ function setCombatButtonsVisible(visible) {
 if (attackButton) {
     attackButton.onclick = () => {
         if (!playersTurn || !fighting) return;
-        console.log("Attack clicked");
 
         selectedAction = "attack";
         selectCombatButton(attackButton);
@@ -422,8 +418,6 @@ function monsterTurn() {
         bar.offsetHeight;
         bar.style.animation = "shake 0.2s ease";
     });
-
-    console.log("Player HP:", player.health);
 
     if (player.health <= 0) {
         fighting = false;
