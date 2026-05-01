@@ -181,10 +181,14 @@ function addRandomItem() {
     renderInventory();
 }
 
+const baseDamage = player.damage;
+
 function equipWeapon(item) {
 
+    if (player.weapon === item) return;
+
     player.weapon = item;
-    player.damage *= item.multi;
+    player.damage = baseDamage * item.multi;
 }
 
 function giveItem(itemName) {
@@ -2878,6 +2882,7 @@ const story = {
         type: "combat",
         winNext: "withJustinAfterMonster0",
         loseNext: "withJustinLose",
+        monsterHealth: 150,
     },
 
     withJustinRun1: {
@@ -3403,6 +3408,7 @@ const story = {
         type: "combat",
         winNext: "withJustinWin",
         loseNext: "withJustinLose",
+        monsterHealth: 150,
     },
 
     withJustinLose: {
@@ -4233,7 +4239,8 @@ const story = {
     noFriendFightMonster: {
         type: "combat",
         winNext: "noFriendWin",
-        loseNext: "noFriendLose"
+        loseNext: "noFriendLose",
+        monsterHealth: 150,
     },
 
     noFriendRunMonster: {
@@ -4331,6 +4338,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
+        monsterHealth: 150,
     },
 
     noFriendLose: {
