@@ -33,6 +33,7 @@ const sceneDecisionTwo = document.getElementById("scene-decision-two");
 const sceneDecisionTwoIntro = document.getElementById("scene-decision-two-intro");
 const sceneDecisionThree = document.getElementById("scene-decision-three");
 const sceneCombat = document.getElementById("scene-combat");
+const combatContinueBtn = document.querySelector("#scene-combat .decision2");
 
 // -- PROGRESS BAR -- //
 const playerHealth = document.querySelectorAll(".health-progress");
@@ -254,13 +255,80 @@ if (document.getElementById("search")) {
 let playersTurn = true;
 let fighting = true;
 let playerDefending = false;
+let selectedAction = null;
+
+// doing dialgue in combat here because it is easier to track every combat page instead of doing it for every single combat step in the story dialogue
+function updateCombatLog(message) {
+    // selecting the p elemnt in the combat dialogue
+    const combatDialogue = document.querySelector(".description-text-section-combat .description-text");
+    if (combatDialogue) {
+        typeWriter(combatDialogue, message);
+    }
+}
+
+function selectCombatButton(selectedBtn) {
+    const allCombatBtns = [attackButton, defendButton, runButton];
+
+    allCombatBtns.forEach(btn => {
+        if (btn) btn.style.opacity = "1";
+    });
+
+    if (selectedBtn) selectedBtn.style.opacity = "0.75";
+}
+
+function setCombatButtonsVisible(visible) {
+
+    if (attackButton) {
+        attackButton.style.display = visible ? "flex" : "none"; // if visible true it will display flex if not it will hide it
+    }
+    if (defendButton) {
+        defendButton.style.display = visible ? "flex" : "none";
+    }
+    if (runButton) {
+        runButton.style.display = visible ? "flex" : "none";
+    }
+
+    if (combatContinueBtn) {
+        combatContinueBtn.style.display = visible ? "flex" : "none";
+    }
+}
 
 if (attackButton) {
     attackButton.onclick = () => {
+        if (!playersTurn || !fighting) return;
         console.log("Attack clicked");
 
+        selectedAction = "attack";
+        selectCombatButton(attackButton);
+    };
+}
+
+if (defendButton) {
+    defendButton.onclick = () => {
         if (!playersTurn || !fighting) return;
-        monsterBigEyes.health -= player.damage;
+
+        selectedAction = "defend";
+        selectCombatButton(defendButton);
+    };
+}
+
+if (runButton) {
+    runButton.onclick = () => {
+        if (!playersTurn || !fighting) return;
+
+        selectedAction = "run";
+        selectCombatButton(runButton);
+    };
+}
+
+function combatRender() {
+    if (!selectedAction || !playersTurn || !fighting) return;
+
+    if (selectedAction === "attack") {
+
+        const dmgDealt = player.damage;
+
+        monsterBigEyes.health -= dmgDealt;
         player.hunger -= 2.5;
 
         bigEyesHealth.forEach(bar => {
@@ -269,48 +337,54 @@ if (attackButton) {
             bar.style.animation = "shake 0.2s ease";
         });
 
-        console.log("monster health", monsterBigEyes.health);
-
         progressBars();
 
         if (monsterBigEyes.health <= 0) {
+
             fighting = false;
             progressBars();
-            if (combatWinNext) {
-                renderStep(combatWinNext);
-            }
+            updateCombatLog(`You attack the monster for ${dmgDealt} damage. After a brutal battle, you defeat the monster! You win!`);
+            setTimeout(() => {
+                if (combatWinNext) {
+                    renderStep(combatWinNext);
+                }
+            }, 1500);
             return;
         }
-        endPlayerTurn();
-    };
-}
 
-if (defendButton) {
-    defendButton.onclick = () => {
-        if (!playersTurn || !fighting) return;
+        updateCombatLog(`You attack the monster for ${dmgDealt} damage. The monster is still alive! Keep fighting!`);
+
+    }
+    else if (selectedAction === "defend") {
 
         playerDefending = true;
-        console.log("player defending");
-        progressBars()
+        updateCombatLog("You defended yourself, it looks like the monster berely damaged you! Nice block!");
+        selectedAction = null;
+        selectCombatButton(null);
         endPlayerTurn();
-    };
-}
 
-if (runButton) {
-    runButton.onclick = () => {
-        if (!playersTurn || !fighting) return;
-
+    }
+    else if (selectedAction === "run") {
         const escape = Math.random() < 0.5;
 
         if (escape) {
             fighting = false;
+            updateCombatLog("You retreat from the monster, luckily the monster didn't chase you. You escaped successfully!");
+            setTimeout(() => {
+                if (combatWinNext) {
+                    renderStep(combatWinNext);
+                }
+            }, 1500);
+            return;
         }
 
-        else {
-            endPlayerTurn();
-        }
-    };
-}
+        updateCombatLog("You try to run but the monster is faster than you! You're forced to keep fighting.");
+    }
+
+    selectedAction = null;
+    selectCombatButton(null);
+    endPlayerTurn();
+};
 
 function endPlayerTurn() {
     playersTurn = false;
@@ -328,6 +402,14 @@ function monsterTurn() {
     if (playerDefending) {
         damage *= 0.5;
         playerDefending = false;
+        setTimeout(() => {
+            updateCombatLog(`The monster deals you ${damage} damage. Luckly you defended yourself, now you only take ${damage} damage!`);
+        }, 4000);
+    }
+    else {
+        setTimeout(() => {
+            updateCombatLog(`The monster deals you ${damage} damage. Next time try to defend yourself becuase that really hurt!`);
+        }, 4000);
     }
 
     player.health -= damage;
@@ -345,13 +427,28 @@ function monsterTurn() {
     if (player.health <= 0) {
         fighting = false;
         progressBars();
-        if (combatLoseNext) {
-            renderStep(combatLoseNext);
-        } else {
-            showScene(sceneGameOver);
-        }
+        updateCombatLog("Your health is gone. The monster has defeated you! You lose!");
+        setTimeout(() => {
+            if (combatLoseNext) {
+                renderStep(combatLoseNext);
+            } else {
+                showScene(sceneGameOver);
+            }
+        }, 8000);
+        return
     }
     playersTurn = true;
+
+    setTimeout(() => {
+        updateCombatLog("The monster finished its attack. Now pick between attacking, defending or running away!");
+        selectedAction = null;
+        selectCombatButton(null);
+
+        if (combatContinueBtn) {
+            combatContinueBtn.onclick = combatRender;
+        }
+
+    }, 8000);
 }
 
 let currentTimer = null;
@@ -405,6 +502,12 @@ function game() {
     if (settingsOverlay) {
         settingsOverlayBackground.onclick = () => {
             hideOverlay(settingsOverlay)
+        }
+    }
+
+    if (settingsContinue) {
+        settingsContinue.onclick = () => {
+            hideOverlay(settingsOverlay); 
         }
     }
 
@@ -4471,13 +4574,19 @@ function renderStep(stepId) {
                 }
 
                 const nextStep = story[next];
+
                 if (nextStep && nextStep.type === "combat") {
                     showScene(sceneCombat);
                     combatWinNext = nextStep.winNext;
                     combatLoseNext = nextStep.loseNext;
-                    monsterBigEyes.health = nextStep.monsterHealth;
+                    monsterBigEyes.health = nextStep.monsterHealth || 75;
                     fighting = true;
                     playersTurn = true;
+                    playerDefending = false;
+                    selectedAction = null;
+                    selectCombatButton(null);
+                    combatContinueBtn.onclick = combatRender;
+                    updateCombatLog("You confront the monster bravely, be ready to attack and defend yourself to win this battle!");
                     progressBars();
                     return;
                 }
