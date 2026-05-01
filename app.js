@@ -4331,7 +4331,7 @@ const story = {
         type: "combat",
         winNext: "noFriendWin",
         loseNext: "noFriendLose",
-        monsterHealth: 450,
+        monsterHealth: 45,
     },
 
     noFriendRunMonster: {
