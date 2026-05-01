@@ -1428,11 +1428,21 @@
 
 /* ESCAPED SCENE */
 
-.escaped-main {
+#escaped-main {
     display: flex;
     flex-direction: column;
+    margin: 0;
 
-    background-image: url(/Images/CashierDonalds.png);
+    background-image: url(/Images/escapedbackground.png);
+    background-size: cover;
+    height: 100svh;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+
+    &>h1 {
+        font-size: 100px;
+    }
 
     &>section {
         align-self: center;
