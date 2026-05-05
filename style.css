@@ -206,6 +206,12 @@
     margin-bottom: 20px;
 }
 
+#index-continue:hover {
+    animation: scaleUp 0.1s ease-in forwards;
+    transition: 0.1s ease-in forwards;
+    border: 1px white solid;
+}
+
 
 @keyframes moveDown {
     0% {
@@ -360,8 +366,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: 0;
-        animation: FadeUp 0.5s ease-out forwards;
+        opacity: 1;
     }
 
     &>#play-button:hover {
@@ -386,7 +391,7 @@
             background-size: cover;
             width: 250px;
             height: 80px;
-            animation: moveup 0.5s ease-out forwards;
+            animation: moveup 1500ms ease-in forwards;
         }
 
         &>.go-back-button:hover {
@@ -410,7 +415,6 @@
                 background-size: cover;
                 width: 300px;
                 height: 80px;
-                animation: moveRight 0.5s ease-out forwards;
             }
 
             &>#achievements-button:hover {
@@ -427,7 +431,6 @@
                 background-size: cover;
                 width: 250px;
                 height: 60px;
-                animation: moveLeft 0.5s ease-out forwards;
             }
 
             &>#credits-button:hover {
