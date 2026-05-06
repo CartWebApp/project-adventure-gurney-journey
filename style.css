@@ -367,12 +367,11 @@
         justify-content: center;
         align-items: center;
         opacity: 1;
-    }
 
-    &>#play-button:hover {
-        animation: scaleUp 0.3s ease-out forwards;
+        &:hover {
+            animation: scaleUpTranslate 0.5s ease forwards;
+        }
     }
-
 
     &>.threeText {
         display: flex;
@@ -391,7 +390,6 @@
             background-size: cover;
             width: 250px;
             height: 80px;
-            animation: moveup 1500ms ease-in forwards;
         }
 
         &>.go-back-button:hover {
@@ -437,6 +435,19 @@
                 animation: scaleUp 0.3s ease-out forwards;
             }
         }
+    }
+}
+
+@keyframes scaleUpTranslate{
+    from {
+        transform: scale(1);
+        transform: translateY(0);
+        
+    }
+
+    to {
+        transform: scale(1.05);
+        transform: translateY(-3px);
     }
 }
 
@@ -1696,3 +1707,16 @@
         pointer-events: none;
     }
 } */
+
+
+@media screen and (min-width: 600px) {
+    .active {
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    
+}

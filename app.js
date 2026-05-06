@@ -517,24 +517,18 @@ function game() {
             const timer = setInterval(() => {
                 count++;
 
-                if (count >= 5) {
+                if (count >= 13) {
                     clickContinue.style.color = "black";
                 }
 
-                if (count >= 6) {
+                if (count >= 15) {
+                    clearInterval(timer);
                     indexContinue.style.animation = "none";
                     clickContinue.style.color = "#D9D9D9";
                     showScene(sceneMenu2);
+                
                 }
-
-                if (count >= 7) {
-                    playButton.style.animation = "FadeUp 1500ms ease-in forwards";
-                    goBackBtn.style.animation = "moveRight 1500ms ease-in forwards";
-                    achievementsButton.style.animation = "moveRight 1500ms ease-out forwards";
-                    creditsButton.style.animation = "moveLeft 1500ms ease-out forwards";
-                    clearInterval(timer); // this fixed the loop between pages (stops timer)
-                }
-            }, 480);
+            }, 200);
         }
     }
 
