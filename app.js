@@ -33,7 +33,6 @@ const sceneDecisionTwoIntro = document.getElementById("scene-decision-two-intro"
 const sceneDecisionThree = document.getElementById("scene-decision-three");
 const sceneCombat = document.getElementById("scene-combat");
 const sceneEscape = document.getElementById("scene-escape");
-const scenePuzzle = document.getElementById("scene-puzzle"); 
 
 // -- PROGRESS BAR -- //
 const playerHealth = document.querySelectorAll(".health-progress");
@@ -59,11 +58,6 @@ const achievementsOverlay = document.getElementById("achievements-overlay-contai
 const settingsContinue = document.getElementById("continue-settings");
 const settingsRestart = document.getElementById("restart-program-settings");
 const settingsExit = document.getElementById("exit-program-settings");
-
-// -- Puzzle -- //
-const roundNumber = document.getElementById("round-numbers");
-const circlePuzzle = document.querySelector(".circle");
-const tileButton = document.querySelector(".tile"); 
 
 // This is the switcher for each page active and hidden
 function showScene(sceneToShow) {
@@ -1739,15 +1733,9 @@ const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Do the puzzle to get into the storage room", next: "withAnderdingusPuzzle1" },
+            { text: "Do the puzzle to get into the storage room", next: "withAnderdingusStorageSolve" },
             { text: "Don't take the risk and continue exploring", next: "withAnderdingusRoom0" }
         ]
-    },
-
-    withAnderdingusPuzzle1: {
-        type: "puzzle",
-        winNext: "withAnderdingusStorageSolve",
-        loseNext: "withAnderdingusLose",
     },
 
     withAnderdingusStorageSolve: {
@@ -1773,22 +1761,15 @@ const story = {
     },
 
     withAnderdingusRoomChoice: {
-        type: "choiceThree",
+        type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
             { text: "Scavenge the room", next: "withAnderdingusRoomSearch" },
-            { text: "Do a puzzle", next: "withAnderdingusPuzzle2" },
             { text: "Ignore the room, continue exploring", next: "withAnderdingusDeeper0" }
         ]
-    },
-
-    withAnderdingusPuzzle2: {
-        type: "puzzle",
-        winNext: "withAnderdingusRoomSearch",
-        loseNext: "withAnderdingusLose",
     },
 
     withAnderdingusRoomSearch: {
@@ -1814,22 +1795,15 @@ const story = {
     },
 
     withAnderdingusDeeper1: {
-        type: "choiceThree",
+        type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
-            { text: "Do a puzzle", next: "withAnderdingusPuzzle3" },
             { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
         ]
-    },
-
-    withAnderdingusPuzzle3: {
-        type: "puzzle",
-        winNext: "withAnderdingusDeeperSearch",
-        loseNext: "withAnderdingusLose",
     },
 
     withAnderdingusDeeperSearch: {
@@ -1856,22 +1830,15 @@ const story = {
     },
 
     withAnderdingusTotemChoice: {
-        type: "choiceThree",
+        type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
             { text: "Search rooms", next: "withAnderdingusTotemFind" },
-            { text: "Do a puzzle", next: "withAnderdingusPuzzle4" },
             { text: "Listen to Anderdingus, keep going", next: "withAnderdingusMachete0" }
         ]
-    },
-
-    withAnderdingusPuzzle4: {
-        type: "puzzle",
-        winNext: "withAnderdingusTotemFind",
-        loseNext: "withAnderdingusLose",
     },
 
     withAnderdingusTotemFind: {
@@ -1970,25 +1937,16 @@ const story = {
     },
 
     withAnderdingusMacheteChoice: {
-        type: "choiceThree",
+        type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusMacheteFind" },
-            { text: "Do a puzzle", next: "withAnderdingusPuzzle5" },
             { text: "Go deeper to look for the nest of monster 2", next: "withAnderdingusHallway0" }
         ]
     },
-
-    withAnderdingusPuzzle5: {
-        type: "puzzle",
-        winNext: "withAnderdingusMacheteFind",
-        loseNext: "withAnderdingusLose",
-    },
-
-    // -- ||| CONTINUE HERE! ||| -- //
 
     withAnderdingusMacheteFind: {
         type: "dialogueStory",
