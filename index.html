@@ -11,7 +11,7 @@
 
 <body>
     <!-- SCENE 1: HOME -->
-    <section id="scene-home" class="scene active">
+    <section id="scene-home" class="scene hidden">
         <nav class="homenav">
             <img draggable="false" src="/Images/woodnav.png">
         </nav>
@@ -109,6 +109,7 @@
     <section id="scene-intro" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -143,6 +144,7 @@
     <section id="scene-decision-two-intro" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -197,6 +199,7 @@
     <section id="scene-friend" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -238,6 +241,7 @@
     <section id="scene-story-mechanics" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -296,6 +300,7 @@
     <section id="scene-decision-two" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -354,6 +359,7 @@
     <section id="scene-decision-three" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -414,6 +420,7 @@
     <section id="scene-combat" class="scene hidden">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
+            <button class="journal-button">Journal</button>
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
 
@@ -604,7 +611,66 @@
         </main>
     </section> -->
 
+    <!-- SCENE 11: SUMMARY -->
+
+    <section id="scene-summary" class="scene active">
+        <main id="summary-main">
+            <section class="summary-header">
+                <h1>Your Adventure</h1>
+                <h2 id="summary-ending-title"></h2>
+            </section>
+            <section class="summary-body">
+                <section class="summary-stats">
+                    <h3>Final Stats</h3>
+                    <section class="stat-row">
+                        <span>Health Remaining</span>
+                        <span id="summary-health"></span>
+                    </section>
+                    <section class="stat-row">
+                        <span>Hunger Remaining</span>
+                        <span id="summary-hunger"></span>
+                    </section>
+                    <section class="stat-row">
+                        <span>Total Choices Made</span>
+                        <span id="summary-choices-count"></span>
+                    </section>
+                    <section class="stat-row">
+                        <span>Story Steps Visited</span>
+                        <span id="summary-steps-count"></span>
+                    </section>
+                </section>
+                <section class="summary-path">
+                    <h3>Path Taken</h3>
+                    <div id="summary-path-entries"></div>
+                </section>
+                <section class="summary-choices">
+                    <h3>Key Choices</h3>
+                    <div id="summary-choice-entries"></div>
+                </section>
+            </section>
+            <section class="summary-buttons">
+                <div class="retry">
+                    <p>Play Again</p>
+                </div>
+                <div class="mainmenu">
+                    <p>Main Menu</p>
+                </div>
+            </section>
+        </main>
+    </section>
+
     <!--Overlay section -->
+
+    <dialog id="journal-overlay-container" class="overlay active">
+        <div id="journal-overlay-background"></div>
+        <section class="journal-overlay">
+            <div class="journal-header">
+                <h1>Journal</h1>
+                <button id="journal-close">✕ Close</button>
+            </div>
+            <div id="journal-entries"></div>
+        </section>
+    </dialog>
 
     <dialog id="achievements-overlay-container" class="overlay hidden">
         <div id="achievements-overlay-background"></div>

@@ -9,7 +9,9 @@ import {
     searchRoom,
     combatState,
     currentStep,
-    setCurrentStep
+    setCurrentStep,
+    choiceLog,
+    addToChoiceLog
 } from "./GameLogic.js";
 
 // -- BUTTONS -- //

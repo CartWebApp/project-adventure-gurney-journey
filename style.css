@@ -1444,7 +1444,8 @@
 #scene-decision-two,
 #scene-decision-three,
 #scene-combat,
-#scene-gameover {
+#scene-gameover,
+#scene-summary {
     background-size: cover;
     height: 100vh;
 }
@@ -1708,6 +1709,194 @@
     }
 } */
 
+#summary-main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: #D9D9D9;
+    overflow-y: auto;
+    max-height: 100vh;
+
+    & .summary-header {
+        text-align: center;
+        border-bottom: 2px solid darkred;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+
+        & h1 {
+            font-family: var(--creepyfont);
+            letter-spacing: 4px;
+            font-size: 48px;
+            margin: 0;
+        }
+
+        & h2 {
+            font-size: 24px;
+            color: #c8a97e;
+            margin: 5px 0 0 0;
+        }
+    }
+
+    & .summary-body {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        & .summary-stats,
+        & .summary-path,
+        & .summary-choices {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid darkred;
+            border-radius: 8px;
+            padding: 20px;
+
+            & h3 {
+                margin: 0 0 15px 0;
+                font-size: 24px;
+                color: darkred;
+                border-bottom: 1px solid darkred;
+                padding-bottom: 8px;
+            }
+        }
+
+        & .summary-stats {
+
+            & .stat-row {
+                display: flex;
+                justify-content: space-between;
+                padding: 6px 0;
+                border-bottom: 1px solid rgba(139,69,19,0.2);
+                font-size: 16px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        & .summary-path {
+
+            & .summary-path-entry {
+                display: flex;
+                gap: 12px;
+                margin-bottom: 10px;
+                padding: 8px;
+                border-left: 3px solid darkred;
+                background: rgba(255,255,255,0.02);
+
+                & .summary-path-number {
+                    color: darkred;
+                    font-size: 14px;
+                    min-width: 30px;
+                }
+
+                & .summary-path-text {
+                    font-size: 14px;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        & .summary-choices {
+
+            & .summary-choice-entry {
+                margin-bottom: 15px;
+                padding: 12px;
+                border-left: 3px solid #7fbf7f;
+                background: rgba(255,255,255,0.02);
+                border-radius: 0 4px 4px 0;
+
+                & .summary-choice-number {
+                    font-size: 13px;
+                    color: #7fbf7f;
+                    margin-bottom: 4px;
+                }
+
+                & .summary-choice-text {
+                    font-size: 16px;
+                    color: #D9D9D9;
+                    margin-bottom: 4px;
+                }
+
+                & .summary-choice-led {
+                    font-size: 14px;
+                    color: #D9D9D9;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    & .summary-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
+
+.journal-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-height: 75vh;
+    overflow-y: auto;
+    background: rgba(20, 10, 5, 0.9);
+    border: 2px solid darkred;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 67;
+    color: #D9D9D9;
+
+    & .journal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid darkred;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+
+        & h1 {
+            font-size: 32px;
+            font-family: var(--creepyfont);
+            letter-spacing: 4px;
+            color: darkred;
+        }
+
+        & #journal-close {
+            background: none;
+            border: 1px solid darkred;
+            color: #D9D9D9;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    }
+
+    & .journal-entry {
+        border-left: 3px solid darkred;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        background: rgba(255, 255, 255, 0.03);
+    }
+}
+
+#journal-button {
+    background: none;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+        border-color: darkred;
+        color: darkred;
+    }
+}
 
 @media screen and (min-width: 600px) {
     .active {

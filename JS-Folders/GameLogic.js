@@ -25,6 +25,10 @@ export const combatState = {
     loseNext: null,
 };
 
+export let journal = [];
+
+export let choiceLog = [];
+
 export let inventory = [];
 
 export let currentStep = "intro0";
@@ -129,4 +133,12 @@ export function useItem(item) {
 
     progressBars();
     renderInventory();
+}
+
+export function addToJournal() {
+    
+}
+
+export function addToChoiceLog() {
+
 }
