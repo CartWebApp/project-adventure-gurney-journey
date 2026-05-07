@@ -51,7 +51,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Introduction-image.png",
-        text: "What do you do?",
+        text: "Teddy is debating on turning the TV on or not. He is curious what and wants to check the news. Would you like to turn the TV on or not?",
         options: [
             { text: "Turn on TV", next: "tvNews" },
             { text: "Don't turn on TV", next: "afterNews" }
@@ -315,7 +315,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        text: "What do you do with the food?",
+        text: "They then sit down at a table and begin eating their food. Anderdingus completely devours his meal in 1 minute and Teddy only has his Mc Chicken left. He wonders if he should save his Mc Chicken for later...",
         options: [
             { text: "Finish all the food", next: "withAnderdingusFinishFood" },
             { text: "Save some for later", next: "withAnderdingusSaveFood" }
@@ -518,7 +518,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/DoorShut.png",
-        text: "What do you do?",
+        text: "The door is locked shut, no matter what it won't open. Teddy refuses to believe the door won't open and he thinks about ways to open it. His first idea is to run straight into the door and ram it open... What do you do?",
         options: [
             { text: "Ram the door yourself", next: "withAnderdingusRamSelf" },
             { text: "Tell Anderdingus to ram it", next: "withAnderdingusRamFriend" }
@@ -968,7 +968,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy and Anderdingus both run but it soon catches Anderdingus... What do you do?",
+        text: "Teddy and Anderdingus sprint for their lives trying to lose the monster at every turn. Unfortunately, Anderdingus rolls and sprains his ankle during the run for their lives which caused him to slow down. Teddy looks back and the Anderdingus is in the monster's grasp...",
         options: [
             { text: "Keep running, save yourself", next: "withAnderdingusRunSelf" },
             { text: "Go back and save Anderdingus", next: "withAnderdingusSaveFriend" }
@@ -1050,7 +1050,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Cafe-asylum.png",
-        text: "What do you do?",
+        text: "Teddy and Anderdingus are both out of breath, tired and shaking from what they just experienced. They continue exploring but Anderdingus eventually says they should take a break. Teddy feels that they've almost reached the key... What do you do?",
         options: [
             { text: "Continue exploring, no breaks", next: "withAnderdingusStorage0" },
             { text: "Take a break to rest and recover", next: "withAnderdingusRest" }
@@ -1075,7 +1075,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "They continue exploring and they find the storage room of the insane asylum. However, the storage room is locked and there is a small box with an alarm.",
+        text: "They continue exploring and they find the storage room of the insane asylum.",
         options: [
             { text: "> Continue", next: "withAnderdingusStorageChoice" }
         ]
@@ -1086,7 +1086,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: " However, the storage room is locked and there is a small box with an alarm. Teddy inspects the small box and realizes it is a puzzle. The type of puzzle is unknown, but once you start solving, there is no going back... What do you do?",
         options: [
             { text: "Do the puzzle to get into the storage room", next: "withAnderdingusStorageSolve" },
             { text: "Don't take the risk and continue exploring", next: "withAnderdingusRoom0" }
@@ -1109,7 +1109,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy and Anderdingus continue exploring... They find another room, but luckily the door is not locked.",
+        text: "Teddy and Anderdingus continue exploring... ",
         options: [
             { text: "> Continue", next: "withAnderdingusRoomChoice" }
         ]
@@ -1120,7 +1120,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: "After searching for a while, they come across a room. Teddy and Anderdingus hope to find resources in it so they try opening the door. Luckily it is unlocked but the room is seemingly empty... What do you do?",
         options: [
             { text: "Scavenge the room", next: "withAnderdingusRoomSearch" },
             { text: "Ignore the room, continue exploring", next: "withAnderdingusDeeper0" }
@@ -1143,7 +1143,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "As Teddy and Anderdingus venture deeper into the asylum, the air becomes colder, the feeling of danger is more prominent. Maybe they will find something more useful in these rooms.",
+        text: "As Teddy and Anderdingus venture deeper into the asylum, the air becomes colder...",
         options: [
             { text: "> Continue", next: "withAnderdingusDeeper1" }
         ]
@@ -1154,7 +1154,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: "The feeling of danger is more prominent. They notice another section and a sign for that section...'Solitary'. Teddy and Anderdingus enter the solitary section and find many solitary rooms... What do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
             { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
@@ -1189,7 +1189,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: "Teddy feels something mysterious calling out to him within those rooms. Teddy is unsure if those rooms are dangerous or if they will find something with great use. Teddy is debating on taking the risk and searching the rooms or to leave them... What do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
             { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
@@ -1296,7 +1296,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: "The rooms seem as if they lack significance. Despite seeming empty, there is something shiny in the dark corner of the room... Teddy notices it but what do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusMacheteFind" },
             { text: "Go deeper to look for the nest of monster 2", next: "withAnderdingusHallway0" }
@@ -1367,7 +1367,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail.png",
-        text: "The 2 boys feel like they can win against the monster now. So they continue searching. After walking around, going deeper and deeper, they find a long hallway, and at the end a mysterious room with blood trails leading to it. But there is also another room opposite the hallway...",
+        text: "The 2 boys feel like they can win against the monster now. So they continue searching.",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayChoice" }
         ]
@@ -1378,7 +1378,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "Which room do you go to?",
+        text: "After walking around, going deeper and deeper, they find a long hallway. At the end a mysterious room with blood trails leading to it. However, there is also another room opposite of the hallway... What do you do?",
         options: [
             { text: "Go to the room at the end of the hallway", next: "withAnderdingusHallwayBad" },
             { text: "Go to the room opposite of the hallway", next: "withAnderdingusHallwayGood" }
@@ -1754,7 +1754,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        text: "What do you do with the food?",
+        text: "After receiving their food, find a nearby open table to eat. Justin finishes his food almost instantly but Teddy is enjoying his meal, taking his time. After nearly finishing his meal, Teddy feels full and wonders if he should save it for later or just eat it all... What do you do?",
         options: [
             { text: "Finish all the food", next: "withJustinFinishFood" },
             { text: "Save some for later", next: "withJustinSaveFood" }
@@ -1920,7 +1920,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/DoorShut.png",
-        text: "What do you do?",
+        text: "The door is locked shut, no matter what it won't open. Teddy refuses to believe the door won't open and he thinks about ways to open it. His first idea is to run straight into the door and ram it open... What do you do?",
         options: [
             { text: "Ram the door yourself", next: "withJustinRamSelf" },
             { text: "Tell Justin to ram it", next: "withJustinRamFriend" }
@@ -2336,7 +2336,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail-monster.png",
-        text: "What do you do?",
+        text: "Faced in a rather precarious situation, they have a stare down with the monster while they decide what to do. Any slight movement would trigger the monster to lunge at them. The only choice from here is to kill it or it kills you... What do you do?",
         options: [
             { text: "Fight the monster", next: "withJustinFight1" },
             { text: "Run away", next: "withJustinRun1" }
@@ -2413,7 +2413,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/HallwayChoice.png",
-        text: "What do you do?",
+        text: "The room is in fact seemingly empty, but there might be something. Teddy insists that they should search the room while Justin says the room has nothing useful. Do you search the room despite the disagreement?",
         options: [
             { text: "Search the rooms", next: "withJustinRoomSearch1" },
             { text: "Continue moving forward", next: "withJustinBreak0" }
@@ -2461,7 +2461,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "What do you do?",
+        text: "The boys are tired after exploring for a while. Their legs are tired and need rest and their desire to escape keeps them moving. They need to rest for the upcoming challenges they will face... What do you do?",
         options: [
             { text: "Take a break", next: "withJustinRest" },
             { text: "Continue exploring", next: "withJustinTotem0" }
@@ -2509,7 +2509,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail.png",
-        text: "Teddy and Justin talk a little, they go back to the blood trail but they encounter some more rooms they can potentially search... What do you do?",
+        text: "The monster escapes and the boys continue searching. To fill the silence and lighten the mood they converse a bit. While they are talking and laughing they come across a very enigmatic room. What do you do?",
         options: [
             { text: "Search the rooms", next: "withJustinTotemFind" },
             { text: "Continue exploring", next: "withJustinVent0" }
@@ -2663,7 +2663,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail.png",
-        text: "What do you do?",
+        text: "There is something following behind them in the vent. Justin realizes what it was and also realizes the danger they are in. The monster approaches the boys faster and faster until it is right behind them... What do you do?",
         options: [
             { text: "Turn around", next: "withJustinTurnAround" },
             { text: "Keep moving like nothing happened", next: "withJustinKeepMoving" }
@@ -2746,7 +2746,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail.png",
-        text: "What do you do?",
+        text: "Justin and Teddy greatly injure the monster but the monster escapes and quickly runs away. This is the perfect opportunity to defeat the monster. However, Justin and Teddy were also injured but they are able to chase the monster... What do you do?",
         options: [
             { text: "Chase the monster", next: "withJustinChase" },
             { text: "Don't chase, recover", next: "withJustinRecover" }
@@ -3027,7 +3027,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        text: "What do you do with the food?",
+        text: "After receiving his order, Teddy looks for an open table to sit at. He finds one in the corner of the McDonalds and he starts eating his order. Eventually Teddy is nearly full, but he feels he should save some for later... What do you do?",
         options: [
             { text: "Finish all the food", next: "noFriendFinishFood" },
             { text: "Save some for later", next: "noFriendSaveFood" }
@@ -3452,7 +3452,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy continues his search to gear up for his encounter with the monsters, and as he is exploring, he senses something behind him.",
+        text: "Teddy continues his search to gear up for his encounter with the monsters.",
         options: [
             { text: "> Continue", next: "noFriendMonster1Choice" }
         ]
@@ -3463,7 +3463,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "What do you do?",
+        text: "While exploring, Teddy senses something behind him. He is curious to look back but also senses the danger if he does look back. He wants to pretend to not notice it but the foot steps are getting closer... What do you do?",
         options: [
             { text: "Look behind", next: "noFriendLookBehind1" },
             { text: "Keep eyes forward", next: "noFriendKeepForward1" }
@@ -3486,7 +3486,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy is instantly on high alert, but reluctant to look around. After ignoring the peril, Teddy hears footsteps. The footsteps are seemingly following Teddy, growing faster with each step, until suddenly it rushes toward Teddy.",
+        text: "Teddy is instantly on high alert, but reluctant to look around. After ignoring the peril, Teddy hears footsteps...",
         options: [
             { text: "> Continue", next: "noFriendMonster2Choice" }
         ]
@@ -3497,7 +3497,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Every fiber of Teddy's body is itching to turn around to defend itself. What do you do?",
+        text: "The footsteps are seemingly following Teddy, growing faster with each step, until suddenly it rushes toward Teddy. Every fiber of Teddy's body is itching to turn around to defend himself... What do you do?",
         options: [
             { text: "Look behind", next: "noFriendLookBehind2" },
             { text: "Don't look", next: "noFriendDontLook" }
@@ -3553,7 +3553,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy wonders if he should continue exploring or take a quick break to recover and lower heart rate. What do you do?",
+        text: "Teddy can't seem to lower his heart rate because of what happened. Taking a break would help greatly to let him recover. Would you like to take a break or just YOLO it?",
         options: [
             { text: "Take a break", next: "noFriendRest1" },
             { text: "Go deeper into asylum", next: "noFriendDeeper0" }
@@ -3576,7 +3576,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "As Teddy continues exploring, he ventures deeper and deeper into the asylum. Walking around, he notices some rooms but they seem empty. But he also has no resources right now.",
+        text: "As Teddy continues exploring, he ventures deeper and deeper into the asylum.",
         options: [
             { text: "> Continue", next: "noFriendRoomChoice1" }
         ]
@@ -3587,7 +3587,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "What do you do?",
+        text: "Walking around, he notices some rooms but they seem empty. But he is also lacking resources like food right now. Teddy thinks the rooms are completely empty, but his lack of resources make him want to search them... What do you do?",
         options: [
             { text: "Search rooms", next: "noFriendRoomSearch1" },
             { text: "Continue exploring", next: "noFriendIntersection" }
@@ -3612,7 +3612,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy finds an intersection, he can either go right or left...",
+        text: "Teddy finds an intersection...",
         options: [
             { text: "> Continue", next: "noFriendIntersectionChoice" }
         ]
@@ -3623,7 +3623,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Which way do you go?",
+        text: "Teddy can choose to go left or right in the intersection. After carefully thinking for 10 minutes, Teddy still does not know which direction to go. He is scared he might get lost in this seemingly endless maze... Which direction do you choose?",
         options: [
             { text: "Right", next: "noFriendRight" },
             { text: "Left", next: "noFriendLeft" }
@@ -3660,7 +3660,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy: I'm kinda tired.. I should probably take a break. What do you do?",
+        text: "After finding the bread he continues searching. But not too long after, he realizes he is tired and wonders if he should take a break. He would be able to eat his bread while resting to recover some energy... What do you do?",
         options: [
             { text: "Take a break to rest, eat, and heal", next: "noFriendRest2" },
             { text: "Don't take a break", next: "noFriendWeaponMonster0" }
@@ -3685,7 +3685,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "Teddy goes deeper into the asylum and encounters a normal monster. The monster is holding a small knife. Teddy wonders if he should risk it and fight the monster for the weapon...",
+        text: "Teddy goes deeper into the asylum and encounters a normal monster.",
         options: [
             { text: "> Continue", next: "noFriendWeaponChoice" }
         ]
@@ -3696,7 +3696,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "What do you do?",
+        text: "The monster is holding a small knife. Teddy wonders if he should risk it and fight the monster for the weapon. The monster seems pretty weak and easy to take down... What do you do?",
         options: [
             { text: "Fight monster", next: "noFriendFightMonster" },
             { text: "Run away from monster", next: "noFriendRunMonster" }
@@ -3749,7 +3749,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "What do you do?",
+        text: "Teddy continues following the monster for some time. Somehow the monster does not notice him. Teddy is now RIGHT behind the monster... WHAT DO YOU DO??!?!?!?!",
         options: [
             { text: "Sneak attack", next: "noFriendSneakAttack" },
             { text: "Wait for the right moment", next: "noFriendWait" }
@@ -3783,7 +3783,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        text: "The monster falls asleep, Teddy makes his move by quietly entering the room the monster is sleeping in. The key is right next to the monster... What do you do?",
+        text: "The monster falls asleep, Teddy makes his move by quietly entering the room the monster is sleeping in. The key is right next to the monster. Fortunately Teddy is able to almost reach the monster but if he takes the key the monster will wake up... What do you do?",
         options: [
             { text: "Move quietly to try and steal the key", next: "noFriendStealKey" },
             { text: "Attack the monster", next: "noFriendFinalCombat" }

@@ -125,9 +125,13 @@
         }
 
         &>ol {
-            font-size: 20px;
+            margin-top: -1vh;
+            font-size: 15px;
             justify-self: center;
             list-style-position: inside;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.305);
+            border-radius: 20px;
 
             &>li {
                 align-self: flex-start;
@@ -137,8 +141,12 @@
                 display: flex;
                 align-items: center;
                 flex-direction: row;
-                border-bottom: solid;
-                justify-content: space-between;
+                border-bottom: solid 1px white;
+                
+                &>span {
+                    margin-left: 1vh;
+                    justify-self: flex-start;
+                }
             }
         }
     }
