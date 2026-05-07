@@ -317,8 +317,8 @@ export const story = {
         bgImage: "Images/McDonalds.png",
         text: "What do you do with the food?",
         options: [
-            { text: "Finish all the food", next: "withAnderdingusFinishFood" },
-            { text: "Save some for later", next: "withAnderdingusSaveFood" }
+            { text: "Finish all the McDonalds and leave with your stomachs filled", next: "withAnderdingusFinishFood" },
+            { text: "Save some fries just in case you will be hungry later.", next: "withAnderdingusSaveFood" }
         ]
     },
 
@@ -520,8 +520,8 @@ export const story = {
         bgImage: "Images/DoorShut.png",
         text: "What do you do?",
         options: [
-            { text: "Ram the door yourself", next: "withAnderdingusRamSelf" },
-            { text: "Tell Anderdingus to ram it", next: "withAnderdingusRamFriend" }
+            { text: "Attempt to ram the door yourself, hoping to break it open.", next: "withAnderdingusRamSelf" },
+            { text: "Tell Anderdingus to attempt to ram the door.", next: "withAnderdingusRamFriend" }
         ]
     },
 
@@ -970,8 +970,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "Teddy and Anderdingus both run but it soon catches Anderdingus... What do you do?",
         options: [
-            { text: "Keep running, save yourself", next: "withAnderdingusRunSelf" },
-            { text: "Go back and save Anderdingus", next: "withAnderdingusSaveFriend" }
+            { text: "Save yourself and don't look back to save yourself.", next: "withAnderdingusRunSelf" },
+            { text: "Turn around to remove the monster's grasp on Anderdingus.", next: "withAnderdingusSaveFriend" }
         ]
     },
 
@@ -1052,8 +1052,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Continue exploring, no breaks", next: "withAnderdingusStorage0" },
-            { text: "Take a break to rest and recover", next: "withAnderdingusRest" }
+            { text: "Continue exploring the asylum without any breaks.", next: "withAnderdingusStorage0" },
+            { text: "Use a room as a stop to take a break.", next: "withAnderdingusRest" }
         ]
     },
 
@@ -1088,8 +1088,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Do the puzzle to get into the storage room", next: "withAnderdingusStorageSolve" },
-            { text: "Don't take the risk and continue exploring", next: "withAnderdingusRoom0" }
+            { text: "Solve the puzzle to unlock the storage room door.", next: "withAnderdingusStorageSolve" },
+            { text: "Don't take the risk and move on to continue exploring.", next: "withAnderdingusRoom0" }
         ]
     },
 
@@ -1122,8 +1122,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Scavenge the room", next: "withAnderdingusRoomSearch" },
-            { text: "Ignore the room, continue exploring", next: "withAnderdingusDeeper0" }
+            { text: "Search and scavenge the room for items.", next: "withAnderdingusRoomSearch" },
+            { text: "Don't search the room and ignore it to continue exploring.", next: "withAnderdingusDeeper0" }
         ]
     },
 
@@ -1156,8 +1156,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
-            { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
+            { text: "Search and scavenge the room for items.", next: "withAnderdingusDeeperSearch" },
+            { text: "Move onwards deeper into the asylum.", next: "withAnderdingusTotem0" }
         ]
     },
 
@@ -1191,8 +1191,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "What do you do?",
         options: [
-            { text: "Search rooms", next: "withAnderdingusTotemFind" },
-            { text: "Listen to Anderdingus, keep going", next: "withAnderdingusMachete0" }
+            { text: "Search and savenge the room for items.", next: "withAnderdingusTotemFind" },
+            { text: "Acnkowledge Anderdingus suggestion and continue exploring.", next: "withAnderdingusMachete0" }
         ]
     },
 
