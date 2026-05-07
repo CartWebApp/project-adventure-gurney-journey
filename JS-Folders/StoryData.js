@@ -317,8 +317,8 @@ export const story = {
         bgImage: "Images/McDonalds.png",
         text: "What do you do with the food?",
         options: [
-            { text: "Finish all the McDonalds and leave with your stomachs filled", next: "withAnderdingusFinishFood" },
-            { text: "Save some fries just in case you will be hungry later.", next: "withAnderdingusSaveFood" }
+            { text: "Finish all the food", next: "withAnderdingusFinishFood" },
+            { text: "Save some for later", next: "withAnderdingusSaveFood" }
         ]
     },
 
@@ -520,8 +520,8 @@ export const story = {
         bgImage: "Images/DoorShut.png",
         text: "What do you do?",
         options: [
-            { text: "Attempt to ram the door yourself, hoping to break it open.", next: "withAnderdingusRamSelf" },
-            { text: "Tell Anderdingus to attempt to ram the door.", next: "withAnderdingusRamFriend" }
+            { text: "Ram the door yourself", next: "withAnderdingusRamSelf" },
+            { text: "Tell Anderdingus to ram it", next: "withAnderdingusRamFriend" }
         ]
     },
 
@@ -574,7 +574,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Bro you see that?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh0" },
@@ -586,7 +586,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Is he dead?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh1" },
@@ -598,7 +598,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Dude, that's the guy from the news!",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh2" },
@@ -610,7 +610,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What happened to his leg?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh3" },
@@ -622,7 +622,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "GET AWAY FROM ME!",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh4" },
@@ -634,7 +634,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Woah woah woah.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh5" },
@@ -646,7 +646,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Are you okay?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh6" },
@@ -658,7 +658,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Oh... I thought you guys were... something else...",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh7" },
@@ -670,7 +670,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What happened to your leg?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh8" },
@@ -682,7 +682,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "It got me.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh9" },
@@ -694,7 +694,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What got you?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh10" },
@@ -706,7 +706,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I don't know, but it's not human.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh11" },
@@ -718,7 +718,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "You're telling us there's a monster here that will kill us?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh12" },
@@ -730,7 +730,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Two.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh13" },
@@ -742,7 +742,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Alright dude enough games, how do we get out?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh14" },
@@ -754,7 +754,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There's a key.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh15" },
@@ -766,7 +766,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Where is the key?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh16" },
@@ -778,7 +778,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "One of the 'monsters' have it.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh17" },
@@ -790,7 +790,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Very funny man, stop joking around.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh18" },
@@ -802,7 +802,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Suddenly a loud scary, bone chilling scream was heard...",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh19" },
@@ -814,7 +814,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "You still think I'm joking?",
         options: [
             { text: "< Go Back", next: "withAnderdingusScream" },
@@ -826,7 +826,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Okay so to leave we have to get the key from these monsters.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh20" },
@@ -838,7 +838,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Yeah.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh21" },
@@ -850,7 +850,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "How do we do that?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh22" },
@@ -862,7 +862,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Like I said there are 2 monsters, the first monster only appears if you are alone but you cannot look at it, and the second monster, you just have to survive it.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh23" },
@@ -874,7 +874,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "How do you know about the first monster?",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh24" },
@@ -886,7 +886,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I had a friend.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh25" },
@@ -898,7 +898,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Oh, I'm sorry. Anderdingus we have to get that key.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh26" },
@@ -910,7 +910,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "No way dude, do you not see what they did to this guy.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh27" },
@@ -922,7 +922,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There's no other way, we will die here if we don't do anything, you are coming.",
         options: [
             { text: "< Go Back", next: "withAnderdingusJosh28" },
@@ -970,8 +970,8 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "Teddy and Anderdingus both run but it soon catches Anderdingus... What do you do?",
         options: [
-            { text: "Save yourself and don't look back to save yourself.", next: "withAnderdingusRunSelf" },
-            { text: "Turn around to remove the monster's grasp on Anderdingus.", next: "withAnderdingusSaveFriend" }
+            { text: "Keep running, save yourself", next: "withAnderdingusRunSelf" },
+            { text: "Go back and save Anderdingus", next: "withAnderdingusSaveFriend" }
         ]
     },
 
@@ -1038,7 +1038,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "They run until they feel somewhat safe, free of danger at least. Teddy and Anderdingus are both out of breath, tired and shaking from what they just experienced. They continue exploring but Anderdingus eventually says they should take a break.",
         options: [
             { text: "> Continue", next: "withAnderdingusBreakChoice" }
@@ -1049,11 +1049,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "What do you do?",
         options: [
-            { text: "Continue exploring the asylum without any breaks.", next: "withAnderdingusStorage0" },
-            { text: "Use a room as a stop to take a break.", next: "withAnderdingusRest" }
+            { text: "Continue exploring, no breaks", next: "withAnderdingusStorage0" },
+            { text: "Take a break to rest and recover", next: "withAnderdingusRest" }
         ]
     },
 
@@ -1061,7 +1061,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         hungerChange: 10,
         healthChange: 15,
         text: "They take a moment to rest and recover before heading deeper into the asylum.",
@@ -1085,11 +1085,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
-            { text: "Solve the puzzle to unlock the storage room door.", next: "withAnderdingusStorageSolve" },
-            { text: "Don't take the risk and move on to continue exploring.", next: "withAnderdingusRoom0" }
+            { text: "Do the puzzle to get into the storage room", next: "withAnderdingusStorageSolve" },
+            { text: "Don't take the risk and continue exploring", next: "withAnderdingusRoom0" }
         ]
     },
 
@@ -1097,7 +1097,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Teddy and Anderdingus search the storage room, and after searching more and more, they find a rusty knife. It will help them fight the monster, but there are most likely stronger weapons.",
         options: [
             { text: "> Continue", next: "withAnderdingusRoom0" }
@@ -1119,11 +1119,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
-            { text: "Search and scavenge the room for items.", next: "withAnderdingusRoomSearch" },
-            { text: "Don't search the room and ignore it to continue exploring.", next: "withAnderdingusDeeper0" }
+            { text: "Scavenge the room", next: "withAnderdingusRoomSearch" },
+            { text: "Ignore the room, continue exploring", next: "withAnderdingusDeeper0" }
         ]
     },
 
@@ -1131,7 +1131,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Teddy and Anderdingus search the room. They find absolutely nothing.",
         options: [
             { text: "> Continue", next: "withAnderdingusDeeper0" }
@@ -1153,11 +1153,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
-            { text: "Search and scavenge the room for items.", next: "withAnderdingusDeeperSearch" },
-            { text: "Move onwards deeper into the asylum.", next: "withAnderdingusTotem0" }
+            { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
+            { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
         ]
     },
 
@@ -1165,7 +1165,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         hungerChange: 15,
         text: "Teddy and Anderdingus scavenge the rooms thoroughly, they are lucky enough to find some food to restore their hunger. After they finish searching they go deeper into the asylum.",
         options: [
@@ -1188,11 +1188,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
-            { text: "Search and savenge the room for items.", next: "withAnderdingusTotemFind" },
-            { text: "Acnkowledge Anderdingus suggestion and continue exploring.", next: "withAnderdingusMachete0" }
+            { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
+            { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
         ]
     },
 
@@ -1200,7 +1200,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "At first there is nothing useful, but as they search more and more, they find a weird looking totem.",
         item: "Totem",
         options: [
@@ -1236,7 +1236,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "The deeper they go, the more and more danger they feel. They see many scratches and blood on the walls.",
         options: [
             { text: "> Continue", next: "withAnderdingusMachete1" }
@@ -1247,7 +1247,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "This is probably where the monster stays.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMachete0" },
@@ -1259,7 +1259,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "You think it leaves the key in his nest or something?",
         options: [
             { text: "< Go Back", next: "withAnderdingusMachete1" },
@@ -1271,7 +1271,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "I don't know, we don't even know if that thing has a nest. We should probably search more rooms to find more weapons, this rusty knife isn't doing much.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMachete2" },
@@ -1283,7 +1283,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "There's some more rooms here they seem kinda empty though.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMachete3" },
@@ -1295,7 +1295,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
             { text: "Search the rooms", next: "withAnderdingusMacheteFind" },
@@ -1307,7 +1307,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Machete-image.png",
         text: "They search the rooms, seemingly empty, but they are thorough.",
         options: [
             { text: "> Continue", next: "withAnderdingusMacheteFind2" }
@@ -1318,7 +1318,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Machete-image.png",
         text: "Look what I found!",
         item: "Machete",
         options: [
@@ -1331,7 +1331,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Machete-image.png",
         text: "No way is that a machete.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMacheteFind2" },
@@ -1343,7 +1343,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Machete-image.png",
         text: "Yeah, it looks almost brand new too. It feels very sharp.",
         options: [
             { text: "< Go Back", next: "withAnderdingusMacheteFind3" },
@@ -1355,7 +1355,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Machete-image.png",
         text: "We stand a chance now.",
         options: [
             { text: "> Continue", next: "withAnderdingusHallway0" }
@@ -1366,7 +1366,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "The 2 boys feel like they can win against the monster now. So they continue searching. After walking around, going deeper and deeper, they find a long hallway, and at the end a mysterious room with blood trails leading to it. But there is also another room opposite the hallway...",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayChoice" }
@@ -1377,7 +1377,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "Which room do you go to?",
         options: [
             { text: "Go to the room at the end of the hallway", next: "withAnderdingusHallwayBad" },
@@ -1389,8 +1389,8 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "Teddy and Anderdingus head towards the room, walking along the long hallway. But suddenly, monster 2 arrives behind them, angry that Teddy and Anderdingus were about to invade its nest. Enraged, the monster moves faster, fast enough to knock down Anderdingus almost instantly.",
+        bgImage: "Images/Blood-trail-monster.png",
+        text: "Teddy and Anderdingus head towards the room, walking along the long hallway. But suddenly, one monster arrives behind them, angry that Teddy and Anderdingus were about to invade its nest. Enraged, the monster moves faster, fast enough to knock down Anderdingus almost instantly.",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayBad2" }
         ]
@@ -1400,7 +1400,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Anderdingus tries getting back up but the monster ensures he won't be able to. The monster stomps on Anderdingus's head. Teddy tries to use the machete against the monster. Teddy manages to cut off the monster's arm, but ends up taking a fatal hit in return. The monster then knocks away the machete and eats Teddy's whole head.",
         options: [
             { text: "> Continue", next: "withAnderdingusGameOver" }
@@ -1411,7 +1411,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "They enter the room where they hear the monster near them. Luckily the monster doesn't notice them and heads towards the room at the end of the hallway which appears to be the nest of the monster. They realized it was right to come here instead of walking to the room at the end of the hallway.",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayGood2" }
@@ -1422,7 +1422,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "We should attack it when it's not paying attention.",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood" },
@@ -1434,7 +1434,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "You think he is gonna sleep or something?",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood2" },
@@ -1446,7 +1446,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "I don't know, we will see.",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood3" },
@@ -1458,7 +1458,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "After waiting for a few minutes, the monster is asleep.",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayGood6" }
@@ -1469,7 +1469,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "It's sleeping, lets go.",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood5" },
@@ -1481,7 +1481,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "They quietly approach the nest...",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayGood8" }
@@ -1492,7 +1492,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "I see the key.",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood7" },
@@ -1504,7 +1504,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "They enter the room and approach the monster...",
         options: [
             { text: "> Continue", next: "withAnderdingusHallwayGood10" }
@@ -1515,7 +1515,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "We have to kill this thing before we get that key, you ready?",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood9" },
@@ -1527,7 +1527,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Anderdingus",
         image: "Images/anderdingus-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Yeah.",
         options: [
             { text: "< Go Back", next: "withAnderdingusHallwayGood10" },
@@ -1539,7 +1539,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy swings his machete on the monster's head, but Teddy fails to completely cut off the head. The monster wakes up and screams, Teddy and Anderdingus both back off and prepare to fight to the death with the monster...",
         options: [
             { text: "> Continue", next: "withAnderdingusCombat" }
@@ -1556,7 +1556,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Monster dies. Teddy grabs the key and heads back to the entrance. As Teddy opens the door to escape, Anderdingus helps Josh up, helping him walk. After escaping, they report the incident to the police and shortly after, the abandoned insane asylum was closed off permanently.",
         options: [
             { text: "> The End", next: null }
@@ -1965,7 +1965,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Bro you see that?",
         options: [
             { text: "< Go Back", next: "withJustinJosh0" },
@@ -1977,7 +1977,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Is he dead?",
         options: [
             { text: "< Go Back", next: "withJustinJosh1" },
@@ -1989,7 +1989,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Dude, that's the guy from the news!",
         options: [
             { text: "< Go Back", next: "withJustinJosh2" },
@@ -2001,7 +2001,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What happened to his leg?",
         options: [
             { text: "< Go Back", next: "withJustinJosh3" },
@@ -2013,7 +2013,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "GET AWAY FROM ME!",
         options: [
             { text: "< Go Back", next: "withJustinJosh4" },
@@ -2025,7 +2025,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Woah woah woah.",
         options: [
             { text: "< Go Back", next: "withJustinJosh5" },
@@ -2037,7 +2037,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Are you okay?",
         options: [
             { text: "< Go Back", next: "withJustinJosh6" },
@@ -2049,7 +2049,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Oh... I thought you guys were... something else...",
         options: [
             { text: "< Go Back", next: "withJustinJosh7" },
@@ -2061,7 +2061,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What happened to your leg?",
         options: [
             { text: "< Go Back", next: "withJustinJosh8" },
@@ -2073,7 +2073,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "It got me.",
         options: [
             { text: "< Go Back", next: "withJustinJosh9" },
@@ -2085,7 +2085,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What got you?",
         options: [
             { text: "< Go Back", next: "withJustinJosh10" },
@@ -2097,7 +2097,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I don't know, but it's not human.",
         options: [
             { text: "< Go Back", next: "withJustinJosh11" },
@@ -2109,7 +2109,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Is this a prank?",
         options: [
             { text: "< Go Back", next: "withJustinJosh12" },
@@ -2121,7 +2121,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Alright dude enough games, how do we get out?",
         options: [
             { text: "< Go Back", next: "withJustinJosh13" },
@@ -2133,7 +2133,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There's a key.",
         options: [
             { text: "< Go Back", next: "withJustinJosh14" },
@@ -2145,7 +2145,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Where is the key?",
         options: [
             { text: "< Go Back", next: "withJustinJosh15" },
@@ -2157,7 +2157,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "One of the 'monsters' have it.",
         options: [
             { text: "< Go Back", next: "withJustinJosh16" },
@@ -2169,7 +2169,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Very funny man, stop joking around.",
         options: [
             { text: "< Go Back", next: "withJustinJosh17" },
@@ -2181,7 +2181,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Suddenly a loud scary, bone chilling scream was heard...",
         options: [
             { text: "< Go Back", next: "withJustinJosh18" },
@@ -2193,7 +2193,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I'm not lying, there are 2 monsters, you have to get the key from one of them to escape.",
         options: [
             { text: "< Go Back", next: "withJustinScream" },
@@ -2205,7 +2205,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Okay but what do we do about those things?",
         options: [
             { text: "< Go Back", next: "withJustinJosh19" },
@@ -2217,7 +2217,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Well the first monster should not be a problem, it only appears if you are alone and only attacks if you look at it, but the second monster, you just have to kill it.",
         options: [
             { text: "< Go Back", next: "withJustinJosh20" },
@@ -2229,7 +2229,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "So there's no other way.",
         options: [
             { text: "< Go Back", next: "withJustinJosh21" },
@@ -2241,7 +2241,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "If you want to get out of here, yes.",
         options: [
             { text: "< Go Back", next: "withJustinJosh22" },
@@ -2253,7 +2253,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Lets go dude we are wasting our time here, lets go find the key.",
         options: [
             { text: "< Go Back", next: "withJustinJosh23" },
@@ -2265,7 +2265,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Alright.",
         options: [
             { text: "< Go Back", next: "withJustinJosh24" },
@@ -2277,7 +2277,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Good luck, you'll need it.",
         options: [
             { text: "< Go Back", next: "withJustinJosh25" },
@@ -2289,7 +2289,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "The two begin exploring, they find and scavenge rooms for supplies like food or even weapons and other items that would help in escaping. Then suddenly, they hear someone screaming for help, and they quickly head towards the scream where they find a blood trail...",
         options: [
             { text: "> Continue", next: "withJustinExplore1" }
@@ -2300,7 +2300,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Teddy and Justin follow the trail leading to a suspicious room. They enter and search the room. In the room they discover the monster eating a human leg...",
         options: [
             { text: "> Continue", next: "withJustinExplore2" }
@@ -2311,7 +2311,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Is that Josh's leg?",
         options: [
             { text: "< Go Back", next: "withJustinExplore1" },
@@ -2323,7 +2323,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Probably, but you see that key on his forehead? We have to kill this thing.",
         options: [
             { text: "< Go Back", next: "withJustinExplore2" },
@@ -2335,7 +2335,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "What do you do?",
         options: [
             { text: "Fight the monster", next: "withJustinFight1" },
@@ -2412,7 +2412,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "What do you do?",
         options: [
             { text: "Search the rooms", next: "withJustinRoomSearch1" },
@@ -2424,7 +2424,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         hungerChange: 10,
         text: "Teddy searches the room while Justin is on lookout. After a minute of searching Teddy finds 5 old protein bars. They then continue exploring.",
         item: "Protein Bars",
@@ -2472,7 +2472,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         hungerChange: 10,
         healthChange: 15,
         text: "Teddy and Justin eat the protein bars to recover their hunger and heal a little from their fight with the monster. They then continue exploring.",
@@ -2485,7 +2485,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "If we ever see that monster again we should definitely chase it.",
         options: [
             { text: "> Continue", next: "withJustinTotem1" }
@@ -2496,7 +2496,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "Yeah it should be pretty weak now.",
         options: [
             { text: "< Go Back", next: "withJustinTotem0" },
@@ -2508,8 +2508,8 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "Teddy and Justin talk a little but they encounter some more rooms they can potentially search... What do you do?",
+        bgImage: "Images/Blood-trail.png",
+        text: "Teddy and Justin talk a little, they go back to the blood trail but they encounter some more rooms they can potentially search... What do you do?",
         options: [
             { text: "Search the rooms", next: "withJustinTotemFind" },
             { text: "Continue exploring", next: "withJustinVent0" }
@@ -2520,7 +2520,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "They search the rooms and they find a mysterious totem...",
         item: "Totem",
         options: [
@@ -2532,7 +2532,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Real useful stuff, probably does nothing.",
         options: [
             { text: "< Go Back", next: "withJustinTotemFind" },
@@ -2544,7 +2544,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Ima keep it anyways, maybe it might be useful.",
         options: [
             { text: "< Go Back", next: "withJustinTotemFind2" },
@@ -2556,7 +2556,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Alright man, you do you.",
         options: [
             { text: "< Go Back", next: "withJustinTotemFind3" },
@@ -2568,7 +2568,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Room-Search.png",
         text: "Let's go deeper, maybe we can find even more stuff.",
         options: [
             { text: "> Continue", next: "withJustinVent1" }
@@ -2579,7 +2579,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "As they keep going deeper, it gets colder, until...",
         options: [
             { text: "> Continue", next: "withJustinVent2" }
@@ -2590,7 +2590,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "OMG, you hear that?",
         options: [
             { text: "< Go Back", next: "withJustinVent1" },
@@ -2602,7 +2602,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Yes I do, that's so scary.",
         options: [
             { text: "< Go Back", next: "withJustinVent2" },
@@ -2614,7 +2614,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "The vent just broke!",
         options: [
             { text: "< Go Back", next: "withJustinVent3" },
@@ -2626,7 +2626,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "No way, do not turn around...",
         options: [
             { text: "< Go Back", next: "withJustinVent4" },
@@ -2638,7 +2638,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Why, what is it?",
         options: [
             { text: "< Go Back", next: "withJustinVent5" },
@@ -2650,7 +2650,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Just don't.",
         options: [
             { text: "< Go Back", next: "withJustinVent6" },
@@ -2662,7 +2662,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "What do you do?",
         options: [
             { text: "Turn around", next: "withJustinTurnAround" },
@@ -2674,7 +2674,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "They see a monster and they are shocked, the only option is to run or confront it.",
         options: [
             { text: "> Continue", next: "withJustinTurnAround2" }
@@ -2685,7 +2685,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "I guess we have to fight him.",
         options: [
             { text: "< Go Back", next: "withJustinTurnAround" },
@@ -2697,7 +2697,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Let's do it.",
         options: [
             { text: "< Go Back", next: "withJustinTurnAround2" },
@@ -2709,7 +2709,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         healthChange: -15,
         text: "When they are walking slowly, the monster behind them deals damage to them and escapes.",
         options: [
@@ -2721,7 +2721,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "AUCHHH, what was that!",
         options: [
             { text: "< Go Back", next: "withJustinKeepMoving" },
@@ -2733,7 +2733,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "It was the monster! Should we chase it?",
         options: [
             { text: "< Go Back", next: "withJustinKeepMoving2" },
@@ -2745,7 +2745,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "What do you do?",
         options: [
             { text: "Chase the monster", next: "withJustinChase" },
@@ -2757,7 +2757,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Let's get that monster!",
         options: [
             { text: "> Continue", next: "withJustinChase2" }
@@ -2768,7 +2768,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "YEAH!",
         options: [
             { text: "< Go Back", next: "withJustinChase" },
@@ -2780,7 +2780,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Let's recover for a bit, we are kinda tired.",
         options: [
             { text: "> Continue", next: "withJustinRecover2" }
@@ -2791,7 +2791,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Yeah I agree.",
         options: [
             { text: "< Go Back", next: "withJustinRecover" },
@@ -2803,7 +2803,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "Let's sit down here against the wall.",
         options: [
             { text: "< Go Back", next: "withJustinRecover2" },
@@ -2815,7 +2815,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "They both sit down against the wall relaxing. They think it is pretty relaxing, normal. Too normal...",
         options: [
             { text: "> Continue", next: "withJustinRecover5" }
@@ -2826,7 +2826,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "Where did the monster go again?",
         options: [
             { text: "< Go Back", next: "withJustinRecover4" },
@@ -2838,13 +2838,15 @@ export const story = {
         type: "dialogueStory",
         speaker: "Justin",
         image: "Images/Justin-Buttlord-full.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "It went back into the vent, where it came from.",
         options: [
             { text: "< Go Back", next: "withJustinRecover5" },
             { text: "> Continue", next: "withJustinRecover7" }
         ]
     },
+
+    // Continue HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     withJustinRecover7: {
         type: "dialogueStory",
@@ -3093,7 +3095,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "The door is locked, and after a desperate attempt to open the door, Teddy realizes he is trapped. He turns around to see what awaits him, only darkness and the cold, and an uneasy environment. Teddy's eyes soon adjust to the dark, and he spots a figure, sitting down leaning against the wall, motionless. Teddy decides to carefully approach and gently taps the figure waiting for a response.",
         options: [
             { text: "> Continue", next: "noFriendJosh0" }
@@ -3104,7 +3106,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "BACK OFF!",
         options: [
             { text: "> Continue", next: "noFriendJosh1" }
@@ -3115,7 +3117,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Calm down man, is your leg okay?",
         options: [
             { text: "< Go Back", next: "noFriendJosh0" },
@@ -3127,7 +3129,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Oh... I thought you were something else.",
         options: [
             { text: "< Go Back", next: "noFriendJosh1" },
@@ -3139,7 +3141,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What do you mean by that?",
         options: [
             { text: "< Go Back", next: "noFriendJosh2" },
@@ -3151,7 +3153,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "You want to know what happened to my leg?",
         options: [
             { text: "< Go Back", next: "noFriendJosh3" },
@@ -3163,7 +3165,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Sure.",
         options: [
             { text: "< Go Back", next: "noFriendJosh4" },
@@ -3175,7 +3177,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There are things with us in here... whatever they are, they aren't human.",
         options: [
             { text: "< Go Back", next: "noFriendJosh5" },
@@ -3187,7 +3189,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "You're joking right?",
         options: [
             { text: "< Go Back", next: "noFriendJosh6" },
@@ -3199,7 +3201,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Suddenly a loud screech comes from deep within the abandoned building.",
         options: [
             { text: "< Go Back", next: "noFriendJosh7" },
@@ -3211,7 +3213,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "What was that?!",
         options: [
             { text: "< Go Back", next: "noFriendScream" },
@@ -3223,7 +3225,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Monsters...",
         options: [
             { text: "< Go Back", next: "noFriendJosh8" },
@@ -3235,7 +3237,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Okay I believe you, how do I get out of this hell hole?",
         options: [
             { text: "< Go Back", next: "noFriendJosh9" },
@@ -3247,7 +3249,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "That door is the only way to escape, but you need a key.",
         options: [
             { text: "< Go Back", next: "noFriendJosh10" },
@@ -3259,7 +3261,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Please tell me you know where the key is.",
         options: [
             { text: "< Go Back", next: "noFriendJosh11" },
@@ -3271,7 +3273,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I do, but it's not that simple. That monster has it.",
         options: [
             { text: "< Go Back", next: "noFriendJosh12" },
@@ -3283,7 +3285,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "So we have to steal the key from it? It's just one monster right?",
         options: [
             { text: "< Go Back", next: "noFriendJosh13" },
@@ -3295,7 +3297,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There are two monsters.",
         options: [
             { text: "< Go Back", next: "noFriendJosh14" },
@@ -3307,7 +3309,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "You are telling me there are two monsters here trying to kill us. How do we even get the key.",
         options: [
             { text: "< Go Back", next: "noFriendJosh15" },
@@ -3319,7 +3321,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Simple. Kill it or it kills you.",
         options: [
             { text: "< Go Back", next: "noFriendJosh16" },
@@ -3331,7 +3333,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I can't fight those things alone man and you can't even help because of your leg.",
         options: [
             { text: "< Go Back", next: "noFriendJosh17" },
@@ -3343,7 +3345,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Maybe I can't but I can help you survive. I know how to survive against those things.",
         options: [
             { text: "< Go Back", next: "noFriendJosh18" },
@@ -3355,7 +3357,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Do tell.",
         options: [
             { text: "< Go Back", next: "noFriendJosh19" },
@@ -3367,7 +3369,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "The first monster will follow you around if you are alone, but you must never look back at it. I was too scared to look back and I survived it. And it only ever appeared when I was alone, after my friend...",
         options: [
             { text: "< Go Back", next: "noFriendJosh20" },
@@ -3379,7 +3381,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "I'm sorry for your loss.",
         options: [
             { text: "< Go Back", next: "noFriendJosh21" },
@@ -3391,7 +3393,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "The other monster killed him, that monster... it's like a predator. It has no weaknesses.",
         options: [
             { text: "< Go Back", next: "noFriendJosh22" },
@@ -3403,7 +3405,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "So I'm cooked.",
         options: [
             { text: "< Go Back", next: "noFriendJosh23" },
@@ -3415,7 +3417,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Josh",
         image: "Images/Josh-sabayan.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "There are weapons, you need to find them in these rooms.",
         options: [
             { text: "< Go Back", next: "noFriendJosh24" },
