@@ -140,7 +140,7 @@
                 align-items: center;
                 flex-direction: row;
                 border-bottom: solid 1px white;
-                
+
                 &>span {
                     margin-left: 1vh;
                     justify-self: flex-start;
@@ -307,17 +307,19 @@
     align-items: center;
     color: #D9D9D9;
     margin-top: clamp(80px, 18vh, 200px);
-    gap: clamp(10px, 3vh, 30px);
+    gap: 1vh;
 
     &>#play-button>h1 {
         font-size: clamp(40px, 10vw, 96px);
-        width: clamp(200px, 75vw, 450px);
-        height: clamp(200px, 45vh);
+        width: clamp(200px, 65vw, 450px);
+        height: clamp(100px, 45vh, 150px);
         letter-spacing: clamp(4px, 1.5vw, 10px);
-        margin-bottom: clamp(20px, 4vh, 50px);
+        margin-bottom: 0vh;
+        background-size: contain;
         background-image: url("/images/red-button.png");
         background-repeat: no-repeat;
-        background-size: cover;
+
+        background-position: center;
         font-family: var(--creepyfont);
         font-weight: 100;
         display: flex;
@@ -395,11 +397,11 @@
     }
 }
 
-@keyframes scaleUpTranslate{
+@keyframes scaleUpTranslate {
     from {
         transform: scale(1);
         transform: translateY(0);
-        
+
     }
 
     to {
@@ -491,7 +493,7 @@
 
 
 .Text-section {
-    
+
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -544,9 +546,9 @@
             font-family: var(--normalfont);
             color: #D9D9D9;
             background-color: #0D1E3A;
-            font-size: clamp(13px, 2vw, 20px);
-            width: clamp(250px, 90vw, 800px);
-            height: clamp(220px, 35vh, 300px);
+            font-size: clamp(15px, 2vw, 20px);
+            width: clamp(300px, 80vw, 1000px);
+            height: 300px;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -954,7 +956,7 @@
 .bars {
     position: absolute;
     right: 2vw;
-    top: clamp(8vh, 12vh, 15vh);
+    top: 15vh;
 
     &>section {
         &>progress {
@@ -970,8 +972,8 @@
     align-items: center;
 
     &>img {
-        width: clamp(24px, 5vw, 35px);
-        height: clamp(24px, 5vw, 35px);
+        width: clamp(50px, 5vw, 35px);
+        height: clamp(50px, 5vw, 35px);
         margin-right: -20px;
         z-index: 10;
     }
@@ -982,26 +984,26 @@
     align-items: center;
 
     &>img {
-        width: clamp(24px, 5vw, 35px);
-        height: clamp(24px, 5vw, 35px);
+        width: clamp(50px, 5vw, 35px);
+        height: clamp(50px, 5vw, 35px);
         margin-right: -20px;
         z-index: 10;
     }
 }
 
 .inventory {
-    width: clamp(240px, 80vw, 460px);
+    width: clamp(100px, 80vw, 460px);
     height: auto;
     display: flex;
     justify-content: space-between;
     align-self: center;
-    margin-top: 1%;
+    margin-top: 2vh;
     gap: clamp(6px, 2vw, 10px);
     padding: 0 10px;
 
     &>.slot {
-        width: clamp(44px, 11vw, 85px);
-        height: clamp(44px, 11vw, 85px);
+        width: clamp(60px, 11vw, 85px);
+        height: clamp(60px, 11vw, 85px);
         background-color: white;
         border: solid 3px black;
         box-shadow: inset 0 0 20px 5px #75530fc3;
@@ -1010,6 +1012,7 @@
         justify-content: center;
     }
 }
+
 .health-progress::-webkit-progress-value {
     background: #FF4B4B;
     border-radius: 5px;
@@ -1418,9 +1421,8 @@
 #scene-combat,
 #scene-gameover {
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: clamp(300px, 80vw, 1200px) auto;
     background-position: center;
-    height: 100vh;
 }
 
 /* ESCAPED SCENE */
@@ -1519,7 +1521,7 @@
         & .summary-stats,
         & .summary-path,
         & .summary-choices {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid darkred;
             border-radius: 8px;
             padding: 20px;
@@ -1539,7 +1541,7 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 6px 0;
-                border-bottom: 1px solid rgba(139,69,19,0.2);
+                border-bottom: 1px solid rgba(139, 69, 19, 0.2);
                 font-size: 16px;
 
                 &:last-child {
@@ -1556,7 +1558,7 @@
                 margin-bottom: 10px;
                 padding: 8px;
                 border-left: 3px solid darkred;
-                background: rgba(255,255,255,0.02);
+                background: rgba(255, 255, 255, 0.02);
 
                 & .summary-path-number {
                     color: lightcoral;
@@ -1585,7 +1587,7 @@
                 margin-bottom: 15px;
                 padding: 12px;
                 border-left: 3px solid #7fbf7f;
-                background: rgba(255,255,255,0.02);
+                background: rgba(255, 255, 255, 0.02);
                 border-radius: 0 4px 4px 0;
 
                 & .summary-choice-number {
@@ -1699,30 +1701,35 @@
         display: none;
     }
 
+    .Settings,
+    .Volume {
+        width: 70px;
+    }
+
     .Text-section {
         margin-top: 30vh;
     }
+
 
     .title-image-text {
         width: 150px;
     }
 
     .description-text-section {
-
         &>section {
-            width: 1vw;
+            width: 300px;
         }
     }
 
     .friend-option-button {
-        margin-bottom: -100vh;
+        margin-bottom: -60vh;
     }
 
     #pick-anderdingus {
         margin-top: 3vh;
     }
 
-        #pick-justin {
+    #pick-justin {
         margin-top: 3vh;
     }
 
@@ -1739,7 +1746,10 @@
         margin-top: 3vh;
     }
 
-    .decision1, .decision2 {
+    .decision1,
+    .decision2 {
         font-size: 22px;
     }
+
+
 }

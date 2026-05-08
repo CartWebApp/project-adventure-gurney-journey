@@ -386,6 +386,7 @@ function getEndingTitle() {
     }
 }
 
+console.log(window.innerWidth);
 
 // fills the whole summary page
 function showSummary(outcome) {
@@ -434,8 +435,11 @@ function showSummary(outcome) {
     showScene(sceneSummary);
 }
 
+
+
 // Render of the Dialogue
 export function renderStep(stepId) {
+
     const step = story[stepId];
 
     if (!step || step.type === "gameOver") {
@@ -479,13 +483,33 @@ export function renderStep(stepId) {
         }
     }
 
-    if (step.bgImage) {
-        activeScene.style.backgroundImage = `url('${step.bgImage}')`;
-        activeScene.style.backgroundSize = "cover";
-        activeScene.style.backgroundPosition = "center";
-        activeScene.style.zIndex = "-2";
-    } else {
-        activeScene.style.backgroundImage = "none";
+    function bgImgSize() {
+        const width = window.innerWidth;
+
+        if (width > 600) {
+
+            if (step.bgImage) {
+                activeScene.style.backgroundImage = `url('${step.bgImage}')`;
+
+                activeScene.style.backgroundSize = "cover";
+
+                activeScene.style.zIndex = "-2";
+            } else {
+                activeScene.style.backgroundImage = "none";
+            }
+        }
+
+
+        if (width <= 600) {
+
+            if (step.bgImage) {
+                activeScene.style.backgroundImage = `url('${step.bgImage}')`;
+                activeScene.style.height = "40vh";
+                activeScene.style.zIndex = "-2";
+            } else {
+                activeScene.style.backgroundImage = "none";
+            }
+        }
     }
 
     if (linkText) {
@@ -573,7 +597,7 @@ export function renderStep(stepId) {
             btn.style.display = "none";
         }
     });
-
+    bgImgSize();
     typeWriter(activeDialogue, step.text);
 }
 
