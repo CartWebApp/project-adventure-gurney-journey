@@ -491,6 +491,7 @@
 
 
 .Text-section {
+    
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -498,7 +499,7 @@
     flex-direction: column;
     margin-left: clamp(10px, 5vw, 20%);
     margin-right: clamp(10px, 5vw, 20%);
-    margin-top: clamp(10px, 5vh, 19%);
+    margin-top: 40vh;
 
     &>.title-image-text {
         display: flex;
@@ -544,7 +545,7 @@
             color: #D9D9D9;
             background-color: #0D1E3A;
             font-size: clamp(13px, 2vw, 20px);
-            width: clamp(280px, 90vw, 1000px);
+            width: clamp(250px, 90vw, 800px);
             height: clamp(220px, 35vh, 300px);
             display: flex;
             align-items: center;
@@ -651,6 +652,7 @@
     margin: 20px;
 
     &>h1 {
+        margin-top: 10vh;
         font-family: var(--creepyfont);
         font-size: clamp(36px, 8vw, 96px);
         color: #D9D9D9;
@@ -682,8 +684,7 @@
 
         &>img {
             position: absolute;
-            width: clamp(60%, 70%, 38%);
-            height: 50vh;
+            width: clamp(300px, 80vw, 600px);
             z-index: 0;
             bottom: 0;
             left: 50%;
@@ -702,6 +703,7 @@
             width: clamp(80px, 15vw, 125px);
             height: clamp(50px, 10vw, 75px);
             box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.75);
+            margin-top: 20vh;
         }
     }
 }
@@ -1683,6 +1685,17 @@
         margin-top: 30vh;
     }
 
+    .title-image-text {
+        width: 150px;
+    }
+
+    .description-text-section {
+
+        &>section {
+            width: 1vw;
+        }
+    }
+
     .friend-option-button {
         margin-bottom: -100vh;
     }
@@ -1695,9 +1708,6 @@
         margin-top: 3vh;
     }
 
-    #yesNo {
-        margin-top: 10vh;
-    }
 
     .rivals-people {
         margin-top: 15vh;
@@ -1709,5 +1719,9 @@
 
     .description-text-section-combat {
         margin-top: 3vh;
+    }
+
+    .decision1, .decision2 {
+        font-size: 22px;
     }
 }
