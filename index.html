@@ -11,7 +11,7 @@
 
 <body>
     <!-- SCENE 1: HOME -->
-    <section id="scene-home" class="scene active">
+    <section id="scene-home" class="scene hidden">
         <nav class="homenav">
             <img draggable="false" src="/Images/woodnav.png">
         </nav>
@@ -177,10 +177,10 @@
         <main class="Friend-YN-main">
             <section>
                 <img draggable="false" src="/Images/Yes-no-image.png" alt="Yes or No Image">
-                <div id="Friend-Y-button">
+                <div id="Friend-Y-button" class="friend-option-button">
                     <p>Yes</p>
                 </div>
-                <div id="Friend-N-button">
+                <div id="Friend-N-button" class="friend-option-button">
                     <p>No</p>
                 </div>
             </section>
@@ -188,7 +188,7 @@
     </section>
 
     <!-- SCENE 6: SELECT FRIEND -->
-    <section id="scene-friend" class="scene hidden">
+    <section id="scene-friend" class="scene active">
         <nav class="All-pages-nav">
             <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
             <button class="journal-button">Journal</button>
