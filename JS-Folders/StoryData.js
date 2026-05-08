@@ -5,9 +5,10 @@ export const items = [
     { name: "Fries", type: "food", hunger: 15, img: "/Images/fries.png" },
     { name: "Small Knife", type: "weapon", multi: 1.5, img: "/Images/knife.png" },
     { name: "Machete", type: "weapon", multi: 2, img: "/Images/machete.png" },
-    { name: "Bandages", type: "heal", heal: 10, img: "/Images/bandages.png" },
+    { name: "Bandages", type: "heal", heal: 20, img: "/Images/bandages.png" },
     { name: "Medkit", type: "heal", heal: 50, img: "/Images/medkit.png" },
-    { name: "Totem", type: "extraLife", img: "/Images/Totem.png" }
+    { name: "Totem", type: "extraLife", img: "/Images/Totem.png" },
+    { name: "McFlurry", type: "food", hunger: 20, img: "/Images/mcflurry.png" },
 ];
 
 export const story = {
