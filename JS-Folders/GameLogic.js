@@ -13,7 +13,7 @@ export const player = {
 
 export const monsterBigEyes = {
     health: 45,
-    damage: 3,
+    damage: 7,
 };
 
 export const combatState = {

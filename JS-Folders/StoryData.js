@@ -327,6 +327,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
+        hungerChange: 30,
         text: "Teddy and Anderdingus finish all the McDonalds.",
         options: [
             { text: "> Continue", next: "withAnderdingusAsylum0" }
@@ -530,7 +531,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/DoorShut.png",
-        healthChange: -10,
+        healthChange: -20,
         text: "Teddy attempts to ram the door, but the door does not budge. During the process, Teddy injures himself by ramming the door too hard.",
         options: [
             { text: "> Continue", next: "withAnderdingusJosh0" }
@@ -1062,8 +1063,8 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Cafe-asylum.png",
-        hungerChange: 10,
-        healthChange: 15,
+        hungerChange: 20,
+        healthChange: 10,
         text: "They take a moment to rest and recover before heading deeper into the asylum.",
         options: [
             { text: "> Continue", next: "withAnderdingusStorage0" }
@@ -1098,6 +1099,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Room-Search.png",
+        item: "Small Knife",
         text: "Teddy and Anderdingus search the storage room, and after searching more and more, they find a rusty knife. It will help them fight the monster, but there are most likely stronger weapons.",
         options: [
             { text: "> Continue", next: "withAnderdingusRoom0" }
@@ -1132,7 +1134,8 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Room-Search.png",
-        text: "Teddy and Anderdingus search the room. They find absolutely nothing.",
+        item: "Medkit",
+        text: "Teddy and Anderdingus search the room. They find a medkit that will help them heal themselfs.",
         options: [
             { text: "> Continue", next: "withAnderdingusDeeper0" }
         ]
@@ -1166,7 +1169,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Room-Search.png",
-        hungerChange: 15,
+        item: "Bread",
         text: "Teddy and Anderdingus scavenge the rooms thoroughly, they are lucky enough to find some food to restore their hunger. After they finish searching they go deeper into the asylum.",
         options: [
             { text: "> Continue", next: "withAnderdingusTotem0" }
@@ -1559,7 +1562,7 @@ export const story = {
         bgImage: "Images/Receptionist-asylum.png",
         text: "Monster dies. Teddy grabs the key and heads back to the entrance. As Teddy opens the door to escape, Anderdingus helps Josh up, helping him walk. After escaping, they report the incident to the police and shortly after, the abandoned insane asylum was closed off permanently.",
         options: [
-            { text: "> The End", next: null }
+            { text: "> Continue", next: null }
         ]
     },
 
@@ -1766,6 +1769,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
+        healthChange: 30,
         text: "Teddy and Justin finish all the McDonalds.",
         options: [
             { text: "> Continue", next: "withJustinAsylum0" }
@@ -1777,7 +1781,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        hungerChange: 15,
+        hungerChange: 10,
         item: "Fries",
         text: "Teddy saves some fries for later...",
         options: [
@@ -1932,7 +1936,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/DoorShut.png",
-        healthChange: -10,
+        healthChange: -20,
         text: "Teddy attempts to ram the door, but the door does not budge. During the process, Teddy injures himself by ramming the door too hard.",
         options: [
             { text: "> Continue", next: "withJustinJosh0" }
@@ -2425,8 +2429,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Room-Search.png",
-        hungerChange: 10,
-        text: "Teddy searches the room while Justin is on lookout. After a minute of searching Teddy finds 5 old protein bars. They then continue exploring.",
+        text: "Teddy searches the room while Justin is on lookout. After a minute of searching Teddy finds an old protein bars. They then continue exploring.",
         item: "Protein Bars",
         options: [
             { text: "> Continue", next: "withJustinBreak0" }
@@ -2473,8 +2476,8 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Cafe-asylum.png",
-        hungerChange: 10,
-        healthChange: 15,
+        hungerChange: 20,
+        healthChange: 10,
         text: "Teddy and Justin eat the protein bars to recover their hunger and heal a little from their fight with the monster. They then continue exploring.",
         options: [
             { text: "> Continue", next: "withJustinTotem0" }
@@ -2710,7 +2713,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail.png",
-        healthChange: -15,
+        healthChange: -20,
         text: "When they are walking slowly, the monster behind them deals damage to them and escapes.",
         options: [
             { text: "> Continue", next: "withJustinKeepMoving2" }
@@ -2781,6 +2784,8 @@ export const story = {
         speaker: "Teddy",
         image: "Images/Teddy.png",
         bgImage: "Images/Blood-trail.png",
+        hungerChange: 20,
+        healthChange: 20,
         text: "Let's recover for a bit, we are kinda tired.",
         options: [
             { text: "> Continue", next: "withJustinRecover2" }
@@ -2846,13 +2851,11 @@ export const story = {
         ]
     },
 
-    // Continue HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
     withJustinRecover7: {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "The vent on top of us?",
         options: [
             { text: "< Go Back", next: "withJustinRecover6" },
@@ -2864,15 +2867,11 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "They both look up and they see the monster... They react too slowly and the monster kills them both with a single strike.",
         options: [
-            { text: "> Continue", next: "withJustinGameOverEnd" }
+            { text: "> Continue", next: "withJustinLose" }
         ]
-    },
-
-    withJustinGameOverEnd: {
-        type: "gameOver"
     },
 
     withJustinFinalCombat: {
@@ -2890,7 +2889,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "They chase after the monster and because the monster is wounded it is not as fast as it usually is... Teddy catches up to the monster and pushes it to the ground. Then Justin comes in and kicks it in the head. The monster lets out a very loud scream that makes Teddy and Justin cover their ears, this lets the monster get a sneak attack on Teddy.",
         options: [
             { text: "> Continue", next: "withJustinWin2" }
@@ -2901,7 +2900,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy fell to the floor, he blocked the attack so it did not do much. Justin pushes the monster against the wall and punches it over and over again. Teddy recovers and stands back up but the monster kicks Justin away.",
         options: [
             { text: "> Continue", next: "withJustinWin3" }
@@ -2912,7 +2911,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy then grabs the monster and throws it to the ground and begins stomping its head. Justin quickly recovers and prevents the monster from escaping, letting Teddy stomp its head over and over until the monster's brain is destroyed... The monster is finally dead.",
         options: [
             { text: "> Continue", next: "withJustinWin4" }
@@ -2923,10 +2922,10 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy and Justin grab the key and escape with Josh.",
         options: [
-            { text: "> The End", next: null }
+            { text: "> Continue", next: null }
         ]
     },
 
@@ -3042,6 +3041,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
+        hungerChange: 30,
         bgImage: "Images/McDonalds.png",
         text: "Teddy finishes all the McDonalds.",
         options: [
@@ -3054,7 +3054,8 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/McDonalds.png",
-        hungerChange: 1,
+        hungerChange: 10,
+        item: "McChicken",
         text: "Teddy saves some fries for later...",
         options: [
             { text: "> Continue", next: "noFriendAsylum0" }
@@ -3433,7 +3434,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Receptionist-asylum.png",
         text: "Teddy stays silent, he realizes he must explore the building with monsters constantly on his tail. He also realizes the sooner he waits, the less chance he has to survive, so after Josh's explanations, he begins to explore.",
         options: [
             { text: "> Continue", next: "noFriendExplore1" }
@@ -3444,8 +3445,8 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "As Teddy explores, he finds many rooms with supplies such as food, bandaids, and a flashlight. Teddy finds another room, he scavenges it to find a weird totem. This totem emits a mysterious and otherworldly energy, even so Teddy's guts and instincts decided to keep it, for good luck.",
+        bgImage: "Images/Blood-trail.png",
+        text: "As Teddy explores, he finds a creepy blood trail, he also finds many rooms with supplies such as food, bandaids, and a flashlight. Teddy finds another room, he scavenges it to find a weird totem. This totem emits a mysterious and otherworldly energy, even so Teddy's guts and instincts decided to keep it, for good luck.",
         options: [
             { text: "> Continue", next: "noFriendExplore2" }
         ]
@@ -3455,7 +3456,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Teddy continues his search to gear up for his encounter with the monsters.",
         options: [
             { text: "> Continue", next: "noFriendMonster1Choice" }
@@ -3466,7 +3467,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "While exploring, Teddy senses something behind him. He is curious to look back but also senses the danger if he does look back. He wants to pretend to not notice it but the foot steps are getting closer... What do you do?",
         options: [
             { text: "Look behind", next: "noFriendLookBehind1" },
@@ -3478,7 +3479,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy succumbs to his curiosity and takes a quick glance behind him. He sees a tall, white skinned skinny monster. For a split second Teddy makes eye contact with it and he realizes the immediate danger he is in. Teddy attempts to run for his life, but the monster is too fast, it catches him and kills him.",
         options: [
             { text: "> Continue", next: "noFriendGameOver" }
@@ -3489,7 +3490,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy is instantly on high alert, but reluctant to look around. After ignoring the peril, Teddy hears footsteps...",
         options: [
             { text: "> Continue", next: "noFriendMonster2Choice" }
@@ -3500,7 +3501,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "The footsteps are seemingly following Teddy, growing faster with each step, until suddenly it rushes toward Teddy. Every fiber of Teddy's body is itching to turn around to defend himself... What do you do?",
         options: [
             { text: "Look behind", next: "noFriendLookBehind2" },
@@ -3512,7 +3513,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy looks behind, he sees monster 1 and realizes he messed up. Teddy tries to attack it, but it disappears. Teddy thinks the monster is gone and he is safe but suddenly the monster impales Teddy's stomach from behind...",
         options: [
             { text: "> Continue", next: "noFriendGameOver" }
@@ -3523,7 +3524,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy stayed strong. And as the last step finally reaches directly behind him, nothing happens. The uneasy atmosphere is lifted and Teddy no longer feels something approaching. He survived.",
         options: [
             { text: "> Continue", next: "noFriendAfterMonster1" }
@@ -3538,7 +3539,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "After the monster is gone, Teddy's heart beats out of his chest...",
         options: [
             { text: "> Continue", next: "noFriendBreakChoice" }
@@ -3549,7 +3550,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Teddy can't seem to lower his heart rate because of what happened. Taking a break would help greatly to let him recover. Would you like to take a break or just YOLO it?",
         options: [
             { text: "Take a break", next: "noFriendRest1" },
@@ -3561,7 +3562,9 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
+        hungerChange: 15,
+        healthChange: 5,
         text: "Teddy sits down and controls his breathing... Unfortunately Teddy has no resources yet, nothing for his hunger. After a bit Teddy continues exploring.",
         options: [
             { text: "> Continue", next: "noFriendDeeper0" }
@@ -3583,7 +3586,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "Walking around, he notices some rooms but they seem empty. But he is also lacking resources like food right now. Teddy thinks the rooms are completely empty, but his lack of resources make him want to search them... What do you do?",
         options: [
             { text: "Search rooms", next: "noFriendRoomSearch1" },
@@ -3595,8 +3598,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        healthChange: 10,
+        bgImage: "Images/Room-Search.png",
         text: "Teddy searches the rooms and luckily he finds some bandages. Teddy stores the bandages and continues exploring after.",
         item: "Bandages",
         options: [
@@ -3608,7 +3610,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "Teddy finds an intersection...",
         options: [
             { text: "> Continue", next: "noFriendIntersectionChoice" }
@@ -3619,11 +3621,11 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/HallwayChoice.png",
         text: "Teddy can choose to go left or right in the intersection. After carefully thinking for 10 minutes, Teddy still does not know which direction to go. He is scared he might get lost in this seemingly endless maze... Which direction do you choose?",
         options: [
-            { text: "Right", next: "noFriendRight" },
-            { text: "Left", next: "noFriendLeft" }
+            { text: "Left", next: "noFriendLeft" },
+            { text: "Right", next: "noFriendRight" }
         ]
     },
 
@@ -3632,7 +3634,7 @@ export const story = {
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/story-mechanics.png",
-        healthChange: -15,
+        healthChange: -20,
         text: "Teddy goes right but he encounters a normal monster... Teddy is forced to fight the normal monster... Surprisingly, the normal monster was not that strong, but Teddy did take some damage in the encounter.",
         options: [
             { text: "> Continue", next: "noFriendBreakChoice2" }
@@ -3643,7 +3645,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         hungerChange: 15,
         text: "Teddy goes left, as Teddy continues forward and he finds the asylum's cafeteria. Teddy searches the cafeteria for food and he finds a pieces of old bread.",
         item: "Bread",
@@ -3656,7 +3658,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Cafe-asylum.png",
         text: "After finding the bread he continues searching. But not too long after, he realizes he is tired and wonders if he should take a break. He would be able to eat his bread while resting to recover some energy... What do you do?",
         options: [
             { text: "Take a break to rest, eat, and heal", next: "noFriendRest2" },
@@ -3668,9 +3670,9 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        hungerChange: 10,
-        healthChange: 15,
+        bgImage: "Images/Cafe-asylum.png",
+        hungerChange: 15,
+        healthChange: 10,
         text: "Teddy eats his pieces of bread to fill his hunger and uses the bandages to heal himself. After resting Teddy continues exploring.",
         options: [
             { text: "> Continue", next: "noFriendWeaponMonster0" }
@@ -3711,7 +3713,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail.png",
         text: "Teddy runs away from the monster, thankfully it is too slow to chase.",
         options: [
             { text: "> Continue", next: "noFriendFollowMonster0" }
@@ -3722,7 +3724,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy continues going deeper... suddenly he hears something, the monster. It does not notice Teddy so he follows the monster quietly.",
         options: [
             { text: "> Continue", next: "noFriendFollowMonster1" }
@@ -3733,7 +3735,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "Teddy",
         image: "Images/Teddy.png",
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "I need to fight this monster...",
         options: [
             { text: "< Go Back", next: "noFriendFollowMonster0" },
@@ -3745,7 +3747,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy continues following the monster for some time. Somehow the monster does not notice him. Teddy is now RIGHT behind the monster... WHAT DO YOU DO??!?!?!?!",
         options: [
             { text: "Sneak attack", next: "noFriendSneakAttack" },
@@ -3757,7 +3759,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy rushes the monster from behind, using his new weapon he stabs the monster over and over again. The monster is injured but not enough to subdue it. Teddy is forced to fight...",
         options: [
             { text: "> Continue", next: "noFriendFinalCombat" }
@@ -3768,7 +3770,7 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy continues to quietly follow the monster. The monster eventually reaches a room and Teddy stays hidden. Teddy waits for a while waiting for the perfect moment.",
         options: [
             { text: "> Continue", next: "noFriendSleepChoice" }
@@ -3779,7 +3781,7 @@ export const story = {
         type: "choiceTwo",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
+        bgImage: "Images/Blood-trail-monster.png",
         text: "The monster falls asleep, Teddy makes his move by quietly entering the room the monster is sleeping in. The key is right next to the monster. Fortunately Teddy is able to almost reach the monster but if he takes the key the monster will wake up... What do you do?",
         options: [
             { text: "Move quietly to try and steal the key", next: "noFriendStealKey" },
@@ -3791,12 +3793,14 @@ export const story = {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "Teddy tip toes towards the key and slowly reaches for the key. Teddy successfully gets the key but he let out a sigh of relief too soon... luckily the monster did not wake up... Teddy then quietly leaves and once he is far enough, he runs back to the entrance to then successfully escape with Josh.",
+        bgImage: "Images/Blood-trail-monster.png",
+        text: "Teddy tip toes towards the key and slowly reaches for the key. Teddy successfully gets the key but he let out a sigh of relief too soon... unfortunately the monster wakes up last second and grabs teddys leg and he is not able to escape.",
         options: [
-            { text: "> The End", next: null }
+            { text: "> continue", next: null }
         ]
     },
+
+    // FIX THIS PART GETS BACK TO FIGHT AFTER STEALS KEY
 
     noFriendFinalCombat: {
         type: "combat",
@@ -3816,7 +3820,7 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "Teddy stabs the monster's brain... he expects the monster to still get up so Teddy continues stabbing the monster everywhere... Ultimately the monster is dead. Apparently the monster's weakness is the brain. Teddy takes the key and successfully escapes with Josh.",
         options: [
-            { text: "> The End", next: null }
+            { text: "> Continue", next: null }
         ]
     },
 };

@@ -361,15 +361,15 @@ function renderJournal() {
     }
 
     [...journal].reverse().forEach(entry => {
-        const entryEl = document.createElement("div");
-        entryEl.classList.add("journal-entry");
-        entryEl.innerHTML = `
+        const div = document.createElement("div");
+        div.classList.add("journal-entry");
+        div.innerHTML = `
             <p class="journal-entry-number">Entry #${entry.timestamp}</p>
             <p class="journal-entry-speaker">${entry.speaker}:</p>
             <p class="journal-entry-text">${entry.text}</p>
-            ${entry.choice ? `<p class="journal-entry-choice">➤ You chose: "${entry.choice}"</p>` : ""}
+            ${entry.choice ? `<p class="journal-entry-choice">> You chose: "${entry.choice}"</p>` : ""}
         `;
-        journalEntriesContainer.appendChild(entryEl);
+        journalEntriesContainer.appendChild(div);
     });
 }
 
@@ -410,7 +410,7 @@ function showSummary(outcome) {
             <span class="summary-path-number">#${i + 1}</span>
             <span class="summary-path-text">
                 <strong>${entry.speaker}:</strong> ${entry.text}
-                ${entry.choice ? `<br><em style="color:darkred;"> Chose: "${entry.choice}"</em>` : ""}
+                ${entry.choice ? `<br><em style="color:lightcoral;"> Chose: "${entry.choice}"</em>` : ""}
             </span>
         `;
         summaryPathEntries.appendChild(div);
@@ -426,7 +426,6 @@ function showSummary(outcome) {
             div.innerHTML = `
                 <p class="summary-choice-number">Choice #${entry.stepNumber}</p>
                 <p class="summary-choice-text">> "${entry.choice}"</p>
-                <p class="summary-choice-led">Led to: ${entry.ledTo}</p>
             `;
             summaryChoiceEntries.appendChild(div);
         });
@@ -510,7 +509,7 @@ export function renderStep(stepId) {
     }
 
     if (step.type === "dialogueStory" || step.type === "choiceTwo" || step.type === "choiceThree") {
-        player.hunger -= 1;
+        player.hunger -= 1.5;
         if (player.hunger <= 0) {
             player.hunger = 0;
             player.health -= 2;
@@ -607,7 +606,7 @@ function game() {
                 }
                 if (count >= 6) {
                     clearInterval(timer); // this clears time so it doesnt go infinite
-                    
+
                     indexContinue.style.animation = "none";
                     clickContinue.style.color = "#D9D9D9";
                     showScene(sceneMenu2);

@@ -641,7 +641,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100svh;
+    height: 100vh;
 }
 
 .Friend-YN-nav {
@@ -892,8 +892,8 @@
 .justin {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    gap: 40px;
 
     &>img {
         height: clamp(180px, 40vw, 340px);
@@ -1565,9 +1565,16 @@
                 }
 
                 & .summary-path-text {
-                    color: lightcoral;
+                    color: rgb(255, 255, 255);
                     font-size: 14px;
                     line-height: 1.4;
+
+                    &>strong {
+                        font-size: 16px;
+                        font-weight:500;
+                        color: darkred;
+                        font-family: var(--normalfont);
+                    }
                 }
             }
         }
@@ -1607,6 +1614,17 @@
         gap: 20px;
         justify-content: center;
         margin-top: 30px;
+
+        &>div {
+            font-size: 20px;
+            border: 1px solid rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 10px;
+
+            &:hover {
+                animation: scaleUp 0.3s ease-out forwards;
+            }
+        }
     }
 }
 
