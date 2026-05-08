@@ -72,16 +72,8 @@
         <div id="black-screen"></div>
 
         <!-- Nav Bar -->
-        <nav class="home2nav">
-            <section>
-                <img draggable="false" src="/Images/Lang-icon.png" alt="Language Icon">
-                <span>Language</span>
-                <select name="languages" id="languages">
-                    <option value="" disabled selected hidden>Select</option>
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                </select>
-            </section>
+        <nav class="All-pages-nav">
+            <img draggable="false" class="Settings" src="/Images/Settings-icon.png" alt="Settings Icon">
             <img draggable="false" class="Volume" src="/Images/Volume.png" alt="Volume Icon">
         </nav>
         <!-- Main Content -->
@@ -613,7 +605,7 @@
 
     <!-- SCENE 11: SUMMARY -->
 
-    <section id="scene-summary" class="scene active">
+    <section id="scene-summary" class="scene hidden">
         <main id="summary-main">
             <section class="summary-header">
                 <h1>Your Adventure</h1>
@@ -649,10 +641,10 @@
                 </section>
             </section>
             <section class="summary-buttons">
-                <div class="retry">
+                <div class="retry" id="summary-retry">
                     <p>Play Again</p>
                 </div>
-                <div class="mainmenu">
+                <div class="mainmenu" id="summary-mainmenu">
                     <p>Main Menu</p>
                 </div>
             </section>
@@ -661,7 +653,7 @@
 
     <!--Overlay section -->
 
-    <dialog id="journal-overlay-container" class="overlay active">
+    <dialog id="journal-overlay-container" class="overlay hidden">
         <div id="journal-overlay-background"></div>
         <section class="journal-overlay">
             <div class="journal-header">

@@ -1191,8 +1191,8 @@ export const story = {
         bgImage: "Images/HallwayChoice.png",
         text: "Teddy feels something mysterious calling out to him within those rooms. Teddy is unsure if those rooms are dangerous or if they will find something with great use. Teddy is debating on taking the risk and searching the rooms or to leave them... What do you do?",
         options: [
-            { text: "Search the rooms", next: "withAnderdingusDeeperSearch" },
-            { text: "Go deeper into the asylum", next: "withAnderdingusTotem0" }
+            { text: "Search the rooms", next: "withAnderdingusTotemFind" },
+            { text: "Go deeper into the asylum", next: "withAnderdingusMachete0" }
         ]
     },
 
@@ -2867,8 +2867,12 @@ export const story = {
         bgImage: "Images/story-mechanics.png",
         text: "They both look up and they see the monster... They react too slowly and the monster kills them both with a single strike.",
         options: [
-            { text: "> Main Menu", next: null }
+            { text: "> Continue", next: "withJustinGameOverEnd" }
         ]
+    },
+
+    withJustinGameOverEnd: {
+        type: "gameOver"
     },
 
     withJustinFinalCombat: {
@@ -3527,14 +3531,7 @@ export const story = {
     },
 
     noFriendGameOver: {
-        type: "dialogueStory",
-        speaker: "The Narrator",
-        image: null,
-        bgImage: "Images/story-mechanics.png",
-        text: "Game Over.",
-        options: [
-            { text: "> Main Menu", next: null }
-        ]
+        type: "gameOver"
     },
 
     noFriendAfterMonster1: {

@@ -4,11 +4,10 @@ import {
     monsterBigEyes,
     progressBars,
     giveItem,
-    useItem,
-    renderInventory,
     searchRoom,
     combatState,
-    currentStep,
+    journal,
+    addToJournal,
     setCurrentStep,
     choiceLog,
     addToChoiceLog
@@ -33,6 +32,9 @@ const goBackButtonSecondPage = document.querySelector(".go-back-button");
 const goBackBtn = document.querySelector(".go-back-button-text");
 const continueBtn = document.querySelector(".continue-button-text");
 const combatContinueBtn = document.querySelector("#scene-combat .decision2");
+const summaryRetryButton = document.getElementById("summary-retry");
+const summaryMainMenuButton = document.getElementById("summary-mainmenu");
+const volumeIcons = document.querySelectorAll(".Volume");
 
 // -- PAGES SCENES -- //
 const sceneHome = document.getElementById("scene-home");
@@ -47,6 +49,7 @@ const sceneDecisionTwoIntro = document.getElementById("scene-decision-two-intro"
 const sceneDecisionThree = document.getElementById("scene-decision-three");
 const sceneCombat = document.getElementById("scene-combat");
 const sceneEscape = document.getElementById("scene-escape");
+const sceneSummary = document.getElementById("scene-summary");
 
 // -- PROGRESS BARS -- //
 const playerHealth = document.querySelectorAll(".health-progress");
@@ -59,7 +62,6 @@ const creditsOverlayBackground = document.getElementById("credits-overlay-backgr
 const settingsOverlayBackground = document.getElementById("settings-overlay-background");
 
 // -- OVERLAY BUTTONS -- //
-const settingsButton = document.querySelector('.Settings');
 const achievementsButton = document.getElementById("achievements-button");
 const creditsButton = document.getElementById("credits-button");
 
@@ -76,6 +78,25 @@ const settingsExit = document.getElementById("exit-program-settings");
 // -- FRIEND PICK BUTTONS -- //
 const pickAnderdingusBtn = document.getElementById("pick-anderdingus");
 const pickJustinBtn = document.getElementById("pick-justin");
+
+// -- JOURNAL OVERLAY-- //
+const journalOverlay = document.getElementById("journal-overlay-container");
+const journalOverlayBackground = document.getElementById("journal-overlay-background");
+const journalClose = document.getElementById("journal-close");
+const journalEntriesContainer = document.getElementById("journal-entries");
+
+// -- SUMMARY PAGE -- //
+const summaryEndingTitle = document.getElementById("summary-ending-title");
+const summaryHealth = document.getElementById("summary-health");
+const summaryHunger = document.getElementById("summary-hunger");
+const summaryChoicesCount = document.getElementById("summary-choices-count");
+const summaryStepsCount = document.getElementById("summary-steps-count");
+const summaryPathEntries = document.getElementById("summary-path-entries");
+const summaryChoiceEntries = document.getElementById("summary-choice-entries");
+
+// // -- AUDIO -- //
+const bgMusic = new Audio("/Images/Audio.mp3");
+bgMusic.loop = true;
 
 
 // Switching scenes
@@ -114,16 +135,39 @@ export function hideOverlayShowScene(sceneToShow) {
     showScene(sceneToShow);
 }
 
-// the Typewritter
+let isMuted = false;
 
+function toggleVolume() {
+    isMuted = !isMuted;
+
+    volumeIcons.forEach(icon => {
+        if (isMuted) {
+            icon.src = "/Images/Volume-muted.png";
+        } else {
+            icon.src = "/Images/Volume.png";
+        }
+    });
+
+    if (isMuted) {
+        bgMusic.pause();
+    } else {
+        bgMusic.play();
+    }
+}
+
+// the Typewritter
 let currentTimer = null;
 
 export function typeWriter(element, text, speed = 30) {
     element.textContent = "";
+    element.onclick = null;
     let i = 0;
     let done = false;
 
-    if (currentTimer) clearInterval(currentTimer);
+    if (currentTimer) {
+        clearInterval(currentTimer);
+        currentTimer = null;
+    }
 
     currentTimer = setInterval(() => {
         element.textContent += text[i];
@@ -232,7 +276,7 @@ function monsterTurn() {
             if (combatState.loseNext) {
                 renderStep(combatState.loseNext);
             } else {
-                showScene(sceneGameOver);
+                showSummary("defeated");
             }
         }, 8000);
         return;
@@ -306,8 +350,92 @@ function combatRender() {
     endPlayerTurn();
 }
 
-// Render of the Dialogue
 
+// the journal render 
+function renderJournal() {
+    journalEntriesContainer.innerHTML = "";
+
+    if (journal.length === 0) {
+        journalEntriesContainer.innerHTML = `<p style="color:#888; text-align:center;">Your story has not begun yet...</p>`;
+        return;
+    }
+
+    [...journal].reverse().forEach(entry => {
+        const entryEl = document.createElement("div");
+        entryEl.classList.add("journal-entry");
+        entryEl.innerHTML = `
+            <p class="journal-entry-number">Entry #${entry.timestamp}</p>
+            <p class="journal-entry-speaker">${entry.speaker}:</p>
+            <p class="journal-entry-text">${entry.text}</p>
+            ${entry.choice ? `<p class="journal-entry-choice">➤ You chose: "${entry.choice}"</p>` : ""}
+        `;
+        journalEntriesContainer.appendChild(entryEl);
+    });
+}
+
+function openJournal() {
+    renderJournal();
+    showOverlay(journalOverlay);
+}
+
+function getEndingTitle() {
+    if (player.hasFriend) {
+        return "Ending: You called a friend";
+    } else {
+        return "Ending: You picked solo mode";
+    }
+}
+
+
+// fills the whole summary page
+function showSummary(outcome) {
+    summaryHealth.textContent = `${player.health} / 100`;
+    summaryHunger.textContent = `${player.hunger} / 100`;
+    summaryChoicesCount.textContent = choiceLog.length;
+    summaryStepsCount.textContent = journal.length;
+
+    if (outcome === "escaped") {
+        summaryEndingTitle.textContent = getEndingTitle() + " — Escaped!";
+        summaryEndingTitle.style.color = "#7fbf7f";
+    } else {
+        summaryEndingTitle.textContent = getEndingTitle() + " — Defeated";
+        summaryEndingTitle.style.color = "darkred";
+    }
+
+    summaryPathEntries.innerHTML = "";
+    journal.forEach((entry, i) => {
+        const div = document.createElement("div");
+        div.classList.add("summary-path-entry");
+        div.innerHTML = `
+            <span class="summary-path-number">#${i + 1}</span>
+            <span class="summary-path-text">
+                <strong>${entry.speaker}:</strong> ${entry.text}
+                ${entry.choice ? `<br><em style="color:darkred;"> Chose: "${entry.choice}"</em>` : ""}
+            </span>
+        `;
+        summaryPathEntries.appendChild(div);
+    });
+
+    summaryChoiceEntries.innerHTML = "";
+    if (choiceLog.length === 0) {
+        summaryChoiceEntries.innerHTML = `<p style="color:#888;">No choices were recorded.</p>`;
+    } else {
+        choiceLog.forEach(entry => {
+            const div = document.createElement("div");
+            div.classList.add("summary-choice-entry");
+            div.innerHTML = `
+                <p class="summary-choice-number">Choice #${entry.stepNumber}</p>
+                <p class="summary-choice-text">> "${entry.choice}"</p>
+                <p class="summary-choice-led">Led to: ${entry.ledTo}</p>
+            `;
+            summaryChoiceEntries.appendChild(div);
+        });
+    }
+
+    showScene(sceneSummary);
+}
+
+// Render of the Dialogue
 export function renderStep(stepId) {
     const step = story[stepId];
 
@@ -315,6 +443,8 @@ export function renderStep(stepId) {
         showScene(sceneGameOver);
         return;
     }
+
+    addToJournal(step);
 
     if (step.item) {
         giveItem(step.item);
@@ -367,7 +497,7 @@ export function renderStep(stepId) {
         player.health += step.healthChange;
         if (player.health <= 0) {
             player.health = 0;
-            showScene(sceneGameOver);
+            showSummary("defeated");
             return;
         }
         progressBars();
@@ -399,6 +529,15 @@ export function renderStep(stepId) {
 
             btn.onclick = () => {
                 const next = step.options[i].next;
+                const choiceText = step.options[i].text;
+
+                if (journal.length > 0) {
+                    journal[journal.length - 1].choice = choiceText;
+                }
+
+                if (step.type === "choiceTwo" || step.type === "choiceThree" || step.type === "choiceIntro") {
+                    addToChoiceLog(stepId, choiceText, next || "end");
+                }
 
                 if (next === "decisionFriend") {
                     showScene(sceneFriendYN);
@@ -424,7 +563,7 @@ export function renderStep(stepId) {
                 }
 
                 if (!next) {
-                    showScene(sceneEscape);
+                    showSummary("escaped");
                     return;
                 }
 
@@ -445,12 +584,16 @@ function game() {
         btn.onclick = () => showOverlay(settingsOverlay);
     });
 
-    if (settingsOverlay) {
-        settingsOverlayBackground.onclick = () => hideOverlay(settingsOverlay);
+    if (settingsOverlayBackground) {
+        settingsOverlayBackground.onclick = () => {
+            hideOverlay(settingsOverlay);
+        }
     }
 
     if (settingsContinue) {
-        settingsContinue.onclick = () => hideOverlay(settingsOverlay);
+        settingsContinue.onclick = () => {
+            hideOverlay(settingsOverlay);
+        }
     }
 
     if (indexContinue) {
@@ -459,18 +602,15 @@ function game() {
             let count = 0;
             const timer = setInterval(() => {
                 count++;
-                if (count >= 5) clickContinue.style.color = "black";
+                if (count >= 5) {
+                    clickContinue.style.color = "black";
+                }
                 if (count >= 6) {
+                    clearInterval(timer); // this clears time so it doesnt go infinite
+                    
                     indexContinue.style.animation = "none";
                     clickContinue.style.color = "#D9D9D9";
                     showScene(sceneMenu2);
-                }
-                if (count >= 7) {
-                    playButton.style.animation = "FadeUp 1500ms ease-in forwards";
-                    goBackBtn.style.animation = "moveRight 1500ms ease-in forwards";
-                    achievementsButton.style.animation = "moveRight 1500ms ease-out forwards";
-                    creditsButton.style.animation = "moveLeft 1500ms ease-out forwards";
-                    clearInterval(timer); // this clears time so it doesnt go infinite
                 }
             }, 480);
         };
@@ -482,23 +622,33 @@ function game() {
     };
 
     if (goBackButtonSecondPage) {
-        goBackButtonSecondPage.onclick = () => showScene(sceneHome);
+        goBackButtonSecondPage.onclick = () => {
+            showScene(sceneHome);
+        }
     }
 
     if (achievementsOverlay) {
-        achievementsButton.onclick = () => showOverlay(achievementsOverlay);
+        achievementsButton.onclick = () => {
+            showOverlay(achievementsOverlay);
+        }
     }
 
     if (creditsButton) {
-        creditsButton.onclick = () => showOverlay(creditsOverlay);
+        creditsButton.onclick = () => {
+            showOverlay(creditsOverlay);
+        }
     }
 
     if (achievementsOverlay) {
-        achievementsOverlayBackground.onclick = () => hideOverlay(achievementsOverlay);
+        achievementsOverlayBackground.onclick = () => {
+            hideOverlay(achievementsOverlay);
+        }
     }
 
     if (creditsOverlay) {
-        creditsOverlayBackground.onclick = () => hideOverlay(creditsOverlay);
+        creditsOverlayBackground.onclick = () => {
+            hideOverlay(creditsOverlay);
+        }
     }
 
     if (friendYes) {
@@ -536,11 +686,15 @@ function game() {
     }
 
     if (settingsExit) {
-        settingsExit.onclick = () => hideOverlayShowScene(sceneHome);
+        settingsExit.onclick = () => {
+            hideOverlayShowScene(sceneHome);
+        }
     }
 
     if (settingsRestart) {
-        settingsRestart.onclick = () => hideOverlayShowScene(sceneMenu2);
+        settingsRestart.onclick = () => {
+            hideOverlayShowScene(sceneMenu2);
+        }
     }
 
     mainMenuButton.onclick = () => showScene(sceneHome);
@@ -556,6 +710,38 @@ function game() {
     if (document.getElementById("search")) {
         document.getElementById("search").onclick = () => searchRoom();
     }
+
+    if (journalOverlay) {
+        document.querySelectorAll(".journal-button").forEach(btn => {
+            btn.onclick = () => openJournal();
+        });
+
+        journalClose.onclick = () => {
+            hideOverlay(journalOverlay);
+        }
+
+        journalOverlayBackground.onclick = () => {
+            hideOverlay(journalOverlay);
+        }
+    }
+
+    if (summaryRetryButton) {
+        summaryRetryButton.onclick = () => {
+            showScene(sceneMenu2);
+        }
+    }
+
+    if (summaryMainMenuButton) {
+        summaryMainMenuButton.onclick = () => {
+            showScene(sceneHome);
+        }
+    }
+
+    volumeIcons.forEach(icon => {
+        icon.onclick = () => {
+            toggleVolume();
+        }
+    });
 }
 
 progressBars();

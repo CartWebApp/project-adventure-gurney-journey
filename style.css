@@ -30,8 +30,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100svh;
-
 }
 
 .homenav {
@@ -300,56 +298,6 @@
     background-size: cover;
     background-position: center;
     height: 100svh;
-}
-
-/* Whole nav bar for secondary main page */
-.home2nav {
-    color: #D9D9D9;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-
-    &>img {
-        animation: moveRight 0.5s ease-out forwards;
-    }
-
-    &>section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        background-image: url("/images/Wood-button.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 400px;
-        height: 100px;
-
-        animation: moveLeft 0.5s ease-out forwards;
-
-        &>span {
-            font-size: 36px;
-        }
-
-        &>img {
-            width: 70px;
-            height: 70px;
-        }
-
-        &>select {
-            border-radius: 20px;
-            width: 70px;
-            height: 40px;
-            padding-left: 5px;
-            color: black;
-
-            &>option {
-                color: black;
-            }
-        }
-    }
-
 }
 
 .home2main {
@@ -1452,9 +1400,10 @@
 #scene-decision-two,
 #scene-decision-three,
 #scene-combat,
-#scene-gameover,
-#scene-summary {
+#scene-gameover {
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 
@@ -1717,6 +1666,13 @@
     }
 } */
 
+#scene-summary {
+    background-image: url('/Images/summary-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 #summary-main {
     width: 100%;
     max-width: 800px;
@@ -1750,6 +1706,7 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
 
         & .summary-stats,
         & .summary-path,
@@ -1794,12 +1751,13 @@
                 background: rgba(255,255,255,0.02);
 
                 & .summary-path-number {
-                    color: darkred;
+                    color: lightcoral;
                     font-size: 14px;
                     min-width: 30px;
                 }
 
                 & .summary-path-text {
+                    color: lightcoral;
                     font-size: 14px;
                     line-height: 1.4;
                 }
@@ -1892,13 +1850,13 @@
     }
 }
 
-#journal-button {
+.journal-button {
     background: none;
     border: 1px solid #D9D9D9;
     color: #D9D9D9;
     padding: 4px 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 28px;
 
     &:hover {
         border-color: darkred;

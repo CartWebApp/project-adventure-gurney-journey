@@ -135,10 +135,21 @@ export function useItem(item) {
     renderInventory();
 }
 
-export function addToJournal() {
-    
+export function addToJournal(step, choiceMade = null) {
+    const entry = {
+        speaker: step.speaker,
+        text: step.text,
+        choice: choiceMade,
+        timestamp: journal.length + 1
+    };
+    journal.push(entry);
 }
 
-export function addToChoiceLog() {
-
+export function addToChoiceLog(stepId, choiceText, nextStepId) {
+    choiceLog.push({
+        stepNumber: choiceLog.length + 1,
+        atStep: stepId,
+        choice: choiceText,
+        ledTo: nextStepId
+    });
 }
