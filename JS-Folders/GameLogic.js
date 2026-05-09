@@ -1,5 +1,35 @@
 import { items } from "./StoryData.js";
 
+export function resetGame() {
+    player.health = 100;
+    player.hunger = 100;
+    player.damage = 7.5;
+    player.hasFriend = false;
+    player.hasExtraLife = false;
+    player.weapon = null;
+    player.weaponActive = false;
+    player.friend = null;
+
+    monsterBigEyes.health = 45;
+    monsterBigEyes.maxHealth = 45;
+
+    combatState.playersTurn = true;
+    combatState.fighting = true;
+    combatState.playerDefending = false;
+    combatState.selectedAction = null;
+    combatState.winNext = null;
+    combatState.loseNext = null;
+
+    journal.length = 0;
+    choiceLog.length = 0;
+    inventory.length = 0;
+
+    currentStep = "intro0";
+
+    progressBars();
+    renderInventory();
+}
+
 export const player = {
     health: 100,
     hunger: 100,
@@ -13,7 +43,13 @@ export const player = {
 
 export const monsterBigEyes = {
     health: 45,
+    maxHealth: 45,
     damage: 7,
+};
+
+export const achievements = {
+    escaped: false,
+    collectedExtraLife: false,
 };
 
 export const combatState = {
@@ -52,6 +88,7 @@ export function progressBars() {
     });
 
     bigEyesHealth.forEach(bar => {
+        bar.max = monsterBigEyes.maxHealth;
         bar.value = monsterBigEyes.health;
     });
 }
@@ -126,6 +163,7 @@ export function useItem(item) {
 
     } else if (item.type === "extraLife") {
         player.hasExtraLife = true;
+        achievements.collectedExtraLife = true;
 
     } else if (item.type === "weapon") {
         equipWeapon(item);

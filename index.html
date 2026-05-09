@@ -489,7 +489,7 @@
     </section>
 
     <!-- SCENE 11: GAME OVER -->
-    <section id="scene-gameover" class="scene hidden">
+    <section id="scene-gameover" class="scene active">
         <main class="game-over-main" id="game-over">
             <h1>Game Over</h1>
             <h2>(--Reason why--)</h2>
@@ -512,11 +512,11 @@
             </section>
 
             <section class="retry-menu">
-                <div class="retry">
-                    <p>Retry</p>
+                <div id="gameover-summary-btn" class="retry">
+                    <p>Summary Page</p>
                 </div>
-                <div class="mainmenu">
-                    <p>Main Menu</p>
+                <div id="gameover-journal-btn" class="mainmenu">
+                    <p>View Journal</p>
                 </div>
             </section>
         </main>
@@ -605,7 +605,7 @@
 
     <!-- SCENE 11: SUMMARY -->
 
-    <section id="scene-summary" class="scene active">
+    <section id="scene-summary" class="scene hidden">
         <main id="summary-main">
             <section class="summary-header">
                 <h1>Your Adventure</h1>

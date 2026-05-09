@@ -10,7 +10,12 @@ import {
     addToJournal,
     setCurrentStep,
     choiceLog,
-    addToChoiceLog
+    addToChoiceLog,
+    inventory,
+    renderInventory,
+    currentStep,
+    achievements,
+    resetGame
 } from "./GameLogic.js";
 
 // -- BUTTONS -- //
@@ -35,6 +40,9 @@ const combatContinueBtn = document.querySelector("#scene-combat .decision2");
 const summaryRetryButton = document.getElementById("summary-retry");
 const summaryMainMenuButton = document.getElementById("summary-mainmenu");
 const volumeIcons = document.querySelectorAll(".Volume");
+const gameoverSummaryBtn = document.getElementById("gameover-summary-btn");
+const gameoverJournalBtn = document.getElementById("gameover-journal-btn");
+const yesNoSection = document.getElementById("yesNo");
 
 // -- PAGES SCENES -- //
 const sceneHome = document.getElementById("scene-home");
@@ -55,6 +63,7 @@ const sceneSummary = document.getElementById("scene-summary");
 const playerHealth = document.querySelectorAll(".health-progress");
 const playerHunger = document.querySelectorAll(".hunger-progress");
 const bigEyesHealth = document.querySelectorAll(".health-progress-bigEyes");
+const countdownBar = document.getElementById("countdown-line");
 
 // -- BACKGROUND OVERLAYS -- //
 const achievementsOverlayBackground = document.getElementById("achievements-overlay-background");
@@ -97,6 +106,7 @@ const summaryChoiceEntries = document.getElementById("summary-choice-entries");
 // // -- AUDIO -- //
 const bgMusic = new Audio("/Images/Audio.mp3");
 bgMusic.loop = true;
+bgMusic.volume = 0.2;
 
 
 // Switching scenes
@@ -274,9 +284,14 @@ function monsterTurn() {
         updateCombatLog("Your health is gone. The monster has defeated you! You lose!");
         setTimeout(() => {
             if (combatState.loseNext) {
-                renderStep(combatState.loseNext);
+                const loseStep = story[combatState.loseNext];
+                if (loseStep && loseStep.type === "gameOver") {
+                    handleGameOver("You were defeated in combat.");
+                } else {
+                    renderStep(combatState.loseNext);
+                }
             } else {
-                showSummary("defeated");
+                handleGameOver("You were defeated in combat.");
             }
         }, 8000);
         return;
@@ -386,7 +401,6 @@ function getEndingTitle() {
     }
 }
 
-console.log(window.innerWidth);
 
 // fills the whole summary page
 function showSummary(outcome) {
@@ -398,6 +412,7 @@ function showSummary(outcome) {
     if (outcome === "escaped") {
         summaryEndingTitle.textContent = getEndingTitle() + " — Escaped!";
         summaryEndingTitle.style.color = "#7fbf7f";
+        achievements.escaped = true;
     } else {
         summaryEndingTitle.textContent = getEndingTitle() + " — Defeated";
         summaryEndingTitle.style.color = "darkred";
@@ -435,7 +450,52 @@ function showSummary(outcome) {
     showScene(sceneSummary);
 }
 
+let extraLifeContext = null;
 
+//this checks for extra totem
+function handleGameOver(reason = "") {
+    const hasTotem = inventory.some(i => i.type === "extraLife");
+
+    // if there is no tetem just go to summary page
+    if (!hasTotem) {
+        showSummary("defeated");
+        return;
+    }
+
+    // if they have a totem replace the reason and chnage to gamover page
+    const reasonEl = document.getElementById("gameover-reason");
+    if (reasonEl) reasonEl.textContent = reason;
+
+    extraLifeContext = reason;
+    showScene(sceneGameOver);
+
+    if (!countdownBar || !yesNoSection) return;
+
+    // Reset bar to full
+    countdownBar.value = 100;
+
+    // Clear any other timer around the global scope
+    if (window._extraLifeTimer) {
+        clearInterval(window._extraLifeTimer);
+        window._extraLifeTimer = null;
+    }
+
+    /// each 1 is a milisecond
+    const totalMs = 10000;
+    const tickMs = 100;
+    let elapsed = 0;
+
+    window._extraLifeTimer = setInterval(() => {
+        elapsed += tickMs;
+        countdownBar.value = 100 - (elapsed / totalMs) * 100;
+
+        if (elapsed >= totalMs) {
+            clearInterval(window._extraLifeTimer);
+            window._extraLifeTimer = null;
+            yesNoSection.style.display = "none";
+        }
+    }, tickMs);
+}
 
 // Render of the Dialogue
 export function renderStep(stepId) {
@@ -443,7 +503,7 @@ export function renderStep(stepId) {
     const step = story[stepId];
 
     if (!step || step.type === "gameOver") {
-        showScene(sceneGameOver);
+        handleGameOver("You died in the asylum.");
         return;
     }
 
@@ -520,7 +580,7 @@ export function renderStep(stepId) {
         player.health += step.healthChange;
         if (player.health <= 0) {
             player.health = 0;
-            showSummary("defeated");
+            handleGameOver("You run out of health, GG!.");
             return;
         }
         progressBars();
@@ -533,10 +593,16 @@ export function renderStep(stepId) {
     }
 
     if (step.type === "dialogueStory" || step.type === "choiceTwo" || step.type === "choiceThree") {
-        player.hunger -= 1.5;
+        player.hunger -= 1;
         if (player.hunger <= 0) {
             player.hunger = 0;
             player.health -= 2;
+            if (player.health <= 0) {
+                player.health = 0;
+                progressBars();
+                handleGameOver("You starved to death.");
+                return;
+            }
         }
         progressBars();
     }
@@ -574,6 +640,7 @@ export function renderStep(stepId) {
                     combatState.winNext = nextStep.winNext;
                     combatState.loseNext = nextStep.loseNext;
                     monsterBigEyes.health = nextStep.monsterHealth || 45;
+                    monsterBigEyes.maxHealth = nextStep.monsterHealth || 45;
                     combatState.fighting = true;
                     combatState.playersTurn = true;
                     combatState.playerDefending = false;
@@ -630,9 +697,9 @@ function game() {
                 }
                 if (count >= 6) {
                     clearInterval(timer); // this clears time so it doesnt go infinite
-
                     indexContinue.style.animation = "none";
                     clickContinue.style.color = "#D9D9D9";
+                    bgMusic.play();
                     showScene(sceneMenu2);
                 }
             }, 480);
@@ -652,6 +719,7 @@ function game() {
 
     if (achievementsOverlay) {
         achievementsButton.onclick = () => {
+            updateAchievements();
             showOverlay(achievementsOverlay);
         }
     }
@@ -710,24 +778,93 @@ function game() {
 
     if (settingsExit) {
         settingsExit.onclick = () => {
+            resetGame();
             hideOverlayShowScene(sceneHome);
         }
     }
 
     if (settingsRestart) {
         settingsRestart.onclick = () => {
+            resetGame();
             hideOverlayShowScene(sceneMenu2);
         }
     }
 
-    mainMenuButton.onclick = () => showScene(sceneHome);
-    retryButton.onclick = () => showScene(sceneMenu2);
-    mainMenuButtonEscaped.onclick = () => showScene(sceneHome);
-    retryButtonEscaped.onclick = () => showScene(sceneMenu2);
+    mainMenuButton.onclick = () => {
+        showScene(sceneHome);
+    }
+    retryButton.onclick = () => {
+        showScene(sceneMenu2);
+    }
 
-    extraLifeNo.onclick = () => showScene(sceneHome);
+    if (gameoverSummaryBtn) {
+        gameoverSummaryBtn.onclick = () => {
+            showSummary("defeated");
+        }
+    }
+
+    if (gameoverJournalBtn) {
+        gameoverJournalBtn.onclick = () => {
+            renderJournal();
+            showOverlay(journalOverlay);
+        };
+    }
+
+    // if no extra life go to summary page
+    extraLifeNo.onclick = () => {
+        //just a checker before canceling a timer
+        if (window._extraLifeTimer) {
+            clearInterval(window._extraLifeTimer);
+            window._extraLifeTimer = null;
+        }
+
+        if (yesNoSection) {
+            yesNoSection.style.display = "";
+        }
+        showSummary("defeated");
+    };
+
     extraLifeYes.onclick = () => {
-        // placeholder
+        //just a checker before canceling a timer
+        if (window._extraLifeTimer) {
+            clearInterval(window._extraLifeTimer);
+            window._extraLifeTimer = null;
+        }
+
+        if (yesNoSection) {
+            yesNoSection.style.display = "";
+        }
+
+        // Remove the totem from inventory
+        const totemIndex = inventory.findIndex(i => i.type === "extraLife");
+        if (totemIndex !== -1) inventory.splice(totemIndex, 1);
+        renderInventory();
+
+        // Heal 50 after using extra life
+        player.health = Math.min(100, player.health + 50);
+        if (player.health <= 0) player.health = 50;
+        progressBars();
+
+        // If they died in combat, go back to the same combat scene
+        if (combatState.winNext || combatState.loseNext) {
+            combatState.fighting = true;
+            combatState.playersTurn = true;
+            combatState.playerDefending = false;
+            combatState.selectedAction = null;
+            selectCombatButton(null);
+            combatContinueBtn.onclick = combatRender;
+            showScene(sceneCombat);
+            updateCombatLog("The totem activated! You've been revived with 50 health. Keep fighting!");
+        } else {
+            //go back to current story step
+            const step = story[currentStep];
+            if (step) {
+                showScene(sceneStory);
+                renderStep(currentStep);
+            } else {
+                showScene(sceneStory);
+            }
+        }
     };
 
     if (document.getElementById("search")) {
@@ -750,12 +887,14 @@ function game() {
 
     if (summaryRetryButton) {
         summaryRetryButton.onclick = () => {
+            resetGame();
             showScene(sceneMenu2);
         }
     }
 
     if (summaryMainMenuButton) {
         summaryMainMenuButton.onclick = () => {
+            resetGame();
             showScene(sceneHome);
         }
     }
@@ -765,6 +904,23 @@ function game() {
             toggleVolume();
         }
     });
+
+    // this updates the achievements with a check mark
+    function updateAchievements() {
+        const escapedBox = document.querySelector(".escaped-checkbox");
+        const extraLifeBox = document.querySelectorAll(".escaped-checkbox")[1];
+
+        // if true check mark if not nothing
+        if (escapedBox) {
+            escapedBox.textContent = achievements.escaped ? "✓" : "";
+            escapedBox.style.color = achievements.escaped ? "lightgreen" : "";
+        }
+
+        if (extraLifeBox) {
+            extraLifeBox.textContent = achievements.collectedExtraLife ? "✓" : "";
+            extraLifeBox.style.color = achievements.collectedExtraLife ? "lightgreen" : "";
+        }
+    }
 }
 
 progressBars();

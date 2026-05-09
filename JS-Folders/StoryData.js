@@ -3056,7 +3056,7 @@ export const story = {
         image: null,
         bgImage: "Images/McDonalds.png",
         hungerChange: 10,
-        item: "McChicken",
+        item: "McFlurry",
         text: "Teddy saves some fries for later...",
         options: [
             { text: "> Continue", next: "noFriendAsylum0" }
@@ -3785,19 +3785,30 @@ export const story = {
         bgImage: "Images/Blood-trail-monster.png",
         text: "The monster falls asleep, Teddy makes his move by quietly entering the room the monster is sleeping in. The key is right next to the monster. Fortunately Teddy is able to almost reach the monster but if he takes the key the monster will wake up... What do you do?",
         options: [
-            { text: "Move quietly to try and steal the key", next: "noFriendStealKey" },
+            { text: "Move quietly to try and steal the key", next: "noFriendStealKey0" },
             { text: "Attack the monster", next: "noFriendFinalCombat" }
         ]
     },
 
-    noFriendStealKey: {
+    noFriendStealKey0: {
         type: "dialogueStory",
         speaker: "The Narrator",
         image: null,
         bgImage: "Images/Blood-trail-monster.png",
         text: "Teddy tip toes towards the key and slowly reaches for the key. Teddy successfully gets the key but he let out a sigh of relief too soon... unfortunately the monster wakes up last second and grabs teddys leg and he is not able to escape.",
         options: [
-            { text: "> continue", next: null }
+            { text: "> continue", next: "noFriendStealKey1" }
+        ]
+    },
+
+    noFriendStealKey1: {
+        type: "dialogueStory",
+        speaker: "The Narrator",
+        image: null,
+        bgImage: "Images/Blood-trail-monster.png",
+        text: "Because of this, now Teddy needs to confront the mosnter. Get ready to fight him!",
+        options: [
+            { text: "> continue", next: "noFriendFinalCombat" }
         ]
     },
 
