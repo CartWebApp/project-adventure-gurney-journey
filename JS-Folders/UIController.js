@@ -72,7 +72,7 @@ const settingsOverlayBackground = document.getElementById("settings-overlay-back
 
 // -- OVERLAY BUTTONS -- //
 const achievementsButton = document.getElementById("achievements-button");
-const creditsButton = document.getElementById("credits-button");
+const creditsButton = document.getElementById("credits-button")
 
 // -- OVERLAYS -- //
 const creditsOverlay = document.getElementById("credits-overlay-container");

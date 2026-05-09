@@ -1710,6 +1710,14 @@ body {
     }
 }
 
+.mobile-panel-btn {
+    display: none;
+}
+
+.mobile-overlay {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
     .active {
         display: block;
@@ -1783,5 +1791,168 @@ body {
 
     .Introduction-page-main {
         background-size: 100% 50%;
+    }
+
+    .mainleft,
+    .mainright {
+        display: none;
+    }
+
+    /* HOME MAIN PAGE MEDIA  */
+
+    .homemain {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #mainmiddle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 28vh;
+        gap: 18px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #mainmiddle>h1 {
+        margin-bottom: 0;
+    }
+
+    #mainmiddle>h2 {
+        font-size: clamp(16px, 4vw, 22px);
+        margin-bottom: 0;
+    }
+
+    #scene-home .title {
+        font-size: 52px;
+        line-height: 1;
+    }
+
+    #scene-home .title>span {
+        font-size: 90px;
+    }
+
+    /* wood buttons */
+    .mobile-panel-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        padding-left: 10px;
+        width: clamp(220px, 72vw, 310px);
+        height: 64px;
+        background-image: url("/images/wood-button.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: clamp(18px, 5vw, 24px);
+        font-family: var(--normalfont);
+        cursor: pointer;
+    }
+
+    .mobile-panel-btn:hover {
+        animation: scaleUp 0.3s ease-out forwards;
+    }
+
+    .mobile-btn-icon {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    /* index continue stays same style, just smaller */
+    #index-continue {
+        padding: 12px 16px;
+        margin-top: 6px;
+    }
+
+    #click-continue {
+        font-size: clamp(13px, 3.5vw, 16px);
+    }
+
+    /* overlay backdrop */
+    .mobile-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-overlay.hidden {
+        display: none;
+    }
+
+    /* wood plank panel */
+    .mobile-overlay-panel {
+        background-image: url("/Images/mainwoodplank.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: clamp(260px, 85vw, 340px);
+        min-height: 280px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 16px 16px 16px;
+        position: relative;
+    }
+
+    .mobile-overlay-panel>h4 {
+        font-size: 26px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        width: 100%;
+        text-align: center;
+        padding-bottom: 8px;
+        margin-bottom: 4px;
+    }
+
+    .mobile-overlay-panel>ol,
+    .mobile-overlay-panel>ul {
+        font-size: 14px;
+        padding: 10px 14px;
+        background-color: rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        width: 100%;
+        list-style-position: inside;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mobile-overlay-panel>ol>li,
+    .mobile-overlay-panel>ul>li {
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        line-height: 1.4;
+    }
+
+    .mobile-overlay-panel>ol>li:last-child,
+    .mobile-overlay-panel>ul>li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-overlay-close {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #D9D9D9;
+        font-size: 40px;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .mobile-overlay-close:hover {
+        color: lightcoral;
     }
 }

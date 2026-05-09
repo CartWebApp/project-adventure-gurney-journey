@@ -45,6 +45,17 @@
             <section id="mainmiddle">
                 <h1 class="title">The <span>Gurney</span> Journey</h1>
                 <h2>Ready for a new adventure?</h2>
+
+                <section class="mobile-panel-btn" id="mobile-facts-btn">
+                    <img src="/Images/fun-fact-image.png" class="mobile-btn-icon" draggable="false">
+                    <span>Fun Facts</span>
+                </section>
+
+                <section class="mobile-panel-btn" id="mobile-howto-btn">
+                    <img src="/Images/question-mark.png" class="mobile-btn-icon" draggable="false">
+                    <span>How to play?</span>
+                </section>
+
                 <div id="index-continue">
                     <p id="click-continue"> Click to continue...</p>
                 </div>
@@ -62,9 +73,35 @@
                     </ul>
                 </article>
             </section>
-
-
         </main>
+
+        <!-- MOBILE OVERLAYS -->
+        <div class="mobile-overlay hidden" id="mobile-facts-overlay">
+            <div class="mobile-overlay-panel">
+                <button class="mobile-overlay-close">✕</button>
+                <h4>Fun Facts</h4>
+                <ol>
+                    <li><span>80% players fail to beat this game</span></li>
+                    <li><span>only 0.1% of players find the secret button 🤫</span></li>
+                    <li><span>The secret button is real</span></li>
+                    <li><span>The secret button is very secret, and small</span></li>
+                    <li><span>No friend = harder</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="mobile-overlay hidden" id="mobile-howto-overlay">
+            <div class="mobile-overlay-panel">
+                <button class="mobile-overlay-close">✕</button>
+                <h4>How to play?</h4>
+                <ul>
+                    <li>Progress through the story with your choices</li>
+                    <li>Explore and find items</li>
+                    <li>Turn based fighting</li>
+                    <li>Defeat the final boss to achieve VICTORY!</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- SCENE 2: SECOND MENU -->
