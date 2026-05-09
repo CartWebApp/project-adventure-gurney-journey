@@ -15,6 +15,11 @@
     user-select: none;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .hidden {
     display: none;
 }
@@ -634,6 +639,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 20px;
+    margin: 0px;
 }
 
 /* Friend Yes or No page */
@@ -1426,9 +1432,13 @@
 #scene-combat,
 #scene-gameover {
     background-repeat: no-repeat;
-    background-size: clamp(300px, 80vw, 1200px) auto;
-    background-position: center;
+    background-position: center left;
+    background-size: cover;
+    height: 100vh;
 }
+
+
+
 
 /* ESCAPED SCENE */
 
@@ -1578,7 +1588,7 @@
 
                     &>strong {
                         font-size: 16px;
-                        font-weight:500;
+                        font-weight: 500;
                         color: darkred;
                         font-family: var(--normalfont);
                     }
@@ -1756,5 +1766,19 @@
         font-size: 22px;
     }
 
+    #scene-intro,
+    #scene-decision-two-intro,
+    #scene-decision-two,
+    #scene-decision-three {
+        background-size: 100% 50%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 100svh;
+        background-color: #A1A1A1;
+    }
 
+
+    .Introduction-page-main {
+        background-size: 100% 50%;
+    }
 }

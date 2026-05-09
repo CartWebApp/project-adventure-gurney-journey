@@ -551,7 +551,7 @@ export function renderStep(stepId) {
             if (step.bgImage) {
                 activeScene.style.backgroundImage = `url('${step.bgImage}')`;
 
-                activeScene.style.backgroundSize = "cover";
+
 
                 activeScene.style.zIndex = "-2";
             } else {
@@ -564,7 +564,7 @@ export function renderStep(stepId) {
 
             if (step.bgImage) {
                 activeScene.style.backgroundImage = `url('${step.bgImage}')`;
-                activeScene.style.height = "40vh";
+
                 activeScene.style.zIndex = "-2";
             } else {
                 activeScene.style.backgroundImage = "none";
