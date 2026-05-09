@@ -639,8 +639,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
-    margin: 0px;
+    padding: 20px;
 }
 
 /* Friend Yes or No page */
@@ -1717,6 +1716,15 @@ body {
 
 .mobile-overlay {
     display: none;
+}
+
+#leaderboard h4 {
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+}
+
+#instructions h4 {
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 600px) {
