@@ -645,13 +645,10 @@ body {
 /* Friend Yes or No page */
 
 #scene-friend-yesno {
-    background-image: url("/images/Rocky-background.png");
+    background-image: url(Images/selectfriendbackground.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 100vh;
 }
-
 .Friend-YN-nav {
     display: flex;
     flex-direction: row;
@@ -820,7 +817,6 @@ body {
         gap: clamp(15px, 3vh, 20px);
         width: clamp(240px, 80vw, 1000px);
         height: auto;
-        margin: 30px;
 
         &>div {
             width: clamp(200px, 70vw, 380px);
@@ -829,11 +825,9 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            font-size: clamp(20px, 5vw, 40px);
+            font-size: clamp(24px, 6vw, 48px);
             border-radius: 10px;
             box-shadow: 0px 0px 20px 7px rgba(255, 255, 255, 0.8);
-            padding: 5px;
 
             &:hover {
                 animation: scaleUp 0.3s ease forwards;
@@ -871,19 +865,14 @@ body {
 
 #scene-friend {
     background-image: url(Images/selectfriendbackground.png);
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    min-height: 100svh;
-    height: auto;
 }
+
 
 .selectfriendmain {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 
     &>h1 {
         text-align: center;
@@ -893,14 +882,16 @@ body {
     }
 }
 
+
+
 .friendsection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 30px;
-    width: clamp(280px, 95vw, 1000px);
-    height: auto;
+    width: clamp(100px, 95vw, 1000px);
+    height: fit-content;
 }
 
 .anderdingus,
@@ -1180,8 +1171,8 @@ body {
     align-items: center;
 
     &>img {
-        width: clamp(24px, 5vw, 35px);
-        height: clamp(24px, 5vw, 35px);
+        width: clamp(50px, 5vw, 35px);
+        height: clamp(50px, 5vw, 35px);
         margin-right: -20px;
         z-index: 10;
     }
@@ -1428,14 +1419,13 @@ body {
 #scene-intro,
 #scene-decision-two-intro,
 #scene-friend-yesno,
-#scene-friend,
 #scene-story-mechanics,
 #scene-decision-two,
 #scene-decision-three,
 #scene-combat,
 #scene-gameover {
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: center;
     background-size: cover;
     height: 100vh;
 }
@@ -1760,6 +1750,10 @@ body {
         margin-bottom: -60vh;
     }
 
+    #scene-friend {
+        background-size: cover;
+    }
+
     #pick-anderdingus {
         margin-top: 3vh;
     }
@@ -1774,7 +1768,7 @@ body {
     }
 
     .enemy-team {
-        margin-top: -5vh;
+        margin-top: -1vh;
     }
 
     .description-text-section-combat {
